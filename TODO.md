@@ -1,5 +1,6 @@
 # Next #
-- move gemfire-toolkit into ops-suite
+- move gemfire-toolkit into ops-suite, have it built from source on each node
+  (is this a good idea ? it requires each node to access a maven repo)
 - public IP addresses
 - get gfsh from outside working
 - ability to specify a schedule for the cluster
@@ -8,7 +9,7 @@
 - initial pdx config preferences
 - pull commonalities between aws_provision and aws_provision_storage into
 common file
-- try again to get locator connections from outside working
+- automatic backups to S3 (how will the S3 credentials be handled ?)
 
 
 # Later #
