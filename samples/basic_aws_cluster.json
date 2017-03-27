@@ -1,8 +1,8 @@
 {
-  "EnvironmentName" : "AirlineDemo2",
+  "EnvironmentName" : "AirlineDemo",
   "RegionName" : "us-east-1",
   "SSHKeyPairName" : "yak-keypair",
-  "SSHKeyPath": "/Users/rmay/Downloads/yak-keypair.pem",
+  "SSHKeyPath": "/Users/me/Downloads/yak-keypair.pem",
   "Servers" : [
     {
       "Name" : "gem1101",
@@ -31,13 +31,6 @@
       "AZ" : "B",
       "InstanceType" : "m4.large",
       "Roles" : ["ETL"]
-    },
-    {
-      "Name" : "web2201",
-      "PrivateIP" : "192.168.2.202",
-      "AZ" : "B",
-      "InstanceType" : "m4.large",
-      "Roles" : ["WEB"]
     }
   ]
 }
