@@ -52,7 +52,7 @@
                 "{{ Server.Name }}-server" : {
                     "type" : "datanode",
                     "server-bind-address" : "{{ Server.PrivateIP }}",
-                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85"]
+                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85", "-Dgemfire.ALLOW_PERSISTENT_TRANSACTIONS=true"]
                     {% if Server.PrivateIP == '192.168.2.101' %}
                     , "http-service-port": 18080,
                     "start-dev-rest-api" : "true"
