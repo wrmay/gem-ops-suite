@@ -38,7 +38,7 @@ if __name__ == '__main__':
    serverName = target[i+1:]
    
    if not serverName in serverMap:
-      sys.exit('server "{0}" not found in runtime.json'.format(serverName))
+      sys.exit('server "{0}" not found in aws_runtime.json'.format(serverName))
       
    serverIp = serverMap[serverName]
    

@@ -102,7 +102,7 @@ The setup steps are shown in concise form below:
 cd ~/gem-ops-suite
 cp samples/awscluster.json config
 vi config/awscluster.json  #edit the cluster definition
-python3 generateCluster.py
+python3 generateAWSCluster.py 
 ```
 
 You now have a completely reproducible GemFire cluster on AWS.  The entire

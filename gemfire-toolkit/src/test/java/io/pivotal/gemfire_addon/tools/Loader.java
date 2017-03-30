@@ -9,7 +9,7 @@ public class Loader {
 	public static void main(String []args){
 		ClientCache cache = null;
 		try {
-			cache = new ClientCacheFactory().addPoolLocator("localhost", 10000).create();
+			cache = new ClientCacheFactory().addPoolLocator("54.89.231.4", 10000).create();
 			Region<Object,Object> testRegion = cache.createClientRegionFactory(ClientRegionShortcut.PROXY).create("Test");
 			
 			for(int i=0; i< 1000; ++i){
