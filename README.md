@@ -22,7 +22,7 @@ packages
 * You will need to register a key pair with AWS and you will need the
 corresponding .pem file on your local machine.
 * You will need an AWS AccessKeyId and SecretAccessKey. You can either use your
-master key (which is dicouraged by Amazon) or create an IAM user.  The IAM
+master key (which is discouraged by Amazon) or create an IAM user.  The IAM
 user you create will need to attach a user policy that grants access to all EC2, Cloud Formation and Elastic Load Balancing operations.  The following
 policy definition can be used.
 
