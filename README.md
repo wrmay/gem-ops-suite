@@ -223,8 +223,60 @@ formula for reserve given size: =  x^2/4096 + x/16 + 1/2 (and 2 more G for locat
 formula for -Xmn (in m) given -Xmx (in m): x/5 - x^2/500000 - 600
 
 
+#Supporting Local Client Connections
+
+ - Open setuptasks/InstallGemFireCluster/cluster.json
+ - Add jmx-manager-hostname-for-clients
+ 
+
+
 ## Known Issues and the Default Plan ##
 Currently, due to a GemFire issue which will be resolved in version 9.0.2,
 multiple locators are not supported.  Currently regardless of the cluster.json
 file, a single locator will be deployed on the machine having private IP
 address 192.168.1.101
+
+
+
+## External AWS GemFire clients UnknownHostException
+
+When the follow errors occurs when trying to connect to the cluster from outside the AWS cluster
+
+	[warn 2017/03/31 09:15:50.277 EDT <Function Execution Thread-1> tid=0x1c] Could not connect to: ip-192-168-2-101:10100
+	java.net.UnknownHostException: ip-???-???-?-???: nodename nor servname 
+
+In order to connect to GemFire thru JMX or a external GemFire client,
+you must currently add the private host server hostname and their private IP addresses to your /etc/host.
+
+The generateHosts.py script to generate the /etc/host entries
+
+	python3 generateHosts.py 
+
+Example output
+
+	$ python3 generateHosts.py 
+	#Add the following to your /etc/hosts
+	54.242.56.47 ip-192-168-1-101
+	54.175.171.234 ip-192-168-2-101
+	34.206.72.136 ip-192-168-3-101
+
+Example /etc/host
+
+	##
+	# Host Database
+	#
+	# localhost is used to configure the loopback interface
+	##
+	127.0.0.1       localhost
+	255.255.255.255 broadcasthost
+	::1             localhost
+	#GemFire AWS cluster entries
+	54.242.56.47 ip-192-168-1-101
+	54.175.171.234 ip-192-168-2-101
+	34.206.72.136 ip-192-168-3-101
+	
+	~                                           
+
+
+
+

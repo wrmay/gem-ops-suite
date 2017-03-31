@@ -90,6 +90,9 @@ if __name__ == '__main__':
     with open(configFile, 'r') as contextFile:
         context = json.load(contextFile)
 
+
+    print ("current directory:"+os.getcwd())
+    
     with open(instanceMapFile,'r') as f:
         ipTable = json.load(f)
 

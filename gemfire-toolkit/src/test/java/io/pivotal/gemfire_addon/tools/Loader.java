@@ -7,9 +7,21 @@ import org.apache.geode.cache.client.ClientRegionShortcut;
 
 public class Loader {
 	public static void main(String []args){
+		
+		
+		if(args.length == 0)
+		{
+			System.err.println("Usage java "+Loader.class.getSimpleName()+" locator-host");
+			System.exit(-1);
+		}
+		
 		ClientCache cache = null;
 		try {
-			cache = new ClientCacheFactory().addPoolLocator("54.89.231.4", 10000).create();
+			
+			String locatorHost = args[0];
+			
+			System.out.println("Connecting to "+locatorHost+"[10000]");
+			cache = new ClientCacheFactory().addPoolLocator(locatorHost, 10000).create();
 			Region<Object,Object> testRegion = cache.createClientRegionFactory(ClientRegionShortcut.PROXY).create("Test");
 			
 			for(int i=0; i< 1000; ++i){

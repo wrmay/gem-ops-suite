@@ -2,7 +2,7 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
-        "locators" : "192.168.1.101[10000]",
+        "locators" : "54.242.56.47[10000]",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
     },
@@ -14,6 +14,7 @@
         "log-level" : "config",
         "statistic-sampling-enabled" : "true",
         "statistic-archive-file" : "locator.gfs",
+        "jmx-manager-hostname-for-clients" : "ip-192-168-1-101", 
         "log-file-size-limit" : "10",
         "log-disk-space-limit" : "100",
         "archive-file-size-limit" : "10",
