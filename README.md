@@ -145,6 +145,11 @@ project can be checked in to source control to allow versioning of the cluster.
 - __gf.py gfsh shutdown --include-locators=true__
 
   Stops all cluster members.
+  
+- __generateHosts.py__
+
+  generates /etc/hosts entries for external AWS GemFire clients
+
 
 ## Script Examples ##
 
