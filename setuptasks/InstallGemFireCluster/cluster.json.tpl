@@ -2,7 +2,9 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
-        "locators" : "54.242.56.47[10000]",
+        {% for Server in Servers  if "Locator" in Server.Roles and Server.PrivateIP == '192.168.1.101' %}
+        "locators" : "{{ Server.PublicIpAddress }}[10000]",
+    	{% endfor %}
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
     },
