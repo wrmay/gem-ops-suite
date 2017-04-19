@@ -175,15 +175,15 @@
          "Volumes" : [
           {
             "Device" : "/dev/xvdf",
-            "VolumeId" : "vol-0b5a057f1854bde44"
+            "VolumeId" : "vol-09f8ee43c99429ab7"
           }
 ,          {
             "Device" : "/dev/xvdg",
-            "VolumeId" : "vol-0b16047749b6689a9"
+            "VolumeId" : "vol-0f4fdd804fa694f22"
           }
 ,          {
             "Device" : "/dev/xvdh",
-            "VolumeId" : "vol-0951729c9797e8abc"
+            "VolumeId" : "vol-08f31990eabb4c387"
           }
          ] ,
          "BlockDeviceMappings" : [
@@ -215,15 +215,15 @@
          "Volumes" : [
           {
             "Device" : "/dev/xvdf",
-            "VolumeId" : "vol-0444598029135a3ef"
+            "VolumeId" : "vol-01d5972d2906af56b"
           }
 ,          {
             "Device" : "/dev/xvdg",
-            "VolumeId" : "vol-08eca95fc3642c481"
+            "VolumeId" : "vol-08c6b783f262b1337"
           }
 ,          {
             "Device" : "/dev/xvdh",
-            "VolumeId" : "vol-01d342af3fdbd4e1b"
+            "VolumeId" : "vol-076ba0afdacd1bdcd"
           }
          ] ,
          "BlockDeviceMappings" : [
@@ -255,15 +255,47 @@
          "Volumes" : [
           {
             "Device" : "/dev/xvdf",
-            "VolumeId" : "vol-0ab6917607af97a5d"
+            "VolumeId" : "vol-05dd35c31bf490fd5"
           }
 ,          {
             "Device" : "/dev/xvdg",
-            "VolumeId" : "vol-090192cb886a2e7bf"
+            "VolumeId" : "vol-0817af4cb6f3223b9"
           }
 ,          {
             "Device" : "/dev/xvdh",
-            "VolumeId" : "vol-0d13b7460017b1bf5"
+            "VolumeId" : "vol-0a3e0c0c83f00052f"
+          }
+         ] ,
+         "BlockDeviceMappings" : [
+         ]
+      }
+    }
+,     "etl1103" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+         "AvailabilityZone" : "us-east-1c",
+         "EbsOptimized" : true,
+         "ImageId" : "ami-0b33d91d",
+         "InstanceInitiatedShutdownBehavior" : "stop",
+         "InstanceType" : "m4.xlarge",
+         "KeyName" : "ggreenpivotalio",
+         "PrivateIpAddress" : "192.168.3.103",
+         "SecurityGroupIds" : [ { "Ref" : "SecurityGroup"}],
+         "SubnetId" : { "Ref" : "SubnetC" },
+         "Tags" : [
+            {
+              "Key": "Name",
+              "Value" : "GGreenServeretl1103"
+            },
+            {
+              "Key": "Environment",
+              "Value" : "GGreen"
+            }
+          ],
+         "Volumes" : [
+          {
+            "Device" : "/dev/xvdf",
+            "VolumeId" : "vol-085e22ed8709af8b3"
           }
          ] ,
          "BlockDeviceMappings" : [
