@@ -5,3 +5,7 @@ aws_runtime_storage.json
 .project
 .pydevproject
 /bin/
+config/awscluster.json
+config/cloudformation.json
+config/env.json
+config/storage.json
