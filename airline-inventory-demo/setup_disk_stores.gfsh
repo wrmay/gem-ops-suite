@@ -1,0 +1,7 @@
+create disk-store --name=revenueControlDiskStore --dir=/home/vagrant/gemfire_cluster/data/revenueControl --allowForceCompaction=true --auto-compact=true --max-oplog-size=256
+create disk-store --name=flightDiskStore --dir=/home/vagrant/gemfire_cluster/data/flight --allowForceCompaction=true --auto-compact=true --max-oplog-size=256
+create disk-store --name=flightAvailabilityDiskStore --dir=/home/vagrant/gemfire_cluster/data/flightAvailability --allowForceCompaction=true --auto-compact=true --max-oplog-size=256
+create disk-store --name=fareDiskStore --dir=/home/vagrant/gemfire_cluster/data/fare --allowForceCompaction=true --auto-compact=true --max-oplog-size=256
+create disk-store --name=airportDiskStore --dir=/home/vagrant/gemfire_cluster/data/airport --allowForceCompaction=true --auto-compact=true --max-oplog-size=256
+
+list disk-stores
