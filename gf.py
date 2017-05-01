@@ -6,7 +6,7 @@ import fileinput
 import json
 import os
 import os.path
-import io
+import StringIO
 import subprocess
 import sys
 import tempfile
@@ -57,16 +57,16 @@ def runRemoteQuietly(sshInfo, *args):
     runListQuietly( prefix + list(args))
 
 def printUsage():
-    print('gf.py usage                              #note: cluster.json must be in same directory')
-    print('\tpython3 gf.py gfsh                      #start an interactive gfsh session on a cluster member - connects automatically')
-    print('\tpython3 gf.py gfsh cmds...              #run a gfsh command (e.g. python gf.py gfsh list members) - connects automtically')
-    print('\tpython3 gf.py help                      #print this help message')
-    print('\tpython3 gf.py bounce                    #restart each cache server, one at a time, waiting for redundancy to be established before each stop')
-    print('\tpython3 gf.py start                     #start the whole cluster - idempotent - whatever is not started will be started')
-    print('\tpython3 gf.py stop                      #stop all cache servers (locators must be stopped explicitly) - idempotent')
-    print('\tpython3 gf.py start <process name>      #start a specific process')
-    print('\tpython3 gf.py stop <process name>       #stop a specific process (will not allow stopping a member when redundancy is not established)')
-    print('\tpython3 gf.py stop <process name> force #stop a member even if it would cause data loss')
+    print 'gf.py usage                              #note: cluster.json must be in same directory'
+    print '\tpython gf.py gfsh                      #start an interactive gfsh session on a cluster member - connects automatically'
+    print '\tpython gf.py gfsh cmds...              #run a gfsh command (e.g. python gf.py gfsh list members) - connects automtically'
+    print '\tpython gf.py help                      #print this help message'
+    print '\tpython gf.py bounce                    #restart each cache server, one at a time, waiting for redundancy to be established before each stop'
+    print '\tpython gf.py start                     #start the whole cluster - idempotent - whatever is not started will be started'
+    print '\tpython gf.py stop                      #stop all cache servers (locators must be stopped explicitly) - idempotent'
+    print '\tpython gf.py start <process name>      #start a specific process'
+    print '\tpython gf.py stop <process name>       #stop a specific process (will not allow stopping a member when redundancy is not established)'
+    print '\tpython gf.py stop <process name> force #stop a member even if it would cause data loss'
 
 
 def startCluster():
@@ -88,7 +88,7 @@ def startCluster():
                     clusterScriptDir = cdef.locatorProperty(pkey,'cluster-home', host = hkey)
 
                     clusterScript = os.path.join(clusterScriptDir,'cluster.py')
-                    launch = launchRemote(host['ssh'],'python3', clusterScript,'start', pkey)
+                    launch = launchRemote(host['ssh'], 'python', clusterScript,'start', pkey)
                     launches.append(launch)
 
     fails = 0
@@ -99,7 +99,7 @@ def startCluster():
     if fails > 0:
         sys.exit('at least one failure occurred while starting locators')
     else:
-        print('all locators started')
+        print 'all locators started'
 
 
     # now start on all datanodes concurrently
@@ -114,7 +114,7 @@ def startCluster():
                 clusterScriptDir = cdef.datanodeProperty(pkey,'cluster-home', host = hkey)
 
                 clusterScript = os.path.join(clusterScriptDir,'cluster.py')
-                launch = launchRemote(host['ssh'],'python3', clusterScript,'start', 'datanodes')
+                launch = launchRemote(host['ssh'],'python', clusterScript,'start', 'datanodes')
                 launches.append(launch)
                 break #BREAK - once you find one data node thats all you need
 
@@ -126,7 +126,7 @@ def startCluster():
     if fails > 0:
         sys.exit('at least one failure occurred while starting cluster')
     else:
-        print('all datanodes started')
+        print 'all datanodes started'
 
     # now start on all accessors concurrently
     launches = []
@@ -140,7 +140,7 @@ def startCluster():
                 clusterScriptDir = cdef.datanodeProperty(pkey,'cluster-home', host = hkey)
 
                 clusterScript = os.path.join(clusterScriptDir,'cluster.py')
-                launch = launchRemote(host['ssh'],'python3', clusterScript,'start', 'accessors')
+                launch = launchRemote(host['ssh'],'python', clusterScript,'start', 'accessors')
                 launches.append(launch)
                 break #BREAK - once you find one accessor thats all you need
 
@@ -152,7 +152,7 @@ def startCluster():
     if fails > 0:
         sys.exit('at least one failure occurred while starting cluster')
     else:
-        print('cluster started')
+        print 'cluster started'
 
     subprocess.call(['stty', 'sane'])
 
@@ -180,11 +180,11 @@ def runClusterScriptOnAnyHost(*args):
 
                 # all of that was just to get the location of the remote script
                 try :
-                    print('executing python {0} {1}  on {2}'.format(clusterScript, ' '.join(args),hkey))
-                    runRemoteList(host['ssh'], ['python3', clusterScript] + list(args) )
+                    print 'executing python {0} {1}  on {2}'.format(clusterScript, ' '.join(args),hkey)
+                    runRemoteList(host['ssh'], [clusterScript] + list(args) )
                     success = True
                 except Exception as x:
-                    print('failed: {0}'.format(x))
+                    print 'failed: {0}'.format(x)
                     pass
 
 def runClusterScriptOnMemberHost(mname, *args):
@@ -214,8 +214,8 @@ def runClusterScriptOnMemberHost(mname, *args):
 
     clusterScript = os.path.join(clusterScriptDir,'cluster.py')
 
-    print('executing python {0} {1} on {2}'.format(clusterScript, ' '.join(args),targetHost['ssh']['host']))
-    runRemoteList(targetHost['ssh'], ['python3',clusterScript] + list(args))
+    print 'executing python {0} {1} on {2}'.format(clusterScript, ' '.join(args),targetHost['ssh']['host'])
+    runRemoteList(targetHost['ssh'], ['python', clusterScript] + list(args))
 
 def redundancyEstablished(wait = 0):
     # uses the clusterDef and cdef variables from global scope
@@ -223,7 +223,7 @@ def redundancyEstablished(wait = 0):
     global cdef
 
     # pick a random host to execute on
-    targetHost = random.choice(list(clusterDef['hosts'].keys()))
+    targetHost = random.choice(clusterDef['hosts'].keys())
     sshInfo = clusterDef['hosts'][targetHost]['ssh']
 
     #compile a list of locators
@@ -251,7 +251,7 @@ def redundancyEstablished(wait = 0):
 
             port = cdef.locatorProperty(l[1],'jmx-manager-port', host=l[0], notFoundOK=True)
             if port is None:
-                print('warning, could not ascertain jmx-manager-port for "{0}" from settings - using 1099'.format(host))
+                print 'warning, could not ascertain jmx-manager-port for "{0}" from settings - using 1099'.format(host)
                 port = 1099
 
             p = subprocess.Popen(['ssh', '-o','StrictHostKeyChecking=no',
@@ -263,7 +263,7 @@ def redundancyEstablished(wait = 0):
                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             p.communicate()
             if p.returncode == 0:
-                print('running redundancy check from {0} using jmx-manager host:port={1},{2}'.format(targetHost, host, port))
+                print 'running redundancy check from {0} using jmx-manager host:port={1},{2}'.format(targetHost, host, port)
                 cmd = ['ssh', '-o','StrictHostKeyChecking=no',
                             '-t', '-i', l[2]['key-file'],
                             '{0}@{1}'.format(l[2]['user'], l[2]['host']),
@@ -282,9 +282,9 @@ def redundancyEstablished(wait = 0):
                 else:
                     return False
             else:
-                print('warning - could not connect to jmx manager "{0}"'.format(host))
+                print 'warning - could not connect to jmx manager "{0}"'.format(host)
 
-        except Exception as x:
+        except Exception  as x:
             pass
 
     if success == False:
@@ -329,12 +329,12 @@ def getClusterProperty(propName,  hostName = None, processName = None):
     result = None
     if processName is None:
         if hostName is None:
-            hostName = random.choice(list(clusterDef['hosts'].keys()))
+            hostName = random.choice(clusterDef['hosts'].keys())
         else:
             if hostName not in clusterDef['hosts']:
                 raise Exception('host not found in cluster definition: ' + hostName)
 
-        processName = random.choice(list(clusterDef['hosts'][hostName]['processes'].keys()))
+        processName = random.choice(clusterDef['hosts'][hostName]['processes'].keys())
 
     else:
         # the passed value of hostName is ignored (if provided) it is inferred
@@ -364,7 +364,7 @@ def gfsh(cmds = None):
     global cdef
 
     # pick a random host to execute on
-    targetHost = random.choice(list(clusterDef['hosts'].keys()))
+    targetHost = random.choice(clusterDef['hosts'].keys())
     sshInfo = clusterDef['hosts'][targetHost]['ssh']
 
     locatorsProp = getClusterProperty('locators', hostName = targetHost)
@@ -402,13 +402,13 @@ def gfsh(cmds = None):
                         'JAVA_HOME={0}'.format(javaHome),
                         os.path.join(gemfire,'bin','gfsh')], stdin=subprocess.PIPE)
 
-        p.stdin.write(bytes('connect --locator={0}\r'.format(availableLocator), encoding='ascii'))
-        p.stdin.write(bytes('set variable --name=APP_RESULT_VIEWER --value=external\r', encoding='ascii'))
+        p.stdin.write('connect --locator={0}\r'.format(availableLocator))
+        p.stdin.write('set variable --name=APP_RESULT_VIEWER --value=external\r')
         p.poll()
 
         while p.returncode is None:
-            line = input()
-            p.stdin.write(bytes(line + '\r', encoding='ascii'))
+            line = raw_input()
+            p.stdin.write(line + '\r')
             if line == 'quit':
                 p.stdin.close()
                 p.communicate()
@@ -436,20 +436,18 @@ def bounce():
             process = clusterDef['hosts'][hkey]['processes'][pkey]
             if process['type'] == 'datanode':
                 if not redundancyEstablished():
-                    print('witing up to 5 minutes for redundancy to be established')
+                    print 'witing up to 5 minutes for redundancy to be established'
                     if not redundancyEstablished(300):
                         raise Exception('redundancy could not be established - exiting')
 
                 stopMember(pkey, force = True)
                 startMember(pkey)
 
-    print('all datanodes bounced')
+    print 'all datanodes bounced'
 
 if __name__ == '__main__':
-    assert sys.version_info >= (3,0)
-
     here = os.path.dirname(sys.argv[0])
-    clusterDefFile = os.path.join(here, 'setuptasks','InstallGemFireCluster','cluster.json')
+    clusterDefFile = os.path.join(here, 'cluster.json')
     if not os.path.isfile(clusterDefFile):
         sys.exit('could not find cluster definition file: ' + clusterDefFile)
 
@@ -462,7 +460,7 @@ if __name__ == '__main__':
 
         cdef = clusterdef.ClusterDef(clusterDef)
 
-    print('loaded cluster defintion from {0}'.format(clusterDefFile))
+    print 'loaded cluster defintion from {0}'.format(clusterDefFile)
 
     if len(sys.argv) == 1:
         printUsage()

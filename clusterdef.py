@@ -127,8 +127,8 @@ class ClusterDef:
     # this method assumes that it is not passed handled props or
     # jvm props
     def gfshArg(self, key, val):
-        if self.isBindAddressProperty(key):
-            val = self.translateBindAddress(val)
+        #if self.isBindAddressProperty(key):
+        #    val = self.translateBindAddress(val)
 
         if key in gemprops.GEMFIRE_PROPS:
             return '--J="-Dgemfire.{0}={1}"'.format(key,val)
@@ -139,7 +139,7 @@ class ClusterDef:
 
     def buildGfshArgs(self, props):
         result = []
-        for key in list(props.keys()):
+        for key in props.keys():
             if not key in gemprops.HANDLED_PROPS:
                 result.append(self.gfshArg(key, props[key]))
 
@@ -149,7 +149,7 @@ class ClusterDef:
         result = []
         for hostname in [self.thisHost, 'localhost']:
             if hostname in self.clusterDef['hosts']:
-                for processName in list(self.clusterDef['hosts'][hostname]['processes'].keys()):
+                for processName in self.clusterDef['hosts'][hostname]['processes'].keys():
                     process = self.clusterDef['hosts'][hostname]['processes'][processName]
                     if process['type'] == processType:
                         result.append(processName)
@@ -185,7 +185,8 @@ class ClusterDef:
             return result
 
         if self.isBindAddressProperty(propertyName):
-            return self.translateBindAddress(result)
+            pass
+            #return self.translateBindAddress(result)
         else:
             return result
 
@@ -195,7 +196,8 @@ class ClusterDef:
     def datanodeProperty(self, processName, propertyName, host=None, notFoundOK = False):
         result = self.processProperty('datanode',processName, propertyName, host = host, notFoundOK = notFoundOK)
         if self.isBindAddressProperty(propertyName):
-            return self.translateBindAddress(result)
+            pass
+            #return self.translateBindAddress(result)
         else:
             return result
 
@@ -254,7 +256,7 @@ class ClusterDef:
                        self.props(processType + '-properties'),
                        self.hostProps(),
                        self.processProps(processName)]:
-            for k in list(source.keys()):
+            for k in source.keys():
                 temp[k] = source[k]
 
         #now post-process, removing the items that cannot be passed as

@@ -2,9 +2,9 @@
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
 
-HANDLED_PROPS=['gemfire','java-home','cluster-home', 'bind-address', 'port',
-               'jvm-options','server-bind-address', 'server-port', 'classpath'
-               , 'hostname-for-clients']
+HANDLED_PROPS=['gemfire','java-home','cluster-home', 'port',
+               'jvm-options', 'server-port', 'classpath', 'bind-address','server-bind-address',
+               'hostname-for-clients', 'enable-cluster-configuration', 'use-cluster-configuration']
 
 
 GEMFIRE_PROPS=[
@@ -15,7 +15,7 @@ GEMFIRE_PROPS=[
     ,'async-distribution-timeout'
     ,'async-max-queue-size'
     ,'async-queue-timeout'
-#   ,'bind-address' handled by a gfsh --bind-address arg instead of a --J-D
+#    ,'bind-address'
     ,'cache-xml-file'
     ,'cluster-configuration-dir'
     ,'cluster-ssl-ciphers'
@@ -36,7 +36,7 @@ GEMFIRE_PROPS=[
     ,'distributed-system-id'
     ,'durable-client-id'
     ,'durable-client-timeout'
-    ,'enable-cluster-configuration'
+#    ,'enable-cluster-configuration'
     ,'enable-network-partition-detection'
     ,'enable-time-statistics'
     ,'enforce-unique-host'
@@ -119,7 +119,7 @@ GEMFIRE_PROPS=[
     ,'security-peer-auth-init'
     ,'security-peer-authenticator'
     ,'security-peer-verifymember-timeout'
-#   ,'server-bind-address'  this is set using a gfsh --server-bind-address argument not a --J-D argument
+#    ,'server-bind-address'
     ,'server-ssl-ciphers'
     ,'server-ssl-enabled'
     ,'server-ssl-keystore'
@@ -145,7 +145,7 @@ GEMFIRE_PROPS=[
     ,'udp-fragment-size'
     ,'udp-recv-buffer-size'
     ,'udp-send-buffer-size'
-    ,'use-cluster-configuration'
+#    ,'use-cluster-configuration'
     ,'user-command-packages'
     ,'writable-working-dir'
     ]
