@@ -181,7 +181,7 @@ def runClusterScriptOnAnyHost(*args):
                 # all of that was just to get the location of the remote script
                 try :
                     print 'executing python {0} {1}  on {2}'.format(clusterScript, ' '.join(args),hkey)
-                    runRemoteList(host['ssh'], [clusterScript] + list(args) )
+                    runRemoteList(host['ssh'], ['python', clusterScript] + list(args) )
                     success = True
                 except Exception as x:
                     print 'failed: {0}'.format(x)
