@@ -55,7 +55,9 @@ def pidIsAlive(pidfile):
 def serverIsRunning(processName):
 	try:
 		port = clusterDef.locatorProperty(processName, 'server-port')
-		#bindAddress = clusterDef.translateBindAddress(clusterDef.datanodeProperty(processName, 'server-bind-address'))
+		bindAddress = clusterDef.datanodeProperty(processName, 'server-bind-address', notFoundOK = True)
+		if bindAddress is None:
+			bindAddress = '127.0.0.1'
 
 		#leave the double parens in the line below!
 		sock = socket.create_connection((bindAddress, port))
@@ -73,7 +75,10 @@ def serverIsRunning(processName):
 
 def locatorIsRunning(processName):
 	port = clusterDef.locatorProperty(processName, 'port')
-	#bindAddress = clusterDef.translateBindAddress(clusterDef.locatorProperty(processName, 'bind-address'))
+	bindAddress = clusterDef.locatorProperty(processName, 'bind-address', notFoundOK = True)
+	if bindAddress is None:
+		bindAddress = '127.0.0.1'
+
 	try:
 		#leave the double parens in the line below!
 		sock = socket.create_connection( (bindAddress, port))
@@ -336,7 +341,11 @@ def stopCluster():
 			process = host['processes'][pkey]
 			if process['type'] == 'locator':
 				if not success:
-					bindAddress = clusterDef.locatorProperty(pkey,'bind-address', host = hkey)
+					bindAddress = clusterDef.locatorProperty(pkey,'bind-address', host = hkey, notFoundOK = True)
+					if bindAddress is None:
+						# if bind address is not specified then the process would
+						# have bound to every interface including 127.0.0.1
+						bindAddress = '127.0.0.1'
 					port = clusterDef.locatorProperty(pkey,'port', host = hkey)
 					GEMFIRE = clusterDef.locatorProperty(pkey,'gemfire', host = hkey)
 					rc = subprocess.call([GEMFIRE + "/bin/gfsh"
