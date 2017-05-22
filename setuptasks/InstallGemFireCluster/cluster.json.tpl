@@ -3,7 +3,7 @@
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
         {% for Server in Servers  if "Locator" in Server.Roles and Server.PrivateIP == '192.168.1.101' %}
-        "locators" : "{{ Server.PublicIpAddress }}[10000]",
+        "locators" : "{{ Server.PublicHostName }}[10000]",
     	{% endfor %}
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
@@ -16,7 +16,6 @@
         "log-level" : "config",
         "statistic-sampling-enabled" : "true",
         "statistic-archive-file" : "locator.gfs",
-        "jmx-manager-hostname-for-clients" : "ip-192-168-1-101", 
         "log-file-size-limit" : "10",
         "log-disk-space-limit" : "100",
         "archive-file-size-limit" : "10",
@@ -47,14 +46,13 @@
                {% if Server.PrivateIP == '192.168.1.101' %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "bind-address" : "{{ Server.PrivateIP }}",
-                    "hostname-for-clients" : "{{ Server.PublicIpAddress }}",
+                    "bind-address" : "{{ Server.PublicHostName }}",
                     "jmx-manager-start" : "true"
                  },
                {% endif %}
                 "{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "server-bind-address" : "{{ Server.PrivateIP }}",
+                    "server-bind-address" : "{{ Server.PublicHostName }}",
                     "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85"]
                     {% if Server.PrivateIP == '192.168.2.101' %}
                     , "http-service-port": 18080,
@@ -63,7 +61,7 @@
                  }
              },
              "ssh" : {
-                "host" : "{{ Server.PublicIpAddress }}",
+                "host" : "{{ Server.PublicHostName }}",
                 "user" : "{{ Server.SSHUser }}",
                 "key-file" : "{{ SSHKeyPath }}"
              }
