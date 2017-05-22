@@ -23,6 +23,7 @@ SERVER_PID_FILE="vf.gf.server.pid"
 clusterDef = None
 
 
+        
 def ensureDir(dname):
     if not os.path.isdir(dname):
         os.mkdir(dname)

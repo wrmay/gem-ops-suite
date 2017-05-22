@@ -12,6 +12,8 @@ import sys
 import threading
 import time
 import tempfile
+import socket
+import clusterdef
 
 #args should be a list
 def runListQuietly(args):
@@ -64,7 +66,20 @@ def renderTemplate(directory, templateFile, context):
 #         msg = '"' + cmd + '" failed with the following output: \n\t' + output[0]
 #         raise Exception(msg)
 
+def determineExternalHost(ipaddress):
+    
+     #Determine ip address
+    process = subprocess.Popen(["nslookup", ipaddress], stdout=subprocess.PIPE)
+    output = str(process.communicate()[0])
+    startEc2 = output.find("name = ec2-")
+    startEc2 = startEc2+7
+    endEc2 = output.find(".com",startEc2)+4
+    
+    externalHost = output[startEc2:endEc2]
+    return externalHost
+    
 def renderTemplatesInDir(context,dirname):
+    
     #print('rendering templates in {0}'.format(dirname))
     for templateFile in os.listdir(dirname):
         if os.path.isdir(os.path.join(dirname,templateFile)):
@@ -101,6 +116,10 @@ if __name__ == '__main__':
         serverName = server['Name']
         ip = ipTable[serverName]
         server['PublicIpAddress'] = ip
+        #server['PublicHostName'] = determineExternalHost(ip)
+        server['PublicHostName'] = clusterdef.ClusterDef.determineExternalHost(ip)
+        print("PublicHostName:"+server['PublicHostName'])
+        
         serverNum += 1
         installationNum = -1
         for installation in server['Installations']:

@@ -16,7 +16,10 @@
         "log-level" : "config",
         "statistic-sampling-enabled" : "true",
         "statistic-archive-file" : "locator.gfs",
-        "jmx-manager-hostname-for-clients" : "ip-192-168-1-101", 
+        {% for Server in Servers  if "Locator" in Server.Roles and Server.PrivateIP == '192.168.1.101' %}
+        "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}", 
+    	{% endfor %}
+        
         "log-file-size-limit" : "10",
         "log-disk-space-limit" : "100",
         "archive-file-size-limit" : "10",
@@ -48,13 +51,13 @@
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
                     "bind-address" : "{{ Server.PrivateIP }}",
-                    "hostname-for-clients" : "{{ Server.PublicIpAddress }}",
+                    "hostname-for-clients" : "{{ Server.PublicHostName }}",
                     "jmx-manager-start" : "true"
                  },
                {% endif %}
                 "{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "server-bind-address" : "{{ Server.PrivateIP }}",
+                    "server-bind-address" : "{{ Server.PublicHostName }}",
                     "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85", "-Dgemfire.ALLOW_PERSISTENT_TRANSACTIONS=true"]
                     {% if Server.PrivateIP == '192.168.2.101' %}
                     , "http-service-port": 18080,

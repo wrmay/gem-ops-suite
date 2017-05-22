@@ -19,6 +19,7 @@ packages
  * jina2
  * boto3
  * awscli
+ 
 * You will need to register a key pair with AWS and you will need the
 corresponding .pem file on your local machine.
 * You will need an AWS AccessKeyId and SecretAccessKey. You can either use your
