@@ -46,13 +46,12 @@
                {% if Server.PrivateIP == '192.168.1.101' %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "bind-address" : "{{ Server.PublicHostName }}",
+                    "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}",
                     "jmx-manager-start" : "true"
                  },
                {% endif %}
                 "{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "server-bind-address" : "{{ Server.PublicHostName }}",
                     "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85"]
                     {% if Server.PrivateIP == '192.168.2.101' %}
                     , "http-service-port": 18080,
@@ -61,7 +60,7 @@
                  }
              },
              "ssh" : {
-                "host" : "{{ Server.PublicHostName }}",
+                "host" : "{{ Server.PublicIP }}",
                 "user" : "{{ Server.SSHUser }}",
                 "key-file" : "{{ SSHKeyPath }}"
              }

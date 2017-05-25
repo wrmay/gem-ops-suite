@@ -6,6 +6,8 @@
        "Type" : "AWS::EC2::VPC",
        "Properties" : {
           "CidrBlock" : "192.168.0.0/16",
+          "EnableDnsHostnames" : "true",
+          "EnableDnsSupport" : "true",
           "Tags" : [
             {
               "Key": "Name",

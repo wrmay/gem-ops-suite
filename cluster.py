@@ -23,7 +23,7 @@ SERVER_PID_FILE="vf.gf.server.pid"
 clusterDef = None
 
 
-        
+
 def ensureDir(dname):
     if not os.path.isdir(dname):
         os.mkdir(dname)
@@ -75,7 +75,14 @@ def serverIsRunning(processName):
 
 def locatorIsRunning(processName):
     port = clusterDef.locatorProperty(processName, 'port')
-    bindAddress = clusterDef.translateBindAddress(clusterDef.locatorProperty(processName, 'bind-address'))
+    rawBindAddress = clusterDef.locatorProperty(processName, 'bind-address',notFoundOK = True)
+    if rawBindAddress is not None:
+        bindAddress = translateBindAddress(rawBindAddress)
+    else:
+        # if bind address was not specified then the locator should be
+        # listening on all network interfaces including 127.0.0.1
+        bindAddress = '127.0.0.1'
+
     try:
         #leave the double parens in the line below!
         sock = socket.create_connection( (bindAddress, port))
@@ -230,7 +237,7 @@ def launchServerProcess(processName):
         return
 
     cmdLine = startServerCommandLine(processName)
-    print('>>> starting server with {0}'.format(' '.join(cmdLine)))
+    #print('>>> starting server with {0}'.format(' '.join(cmdLine)))
 
     try:
         proc = subprocess.Popen(cmdLine)
@@ -330,7 +337,10 @@ def stopCluster():
             process = host['processes'][pkey]
             if process['type'] == 'locator':
                 if not success:
-                    bindAddress = clusterDef.locatorProperty(pkey,'bind-address', host = hkey)
+                    bindAddress = clusterDef.locatorProperty(pkey,'bind-address', host = hkey, notFoundOK = True)
+                    if bindAddress is None:
+                        bindAddress = '127.0.0.1'
+                        
                     port = clusterDef.locatorProperty(pkey,'port', host = hkey)
                     GEMFIRE = clusterDef.locatorProperty(pkey,'gemfire', host = hkey)
                     rc = subprocess.call([GEMFIRE + "/bin/gfsh"
