@@ -48,9 +48,6 @@
             ],
             "Installations" : [
                 {
-                    "Name": "AddHostEntries"
-                },
-                {
                     "Name": "YumInstallPackages",
                     "Packages": ["gcc", "python35","python35-devel","python35-pip"]
                 },
@@ -119,15 +116,13 @@
             "Name" : "controller",
             "ImageId" : "{{ AMI }}",
             "InstanceType" : "t2.micro",
-            "PrivateIP" : "192.168.1.222",
+            "PrivateIP" : "192.168.1.200",
+            "Public" : true,
             "AZ" : "A",
             "SSHUser" : "ec2-user",
             "BlockDevices" : [],
             "Roles" : ["Controller"],
             "Installations" : [
-                {
-                    "Name": "AddHostEntries"
-                },
                 {
                     "Name": "YumInstallPackages",
                     "Packages": ["gcc", "python35","python35-devel","python35-pip"]
