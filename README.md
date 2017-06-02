@@ -19,7 +19,7 @@ packages
  * jina2
  * boto3
  * awscli
- 
+
 * You will need to register a key pair with AWS and you will need the
 corresponding .pem file on your local machine.
 * You will need an AWS AccessKeyId and SecretAccessKey. You can either use your
@@ -35,7 +35,7 @@ policy definition can be used.
                 "Action": [
                     "ec2:*",
                     "cloudformation:*",
-                    "elasticloudbalancing:*"
+                    "elasticloadbalancing:*"
                 ],
                 "Effect": "Allow",
                 "Resource": "*"
@@ -103,7 +103,7 @@ The setup steps are shown in concise form below:
 cd ~/gem-ops-suite
 cp samples/awscluster.json config
 vi config/awscluster.json  #edit the cluster definition
-python3 generateAWSCluster.py 
+python3 generateAWSCluster.py
 ```
 
 You now have a completely reproducible GemFire cluster on AWS.  The entire
@@ -146,7 +146,7 @@ project can be checked in to source control to allow versioning of the cluster.
 - __gf.py gfsh shutdown --include-locators=true__
 
   Stops all cluster members.
-  
+
 - __generateHosts.py__
 
   generates /etc/hosts entries for external AWS GemFire clients
@@ -233,56 +233,8 @@ formula for -Xmn (in m) given -Xmx (in m): x/5 - x^2/500000 - 600
 
  - Open setuptasks/InstallGemFireCluster/cluster.json
  - Add jmx-manager-hostname-for-clients
- 
+
 
 
 ## Known Issues and the Default Plan ##
-Currently, due to a GemFire issue which will be resolved in version 9.0.2,
-multiple locators are not supported.  Currently regardless of the cluster.json
-file, a single locator will be deployed on the machine having private IP
-address 192.168.1.101
-
-
-
-## External AWS GemFire clients UnknownHostException
-
-When the follow errors occurs when trying to connect to the cluster from outside the AWS cluster
-
-	[warn 2017/03/31 09:15:50.277 EDT <Function Execution Thread-1> tid=0x1c] Could not connect to: ip-192-168-2-101:10100
-	java.net.UnknownHostException: ip-???-???-?-???: nodename nor servname 
-
-In order to connect to GemFire thru JMX or a external GemFire client,
-you must currently add the private host server hostname and their private IP addresses to your /etc/host.
-
-The generateHosts.py script to generate the /etc/host entries
-
-	python3 generateHosts.py 
-
-Example output
-
-	$ python3 generateHosts.py 
-	#Add the following to your /etc/hosts
-	54.242.56.47 ip-192-168-1-101
-	54.175.171.234 ip-192-168-2-101
-	34.206.72.136 ip-192-168-3-101
-
-Example /etc/host
-
-	##
-	# Host Database
-	#
-	# localhost is used to configure the loopback interface
-	##
-	127.0.0.1       localhost
-	255.255.255.255 broadcasthost
-	::1             localhost
-	#GemFire AWS cluster entries
-	54.242.56.47 ip-192-168-1-101
-	54.175.171.234 ip-192-168-2-101
-	34.206.72.136 ip-192-168-3-101
-	
-	~                                           
-
-
-
-
+- Currently, due to a GemFire issue , multiple locators are not supported.  Regardless of the cluster.json file, a single locator will be deployed on the machine having private IP address 192.168.1.101.
