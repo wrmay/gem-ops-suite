@@ -21,7 +21,7 @@
       "Properties" : {
          "AvailabilityZone" : "{{ RegionName }}a",
          "CidrBlock" : "192.168.1.0/24",
-         "MapPublicIpOnLaunch" : true,
+         "MapPublicIpOnLaunch" : false,
           "Tags" : [
             {
               "Key": "Name",
@@ -31,12 +31,27 @@
          "VpcId" : { "Ref" : "VPC" }
       }
     },
+    "PublicSubnetA" : {
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+         "AvailabilityZone" : "{{ RegionName }}a",
+         "CidrBlock" : "192.168.1.128/25",
+         "MapPublicIpOnLaunch" : true,
+          "Tags" : [
+            {
+              "Key": "Name",
+              "Value": "{{ EnvironmentName }}PublicSubnetA"
+            }
+          ],
+         "VpcId" : { "Ref" : "VPC" }
+      }
+    },
     "SubnetB" : {
       "Type" : "AWS::EC2::Subnet",
       "Properties" : {
          "AvailabilityZone" : "{{ RegionName }}b",
-         "CidrBlock" : "192.168.2.0/24",
-         "MapPublicIpOnLaunch" : true,
+         "CidrBlock" : "192.168.2.0/25",
+         "MapPublicIpOnLaunch" : false,
           "Tags" : [
             {
               "Key": "Name",
@@ -46,16 +61,46 @@
          "VpcId" : { "Ref" : "VPC" }
       }
     },
-    "SubnetC" : {
+    "PublicSubnetB" : {
       "Type" : "AWS::EC2::Subnet",
       "Properties" : {
-         "AvailabilityZone" : "{{ RegionName }}c",
-         "CidrBlock" : "192.168.3.0/24",
+         "AvailabilityZone" : "{{ RegionName }}b",
+         "CidrBlock" : "192.168.2.128/25",
          "MapPublicIpOnLaunch" : true,
           "Tags" : [
             {
               "Key": "Name",
+              "Value": "{{ EnvironmentName }}PublicSubnetB"
+            }
+          ],
+         "VpcId" : { "Ref" : "VPC" }
+      }
+    },
+    "SubnetC" : {
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+         "AvailabilityZone" : "{{ RegionName }}c",
+         "CidrBlock" : "192.168.3.0/25",
+         "MapPublicIpOnLaunch" : false,
+          "Tags" : [
+            {
+              "Key": "Name",
               "Value": "{{ EnvironmentName }}SubnetC"
+            }
+          ],
+         "VpcId" : { "Ref" : "VPC" }
+      }
+    },
+    "PublicSubnetC" : {
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+         "AvailabilityZone" : "{{ RegionName }}c",
+         "CidrBlock" : "192.168.3.128/25",
+         "MapPublicIpOnLaunch" : true,
+          "Tags" : [
+            {
+              "Key": "Name",
+              "Value": "{{ EnvironmentName }}PublicSubnetC"
             }
           ],
          "VpcId" : { "Ref" : "VPC" }
@@ -93,25 +138,25 @@
       },
       "DependsOn": ["VPCGatewayAttachment"]
     },
-    "SubnetARouteTableAssociation" : {
+    "PublicSubnetARouteTableAssociation" : {
       "Type" : "AWS::EC2::SubnetRouteTableAssociation",
       "Properties" : {
          "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetA"}
+         "SubnetId" : {"Ref" : "PublicSubnetA"}
       }
     },
-    "SubnetBRouteTableAssociation" : {
+    "PublicSubnetBRouteTableAssociation" : {
       "Type" : "AWS::EC2::SubnetRouteTableAssociation",
       "Properties" : {
          "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetB"}
+         "SubnetId" : {"Ref" : "PublicSubnetB"}
       }
     },
-    "SubnetCRouteTableAssociation" : {
+    "PublicSubnetCRouteTableAssociation" : {
       "Type" : "AWS::EC2::SubnetRouteTableAssociation",
       "Properties" : {
          "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetC"}
+         "SubnetId" : {"Ref" : "PublicSubnetC"}
       }
     },
     "VPCGatewayAttachment":{
@@ -158,31 +203,18 @@
     "ELB" : {
       "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
       "Properties": {
-        "Subnets" : [ { "Ref" : "SubnetA" },{ "Ref" : "SubnetB"}, { "Ref" : "SubnetC" }],
+        "Subnets" : [ { "Ref" : "PublicSubnetA" },{ "Ref" : "PublicSubnetB"}, { "Ref" : "PublicSubnetC" }],
          "Instances" : [
-            {% for Server in Servers if "Locator" in Server.Roles %}
+            {% for Server in Servers %}
             { "Ref" : "{{ Server.Name }}" }
-             {% if not loop.last -%},{%- endif %}
+            ] {% if not loop.last -%},{%- endif %}
             {% endfor %}
-            ],
          "LoadBalancerName" : "{{ EnvironmentName}}ELB",
          "Listeners" : [
              {
                "InstancePort" : "10000",
                "InstanceProtocol" : "TCP",
                "LoadBalancerPort" : "10000",
-               "Protocol" : "TCP"
-             },
-             {
-               "InstancePort" : "17070",
-               "InstanceProtocol" : "HTTP",
-               "LoadBalancerPort" : "17070",
-               "Protocol" : "HTTP"
-             },
-             {
-               "InstancePort" : "11099",
-               "InstanceProtocol" : "TCP",
-               "LoadBalancerPort" : "11099",
                "Protocol" : "TCP"
              }
           ],
@@ -217,7 +249,11 @@
          "KeyName" : "{{ KeyPair }}",
          "PrivateIpAddress" : "{{ Server.PrivateIP }}",
          "SecurityGroupIds" : [ { "Ref" : "SecurityGroup"}],
+         {% if Server.Public %}
+         "SubnetId" : { "Ref" : "PublicSubnet{{ Server.AZ }}" },
+         {% else %}
          "SubnetId" : { "Ref" : "Subnet{{ Server.AZ }}" },
+         {% endif %}
          "Tags" : [
             {
               "Key": "Name",

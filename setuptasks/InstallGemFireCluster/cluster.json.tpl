@@ -2,9 +2,7 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
-        {% for Server in Servers  if "Locator" in Server.Roles and Server.PrivateIP == '192.168.1.101' %}
-        "locators" : "{{ Server.PublicHostName }}[10000]",
-    	{% endfor %}
+        "locators" : "{{ ELB }}[10000]",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
     },
@@ -43,21 +41,18 @@
             "host-properties" :  {
              },
              "processes" : {
-               {% if Server.PrivateIP == '192.168.1.101' %}
+               {% if "Locator" in Server.Roles %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}",
                     "jmx-manager-start" : "true"
-                 },
+                 }
                {% endif %}
+               {% if "Datanode" in Server.Roles %}
                 "{{ Server.Name }}-server" : {
                     "type" : "datanode",
                     "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85"]
-                    {% if Server.PrivateIP == '192.168.2.101' %}
-                    , "http-service-port": 18080,
-                    "start-dev-rest-api" : "true"
-                    {% endif %}
                  }
+                {% endif %}
              },
              "ssh" : {
                 "host" : "{{ Server.PublicIP }}",
