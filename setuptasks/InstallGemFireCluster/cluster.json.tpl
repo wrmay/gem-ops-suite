@@ -38,7 +38,7 @@
         "enable-network-partition-detection" : "true"
     },
     "hosts": {
-    {% for Server in Servers  if "Datanode" in Server.Roles or "Locator" in Server.Roles %}
+    {% for Server in Servers  if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
         "ip-{{ Server.PrivateIP | replace('.','-') }}" : {
             "host-properties" :  {
              },
