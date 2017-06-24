@@ -1,0 +1,5 @@
+2017-06-24 16:55:24,543 test SETUP [Provision test cluster on AWS] - SUCCEEDED
+2017-06-24 16:55:24,555 botocore.credentials Found credentials in shared credentials file: ~/.aws/credentials
+2017-06-24 16:55:24,597 botocore.vendored.requests.packages.urllib3.connectionpool Starting new HTTPS connection (1): ec2.us-east-2.amazonaws.com
+2017-06-24 16:55:24,986 test VERIFY [Provision test cluster on AWS] - SUCCEEDED
+2017-06-24 16:57:17,199 test TEARDOWN [Provision test cluster on AWS] - SUCCEEDED
