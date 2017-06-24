@@ -110,7 +110,7 @@ def monitorCFStack(boto3client, stackName, failedEvent, NotFoundOK = False):
 
         time.sleep(5)
 
-    if stackStatus.endswith('COMPLETE'):
+    if stackStatus == 'CREATE_COMPLETE' or stackStatus == 'UPDATE_COMPLETE':
         return True
     else:
         return False
