@@ -73,9 +73,9 @@
                             "LinkName" : "java"
                         },
                         {
-                            "Name" : "GemFire 9.0.1",
-                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.0.1/pivotal-gemfire-9.0.1.zip",
-                            "RootDir" : "pivotal-gemfire-9.0.1",
+                            "Name" : "GemFire 9.0.4",
+                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.0.4/pivotal-gemfire-9.0.4.zip",
+                            "RootDir" : "pivotal-gemfire-9.0.4",
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "gemfire"
                         }
@@ -113,59 +113,7 @@
                 }
                 {% endif %}
             ]
-        } ,
+        } {%if not loop.last -%},{%- endif %}
         {% endfor %}
-        {
-            "Name" : "controller",
-            "ImageId" : "{{ AMI }}",
-            "InstanceType" : "t2.micro",
-            "PrivateIP" : "192.168.1.222",
-            "AZ" : "A",
-            "SSHUser" : "ec2-user",
-            "BlockDevices" : [],
-            "Roles" : ["Controller"],
-            "Installations" : [
-                {
-                    "Name": "AddHostEntries"
-                },
-                {
-                    "Name": "YumInstallPackages",
-                    "Packages": ["gcc", "python35","python35-devel","python35-pip"]
-                },
-                {
-                    "Name": "PipInstallPackages",
-                    "Packages": ["netifaces"],
-                    "PipProgramName" : "pip-3.5"
-                },
-                {
-                    "Name" : "CopyArchives",
-                    "Archives" : [
-                        {
-                            "Name" : "JDK 1.8.0_92",
-                            "ArchiveURL" : "https://s3-us-west-2.amazonaws.com/rmay.pivotal.io.software/jdk-8u92-linux-x64.tar.gz",
-                            "RootDir" : "jdk1.8.0_92",
-                            "UnpackInDir" : "/runtime",
-                            "LinkName" : "java"
-                        },
-                        {
-                            "Name" : "GemFire 9.0.1",
-                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.0.1/pivotal-gemfire-9.0.1.zip",
-                            "RootDir" : "pivotal-gemfire-9.0.1",
-                            "UnpackInDir" : "/runtime",
-                            "LinkName" : "gemfire"
-                        }
-                    ]
-                },
-                {
-                    "Name" : "InstallGemFireCluster",
-                    "ClusterHome" : "/runtime/gem_cluster_1",
-                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py", "gemfire-toolkit/target/gemfire-toolkit-N-runtime.tar.gz"]
-                },
-                {
-                    "Name" : "ConfigureProfile",
-                    "Owner" : "ec2-user"
-                }
-            ]
-        }
     ]
 }
