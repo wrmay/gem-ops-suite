@@ -35,6 +35,7 @@
         "archive-disk-space-limit" : "100",
         "tcp-port" : 10001,
         "server-port" : 10100,
+        "gemfire.ALLOW_PERSISTENT_TRANSACTIONS" : "true",
         "enable-network-partition-detection" : "true"
     },
     "hosts": {
