@@ -1,0 +1,3 @@
+[submodule "gemfire-gart"]
+	path = gemfire-gart
+	url = https://github.com/Pivotal-Data-Engineering/gemfire-gart
