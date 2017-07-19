@@ -1,7 +1,7 @@
 #
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
-# note: this is python3!
+from __future__ import print_function
 import boto3
 import botocore.exceptions
 import jinja2
@@ -87,7 +87,6 @@ def monitorCFStack(boto3client, stackName, NotFoundOK = False):
 
 
 if __name__ == '__main__':
-    assert sys.version_info >= (3,0)
 
     here = os.path.dirname(os.path.abspath(sys.argv[0]))
     configDir = os.path.join(here,'config')
