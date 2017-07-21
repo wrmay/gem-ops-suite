@@ -9,3 +9,4 @@ config/awscluster.json
 config/cloudformation.json
 config/env.json
 config/storage.json
+*.json.backup
