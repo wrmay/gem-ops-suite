@@ -4,3 +4,6 @@
 [submodule "gemfire-security-extensions"]
 	path = gemfire-security-extensions
 	url = https://github.com/Pivotal-Data-Engineering/gemfire-security-extensions
+[submodule "gedi-geode-security-extensions"]
+	path = gedi-geode-security-extensions
+	url = https://github.com/nyla-solutions/gedi-geode-security-extensions.git
