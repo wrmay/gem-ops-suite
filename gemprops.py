@@ -116,6 +116,7 @@ GEMFIRE_PROPS=[
     ,'security-client-dhalgo'
     ,'security-log-file'
     ,'security-log-level'
+    ,'security-manager'
     ,'security-peer-auth-init'
     ,'security-peer-authenticator'
     ,'security-peer-verifymember-timeout'
