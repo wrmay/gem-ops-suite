@@ -67,17 +67,6 @@ def renderTemplate(directory, templateFile, context):
 #         msg = '"' + cmd + '" failed with the following output: \n\t' + output[0]
 #         raise Exception(msg)
 
-def determineExternalHost(ipaddress):
-
-     #Determine ip address
-    process = subprocess.Popen(["nslookup", ipaddress], stdout=subprocess.PIPE)
-    output = str(process.communicate()[0])
-    startEc2 = output.find("name = ec2-")
-    startEc2 = startEc2+7
-    endEc2 = output.find(".com",startEc2)+4
-
-    externalHost = output[startEc2:endEc2]
-    return externalHost
 
 def renderTemplatesInDir(context,dirname):
 
@@ -94,14 +83,6 @@ if __name__ == '__main__':
 
     here = os.path.dirname(os.path.abspath(sys.argv[0]))
 
-    # build gemfire toolkit so it can be uploaded and installed
-    mvnbuild = subprocess.Popen(['mvn','package'],stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd = os.path.join(here,'gemfire-toolkit'))
-    mvnbuild.communicate()
-    if mvnbuild.returncode != 0:
-        sys.exit('maven build of gemfire-toolkit failed')
-    else:
-        print("maven build of gemfire-toolkit succeeded")
-
     configDir = os.path.join(here,'config')
     configFile = os.path.join(configDir,'env.json')
     templateDir = os.path.join(here,'templates')
@@ -115,21 +96,18 @@ if __name__ == '__main__':
         context = json.load(contextFile)
 
 
-    print ("current directory:"+os.getcwd())
-
     with open(instanceMapFile,'r') as f:
         ipTable = json.load(f)
 
-    serverNum = -1
     for server in context['Servers']:
         serverName = server['Name']
         ip = ipTable[serverName]
         server['PublicIpAddress'] = ip
-        #server['PublicHostName'] = determineExternalHost(ip)
         server['PublicIP'] = ip
-        server['PublicHostName'] = clusterdef.ClusterDef.determineExternalHost(ip)
-        #print("PublicHostName:"+server['PublicHostName'])
+        server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + '.compute.amazonaws.com'
 
+    serverNum = -1
+    for server in context['Servers']:
         # assuming a yum based linux
         runRemote(context['SSHKeyPath'], server['SSHUser'], ip, 'sudo', 'yum','install','-y','wget','unzip')
 

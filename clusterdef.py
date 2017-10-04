@@ -14,19 +14,6 @@ class ClusterDef:
         self.clusterDef = cdef
         self.thisHost = socket.gethostname()
 
-    @staticmethod
-    def determineExternalHost(ipaddress):
-
-             #Determine ip address
-            process = subprocess.Popen(["nslookup", ipaddress], stdout=subprocess.PIPE)
-            output = str(process.communicate()[0])
-            startEc2 = output.find("name = ec2-")
-            startEc2 = startEc2+7
-            endEc2 = output.find("amazonaws.com",startEc2)+13
-
-            externalHost = output[startEc2:endEc2]
-            return externalHost
-
     def hostName(self):
         return self.thisHost
 
