@@ -4,6 +4,7 @@ aws_runtime_storage.json
 .classpath
 .project
 .pydevproject
+.py2
 /bin/
 config/awscluster.json
 config/cloudformation.json
