@@ -52,11 +52,12 @@ if __name__ == '__main__':
 
     print '{0} gemfire cluster control scripts installed in {1}'.format(ip, clusterHome)
 
+
+    {% if Servers[ServerNum].Installations[InstallationNum].GemToolsURL %}
     if os.path.exists(os.path.join(clusterHome,'gemtools')):
         shutil.rmtree(os.path.join(clusterHome,'gemtools'))
         print '{0} removing and reinstalling gemfire toolkit'.format(ip)
-
-    {% if Servers[ServerNum].Installations[InstallationNum].GemToolsURL %}
+        
     gemtoolsURL = '{{ Servers[ServerNum].Installations[InstallationNum].GemToolsURL }}'
     gemtoolsArchive = basename(gemtoolsURL)
 
@@ -71,11 +72,6 @@ if __name__ == '__main__':
         runQuietly('unzip', '/tmp/setup/' + gemtoolsArchive, '-d', clusterHome)
 
     print '{0} gemfire toolkit installed in {1}'.format(ip, os.path.join(clusterHome,'gemtools'))
-    {% else %}
-    gemtoolsArchive = '/tmp/setup/gemfire-toolkit-N-runtime.tar.gz'
-    if os.path.exists(gemtoolsArchive):
-      runQuietly('tar', '-C', clusterHome, '-xzf', gemtoolsArchive)
-      print '{0} gemfire toolkit installed in {1}'.format(ip, os.path.join(clusterHome,'gemtools'))
     {% endif %}
 
 

@@ -1,4 +1,3 @@
-#!python
 #
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
@@ -7,7 +6,9 @@ import jinja2.filters
 import json
 import os.path
 import shutil
+import subprocess
 import sys
+
 
 # global reference information
 instanceProps = None
@@ -20,7 +21,7 @@ def initializeRefData():
     regionProps = dict()
 
     #create instanceProps map
-    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64)]
+    ramInfo = [('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64),('r4.xlarge',30),('r4.2xlarge',61),('r4.4xlarge',122)]
     for itype, ram in ramInfo:
         instanceProps[itype] = dict()
         instanceProps[itype]['RAM'] = ram
@@ -93,6 +94,34 @@ if __name__ == '__main__':
 
     # AMI can be at the top level, at least for now
     context['AMI'] = regionProps[context['RegionName']]['AMI']
+
+    # process extensions
+    if 'Extensions' in context:
+        for k,v in context['Extensions']:
+            if k == 'gedi-geode-security-extensions':
+                # for this extension we do not use any other settings
+                # might be nice to pull this into a function
+                if 'Environment' not in context:
+                    context['Environment'] = dict()
+
+                if 'GemFire' not in context['Environment']:
+                    context['Environment']['GemFire'] = dict()
+
+                gem = context['Environment']['GemFire']
+                # now we can add 'locator-properties-' and 'datanode-properties-' and 'global-properties-'
+
+            else:
+                print 'warning: unknown extension: {0}'.format(k)
+
+    # generate security related information
+    if context['SecurityProvider'] is not None:
+        if context['SecurityProvider'] == 'gedi-geode-security-extensions':
+            if 'GemFireOverrides' not in context:
+                context['Environment'] = dict()
+
+
+        else:
+            sys.exit("Unknown security provider: " + context['SecurityProvider'])
 
     renderTemplate(templateDir,templateFileName,context, os.path.dirname(configFile))
     print('cluster configuration generated')
