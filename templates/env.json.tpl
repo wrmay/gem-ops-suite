@@ -7,10 +7,10 @@
     "Environment" : {
     {% for key,d in Environment.items() %}
       "{{ key }}" : {
-    {%for k,v in d.items()}
+    {%for k,v in d.items() %}
           "{{ k }}" : "{{ v }}" {% if not loop.last -%},{% endif %}
     {% endfor %}
-      } {% if not loop.last %-},{%- endif %}
+  } {% if not loop.last -%},{%- endif %}
     {% endfor %}
     },
     {% endif %}
