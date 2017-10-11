@@ -114,14 +114,14 @@ if __name__ == '__main__':
                 print 'warning: unknown extension: {0}'.format(k)
 
     # generate security related information
-    if context['SecurityProvider'] is not None:
-        if context['SecurityProvider'] == 'gedi-geode-security-extensions':
-            if 'GemFireOverrides' not in context:
-                context['Environment'] = dict()
-
-
-        else:
-            sys.exit("Unknown security provider: " + context['SecurityProvider'])
+    # if context['SecurityProvider'] is not None:
+    #     if context['SecurityProvider'] == 'gedi-geode-security-extensions':
+    #         if 'GemFireOverrides' not in context:
+    #             context['Environment'] = dict()
+    #
+    #
+    #     else:
+    #         sys.exit("Unknown security provider: " + context['SecurityProvider'])
 
     renderTemplate(templateDir,templateFileName,context, os.path.dirname(configFile))
     print('cluster configuration generated')
