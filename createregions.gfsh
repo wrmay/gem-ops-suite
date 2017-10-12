@@ -1,0 +1,5 @@
+create disk-store --name=orders-disk-store --dir=/data/orders
+sleep --time=5
+create region --name=Orders --type=PARTITION_REDUNDANT_PERSISTENT_OVERFLOW --disk-store=orders-disk-store --redundant-copies=2
+list regions
+create index --name=order-account-number-index --type=range --region="/Orders o, o.accounts a" --expression="a.accountNumber"

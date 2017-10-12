@@ -1,0 +1,3 @@
+create disk-store --name=pdx-disk-store --dir=/data/pdx
+configure pdx --disk-store=pdx-disk-store --read-serialized=true
+shutdown --include-locators=true
