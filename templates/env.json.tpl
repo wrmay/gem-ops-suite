@@ -97,6 +97,15 @@
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "maven"
                         }
+                {% if "Console" in Server.Roles or "Load" in Server.Roles %}
+                , {
+                    "Name" : "The Grinder3",
+                    "ArchiveURL" : "https://downloads.sourceforge.net/project/grinder/The%20Grinder%203/3.11/grinder-3.11-binary.zip?r=&ts=1507733635&use_mirror=iweb",
+                    "RootDir" : "grinder-3.11",
+                    "UnpackInDir" : "/runtime",
+                    "LinkName" : "grinder"
+                  }
+                {% endif %}
                     ]
                 },
                 {
@@ -109,13 +118,6 @@
                 }
                 {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 ,{
-                  "Name" : "MavenUploadAndBuild",
-                  "AdditionalFiles" : ["gedi-geode-security-extensions"],
-                  "TargetDir" : "/runtime/gedi-geode-security-extensions",
-                  "Owner" : "ec2-user",
-                  "BuildTargets" : ["package"]
-                },
-                {
                     "Name" : "InstallGemFireCluster",
                     "ClusterHome" : "/runtime/gem_cluster_1",
                     "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py"]
