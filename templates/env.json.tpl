@@ -90,6 +90,7 @@
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "gemfire"
                         }
+              {% if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                         , {
                             "Name" : "Apache Maven 3.3.9",
                             "ArchiveURL" : "https://s3-us-west-2.amazonaws.com/rmay.pivotal.io.software/apache-maven-3.3.9-bin.tar.gz",
@@ -97,6 +98,7 @@
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "maven"
                         }
+                {% endif %}
                 {% if "Console" in Server.Roles or "Load" in Server.Roles %}
                 , {
                     "Name" : "The Grinder3",
@@ -112,10 +114,12 @@
                     "Name" : "ConfigureProfile",
                     "Owner" : "ec2-user"
                 }
+              {% if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 ,{
                   "Name" : "ConfigureMaven",
                   "Owner" : "ec2-user"
                 }
+              {% endif %}
                 {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 ,{
                     "Name" : "InstallGemFireCluster",
