@@ -72,10 +72,11 @@ grinder.sh
 
 ```
 #!/bin/bash
-export CLASSPATH='/runtime/grinder/lib/grinder.jar:/runtime/gemfire/lib/*'
+export CLASSPATH='/runtime/gemfire/lib/*:/runtime/grinder/lib/grinder.jar:'
 /runtime/java/bin/java  net.grinder.Grinder
 ```
 Note that the console must be running before starting the workers.
+__Also, note that gemfire needs to be first on the class path!__
 
 ## grinder console ##
 
