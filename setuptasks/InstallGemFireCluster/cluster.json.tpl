@@ -4,7 +4,14 @@
         "java-home" : "/runtime/java",
         "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
-        "distributed-system-id": 1
+        "distributed-system-id": 1,
+        "classpath" : "../gemfire-dynamic-security-1.0.3.jar",
+        "security-manager" : "io.pivotal.pde.gemfire.dynamic.security.DynamicSecurityManager",
+        "security-peer-password" : "passw0rd",
+        "security-admin-password" : "opensesame",
+        "security-disk-store-dir" : "/data/security",
+        "user": "gfpeer",
+        "password" : "passw0rd"
         {% if Environment and Environment.GemFire %}
         {% for key,val in Environment.GemFire if key.startswith('global-properties-') %}
         , "{{ key.substring(len('global-properties-')) }}" : "{{ val }}"
