@@ -7,3 +7,6 @@
 [submodule "gedi-geode-security-extensions"]
 	path = gedi-geode-security-extensions
 	url = https://github.com/nyla-solutions/gedi-geode-security-extensions.git
+[submodule "gemfire-dynamic-security"]
+	path = gemfire-dynamic-security
+	url = https://github.com/Pivotal-Data-Engineering/gemfire-dynamic-security
