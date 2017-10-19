@@ -131,6 +131,12 @@
                   "AdditionalFiles" : ["gemfire-toolkit"],
                   "ClusterHome" : "/runtime/gem_cluster_1",
                   "Owner" : "ec2-user"
+                },
+                {
+                  "Name" : "InstallDynamicSecurity",
+                  "AdditionalFiles" : ["gemfire-dynamic-security"],
+                  "ClusterHome" : "/runtime/gem_cluster_1",
+                  "Owner" : "ec2-user"
                 }
                 {% endif %}
                 {% if "ETL" in Server.Roles %}
