@@ -20,7 +20,7 @@ def initializeRefData():
     regionProps = dict()
 
     #create instanceProps map
-    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64)]
+    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64),('r4.xlarge',30),('r4.2xlarge',61),('r4.4xlarge',122)]
     for itype, ram in ramInfo:
         instanceProps[itype] = dict()
         instanceProps[itype]['RAM'] = ram
