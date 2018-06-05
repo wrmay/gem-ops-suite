@@ -2,11 +2,14 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
-        {% for Server in Servers  if "Locator" in Server.Roles and Server.PrivateIP == '192.168.1.101' %}
-        "locators" : "{{ Server.PublicHostName }}[10000]",
-    	{% endfor %}
+        "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
+        {% if Environment and Environment.GemFire %}
+        {% for key,val in Environment.GemFire if key.startswith('global-properties-') %}
+        , "{{ key.substring(len('global-properties-')) }}" : "{{ val }}"
+        {% endfor %}
+        {% endif %}
     },
    "locator-properties" : {
         "port" : 10000,
@@ -21,7 +24,12 @@
         "archive-file-size-limit" : "10",
         "archive-disk-space-limit" : "100",
         "enable-network-partition-detection" : "true",
-        "jvm-options" : ["-Xmx2g","-Xms2g", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC"]
+        "jvm-options" : ["-Xmx2g","-Xms2g", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC" ]
+        {% if Environment and Environment.GemFire %}
+        {% for key,val in Environment.GemFire if key.startswith('locator-properties-') %}
+        , "{{ key.substring(len('locator-properties-')) }}" : "{{ val }}"
+        {% endfor %}
+        {% endif %}
     },
    "datanode-properties" : {
         "conserve-sockets" : false,
@@ -37,6 +45,11 @@
         "server-port" : 10100,
         "gemfire.ALLOW_PERSISTENT_TRANSACTIONS" : "true",
         "enable-network-partition-detection" : "true"
+        {% if Environment and Environment.GemFire %}
+        {% for key,val in Environment.GemFire if key.startswith('datanode-properties-') %}
+        , "{{ key.substring(len('datanode-properties-')) }}" : "{{ val }}"
+        {% endfor %}
+        {% endif %}
     },
     "hosts": {
     {% for Server in Servers  if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
@@ -44,21 +57,25 @@
             "host-properties" :  {
              },
              "processes" : {
-               {% if Server.PrivateIP == '192.168.1.101' %}
+               {% if "Locator" in Server.Roles %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}",
-                    "jmx-manager-start" : "true"
-                 },
+                    "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}"
+                    {% if "Pulse" in Server.Roles %}
+                    , "jmx-manager-start" : "true"
+                    {% endif %}
+                 }
                {% endif %}
-                "{{ Server.Name }}-server" : {
+               {%if "DataNode" in Server.Roles %}
+                {% if "Locator" in Server.Roles -%},{% endif %}"{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC", "-XX:CMSInitiatingOccupancyFraction=85"]
-                    {% if Server.PrivateIP == '192.168.2.101' %}
+                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m","-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC",  "-XX:CMSInitiatingOccupancyFraction=85"]
+                    {% if "REST" in Server.Roles %}
                     , "http-service-port": 18080,
                     "start-dev-rest-api" : "true"
                     {% endif %}
                  }
+              {% endif %}
              },
              "ssh" : {
                 "host" : "{{ Server.PublicIP }}",

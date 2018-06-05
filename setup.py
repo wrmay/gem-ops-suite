@@ -109,7 +109,7 @@ if __name__ == '__main__':
     serverNum = -1
     for server in context['Servers']:
         # assuming a yum based linux
-        runRemote(context['SSHKeyPath'], server['SSHUser'], ip, 'sudo', 'yum','install','-y','wget','unzip')
+        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'], 'sudo', 'yum','install','-y','wget','unzip')
 
         serverNum += 1
         installationNum = -1
@@ -143,18 +143,18 @@ if __name__ == '__main__':
 
             runQuietly('rsync', '-avz','--delete',
                 '-e' ,'ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
-                installationDir + '/', server['SSHUser'] + '@' + ip + ':/tmp/setup')
+                installationDir + '/', server['SSHUser'] + '@' + server['PublicIP'] + ':/tmp/setup')
 
             if additionalsDir is not None:
                 runQuietly('rsync', '-avz',
                     '-e' ,'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
-                    additionalsDir + '/', server['SSHUser'] + '@' + ip + ':/tmp/setup')
+                    additionalsDir + '/', server['SSHUser'] + '@' + server['PublicIP'] + ':/tmp/setup')
 
                 shutil.rmtree(additionalsDir)
 
 
-            runRemote(context['SSHKeyPath'], server['SSHUser'], ip,
+            runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
                       'sudo', 'python','/tmp/setup/setup.py')
 
-            runRemoteQuietly(context['SSHKeyPath'], server['SSHUser'], ip,
+            runRemoteQuietly(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
                      'rm','-rf', '/tmp/setup')

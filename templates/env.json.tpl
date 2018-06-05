@@ -3,6 +3,17 @@
     "RegionName" : "{{ RegionName }}",
     "KeyPair" : "{{ SSHKeyPairName }}",
     "SSHKeyPath" : "{{ SSHKeyPath }}",
+    {% if Environment %}
+    "Environment" : {
+    {% for key,d in Environment.items() %}
+      "{{ key }}" : {
+    {%for k,v in d.items() %}
+          "{{ k }}" : "{{ v }}" {% if not loop.last -%},{% endif %}
+    {% endfor %}
+  } {% if not loop.last -%},{%- endif %}
+    {% endfor %}
+    },
+    {% endif %}
     "Servers" : [
     {% for Server in Servers %}
         {
@@ -73,13 +84,12 @@
                             "LinkName" : "java"
                         },
                         {
-                            "Name" : "GemFire 9.0.4",
-                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.0.4/pivotal-gemfire-9.0.4.zip",
-                            "RootDir" : "pivotal-gemfire-9.0.4",
+                            "Name" : "GemFire 9.1.1",
+                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.1.1/pivotal-gemfire-9.1.1.zip",
+                            "RootDir" : "pivotal-gemfire-9.1.1",
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "gemfire"
                         }
-                        {% if  "ETL" in Server.Roles %}
                         , {
                             "Name" : "Apache Maven 3.3.9",
                             "ArchiveURL" : "https://s3-us-west-2.amazonaws.com/rmay.pivotal.io.software/apache-maven-3.3.9-bin.tar.gz",
@@ -87,25 +97,37 @@
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "maven"
                         }
-                        {% endif %}
                     ]
                 },
                 {
                     "Name" : "ConfigureProfile",
                     "Owner" : "ec2-user"
                 }
-                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
-                , {
-                    "Name" : "InstallGemFireCluster",
-                    "ClusterHome" : "/runtime/gem_cluster_1",
-                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py", "gemfire-toolkit/target/gemfire-toolkit-N-runtime.tar.gz"]
-                }
-                {% endif %}
-                {% if "ETL" in Server.Roles %}
                 ,{
                   "Name" : "ConfigureMaven",
                   "Owner" : "ec2-user"
                 }
+                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
+                ,{
+                  "Name" : "MavenUploadAndBuild",
+                  "AdditionalFiles" : ["gedi-geode-security-extensions"],
+                  "TargetDir" : "/runtime/gedi-geode-security-extensions",
+                  "Owner" : "ec2-user",
+                  "BuildTargets" : ["package"]
+                },
+                {
+                    "Name" : "InstallGemFireCluster",
+                    "ClusterHome" : "/runtime/gem_cluster_1",
+                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py"]
+                },
+                {
+                  "Name" : "InstallGemFireToolkit",
+                  "AdditionalFiles" : ["gemfire-toolkit"],
+                  "ClusterHome" : "/runtime/gem_cluster_1",
+                  "Owner" : "ec2-user"
+                }
+                {% endif %}
+                {% if "ETL" in Server.Roles %}
                 , {
                     "Name" : "people-loader",
                     "TargetDir" : "/runtime/people-loader",
