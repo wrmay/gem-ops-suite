@@ -1,6 +1,7 @@
 #
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
+from __future__ import print_function
 import clusterdef
 import fileinput
 import json
@@ -15,14 +16,14 @@ import random
 
 
 def determineExternalHost(ipaddress):
-    
+
      #Determine ip address
     process = subprocess.Popen(["nslookup", ipaddress], stdout=subprocess.PIPE)
     output = str(process.communicate()[0])
     startEc2 = output.find("name = ec2-")
     startEc2 = startEc2+7
     endEc2 = output.find(".com",startEc2)+4
-    
+
     externalHost = output[startEc2:endEc2]
     return externalHost
 
@@ -459,8 +460,6 @@ def bounce():
     print('all datanodes bounced')
 
 if __name__ == '__main__':
-    assert sys.version_info >= (3,0)
-
     here = os.path.dirname(sys.argv[0])
     clusterDefFile = os.path.join(here, 'setuptasks','InstallGemFireCluster','cluster.json')
     if not os.path.isfile(clusterDefFile):
