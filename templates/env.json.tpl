@@ -94,7 +94,7 @@
                     "Name" : "ConfigureProfile",
                     "Owner" : "ec2-user"
                 }
-                {% if  "DataNode" in Server.Roles %}
+                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 , {
                     "Name" : "InstallGemFireCluster",
                     "ClusterHome" : "/runtime/gem_cluster_1",
