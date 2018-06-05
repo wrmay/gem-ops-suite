@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
     # build gemfire toolkit so it can be uploaded and installed
     mvnbuild = subprocess.Popen(['mvn','package'],stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd = os.path.join(here,'gemfire-toolkit'))
-    mvnbuild.wait()
+    mvnbuild.communicate()
     if mvnbuild.returncode != 0:
         sys.exit('maven build of gemfire-toolkit failed')
     else:
