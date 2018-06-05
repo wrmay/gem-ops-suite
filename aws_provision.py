@@ -1,7 +1,7 @@
 #
-# Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
+# Copyright (c) 2015-2017 Pivotal Software, Inc. All Rights Reserved.
 #
-# note: this is python3!
+from __future__ import print_function
 import boto3
 import botocore.exceptions
 import jinja2
@@ -26,14 +26,22 @@ def deployCFStack( cloudformation, stackName, stackDef, deployFailedEvent):
     try:
         cloudformation.create_stack(StackName = stackName, TemplateBody = stackDef)
     except botocore.exceptions.ClientError as x:
-        print('cloudformation deploy failed with message: {0}'.format(x.response['Error']['Message']))
+        errorMessage = x.response['Error']['Message']
+        if 'No updates are to be performed' in errorMessage:
+            return #this is OK
+
+        print('cloudformation deploy failed with message: {0}'.format(errorMessage))
         deployFailedEvent.set()
 
 def updateCFStack( cloudformation, stackName, stackDef, deployFailedEvent):
     try:
         cloudformation.update_stack(StackName = stackName, TemplateBody = stackDef)
     except botocore.exceptions.ClientError as x:
-        print('cloudformation deploy failed with message: {0}'.format(x.response['Error']['Message']))
+        errorMessage = x.response['Error']['Message']
+        if 'No updates are to be performed' in errorMessage:
+            return #this is OK
+
+        print('cloudformation deploy failed with message: {0}'.format(errorMessage))
         deployFailedEvent.set()
 
 
@@ -110,15 +118,13 @@ def monitorCFStack(boto3client, stackName, failedEvent, NotFoundOK = False):
 
         time.sleep(5)
 
-    if stackStatus.endswith('COMPLETE'):
+    if stackStatus == 'CREATE_COMPLETE' or stackStatus == 'UPDATE_COMPLETE':
         return True
     else:
         return False
 
 
 if __name__ == '__main__':
-    assert sys.version_info >= (3,0)
-
     here = os.path.dirname(os.path.abspath(sys.argv[0]))
     configDir = os.path.join(here,'config')
     configFile = os.path.join(configDir,'env.json')

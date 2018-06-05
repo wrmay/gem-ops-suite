@@ -11,10 +11,17 @@ if __name__ == '__main__':
       print 'removed {0}'.format(targetDir)
 
    shutil.copytree('/tmp/setup',targetDir)
-   subprocess.check_call(['chown','-R',owner,targetDir])
+   if len(owner > 0):
+      subprocess.check_call(['chown','-R',owner,targetDir])
+
    print 'copied maven project to {0}'.format(targetDir)
 
    mvnEnv = dict()
    mvnEnv['JAVA_HOME'] = '/runtime/java'
-   subprocess.check_call(['sudo','-u',owner,'-E', '/runtime/maven/bin/mvn','clean', 'install'],cwd=targetDir, env=mvnEnv)
+
+   if len(owner > 0):
+      subprocess.check_call(['sudo','-u',owner,'-E', '/runtime/maven/bin/mvn','clean', 'install'],cwd=targetDir, env=mvnEnv)
+   else:
+      subprocess.check_call(['/runtime/maven/bin/mvn','clean', 'install'],cwd=targetDir, env=mvnEnv)
+
    print 'built maven project'

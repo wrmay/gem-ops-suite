@@ -1,7 +1,8 @@
 #
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
-# note: this is python3!
+
+from __future__ import print_function
 import jinja2
 import json
 import os
@@ -27,7 +28,7 @@ def runQuietly(*args):
 
 def runRemote(sshKeyPath, user, host, *args):
     prefix = ['ssh', '-o','StrictHostKeyChecking=no',
-                        '-t',
+                        '-t','-q',
                         '-i', sshKeyPath,
                         '{0}@{1}'.format(user, host)]
 
@@ -36,7 +37,7 @@ def runRemote(sshKeyPath, user, host, *args):
 
 def runRemoteQuietly(sshKeyPath, user, host, *args):
     prefix = ['ssh', '-o','StrictHostKeyChecking=no',
-                        '-t',
+                        '-t','-q',
                         '-i', sshKeyPath,
                         '{0}@{1}'.format(user, host)]
 
@@ -90,7 +91,6 @@ def renderTemplatesInDir(context,dirname):
 
 
 if __name__ == '__main__':
-    assert sys.version_info >= (3,0)
 
     here = os.path.dirname(os.path.abspath(sys.argv[0]))
 
@@ -130,6 +130,9 @@ if __name__ == '__main__':
         server['PublicHostName'] = clusterdef.ClusterDef.determineExternalHost(ip)
         #print("PublicHostName:"+server['PublicHostName'])
 
+        # assuming a yum based linux
+        runRemote(context['SSHKeyPath'], server['SSHUser'], ip, 'sudo', 'yum','install','-y','wget','unzip')
+
         serverNum += 1
         installationNum = -1
         for installation in server['Installations']:
@@ -161,12 +164,12 @@ if __name__ == '__main__':
             renderTemplatesInDir(context, installationDir)
 
             runQuietly('rsync', '-avz','--delete',
-                '-e' ,'ssh -o StrictHostKeyChecking=no -i {0}'.format(context['SSHKeyPath']),
+                '-e' ,'ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
                 installationDir + '/', server['SSHUser'] + '@' + ip + ':/tmp/setup')
 
             if additionalsDir is not None:
                 runQuietly('rsync', '-avz',
-                    '-e' ,'ssh -o StrictHostKeyChecking=no -i {0}'.format(context['SSHKeyPath']),
+                    '-e' ,'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
                     additionalsDir + '/', server['SSHUser'] + '@' + ip + ':/tmp/setup')
 
                 shutil.rmtree(additionalsDir)
