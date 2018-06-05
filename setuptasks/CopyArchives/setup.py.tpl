@@ -10,7 +10,12 @@ import subprocess
 
 def basename(url):
     i = url.rindex('/')
-    return url[i+1:]
+    result = url[i+1:]
+    i = result.find('?')
+    if i > -1:
+      result = result[:i]
+
+    return result
 
 def runQuietly(*args):
     p = subprocess.Popen(list(args), stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
@@ -52,7 +57,7 @@ if __name__ == '__main__':
         if archiveURL.startswith('s3:'):
             runQuietly('aws', 's3', 'cp', archiveURL, '/tmp/setup')
         else:
-            runQuietly('wget', '-P', '/tmp/setup', archiveURL)
+            runQuietly('wget', '-O', '/tmp/setup/' + archiveFile,'-P', '/tmp/setup', archiveURL)
 
         if archiveFile.endswith('.tar.gz'):
             runQuietly('tar', '-C', parentDir, '-xzf', '/tmp/setup/' + archiveFile)
