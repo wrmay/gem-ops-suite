@@ -21,9 +21,16 @@ def runQuietly(*args):
 if __name__ == '__main__':
     ip = '{{Servers[ServerNum].PublicIpAddress }}'
 
+    # use git to download gemfire-manager
+    runQuietly('git','clone','https://github.com/Pivotal-Data-Engineering/gemfire-manager.git', '/tmp/setup/gemfire-manager')
+
+    #build it
+    mvnEnv = dict()
+    mvnEnv['JAVA_HOME'] = '/runtime/java'
+    subprocess.check_call(['/runtime/maven/bin/mvn','-DskipTests', 'packge'],cwd='/tmp/setup/gemfire-manager/gemfire-toolkit', env=mvnEnv)
+
     # locate the parent of cluster-home
-    # unpack gemfire-manager into that directory, then rename it so that
-    # the newly unpacked scripts are in cluster-home
+    # copy the gemfire-manager scripts into cluster home
     # move  cluster.json into cluster-home
     # unpack gemtools into cluster-home
 
@@ -48,34 +55,15 @@ if __name__ == '__main__':
       os.makedirs(clusterHome)
 
     for script in ['cluster.py', 'gf.py', 'clusterdef.py','gemprops.py']:
-      shutil.copy(os.path.join('/tmp/setup',script),clusterHome)
+      shutil.copy(os.path.join('/tmp/setup/gemfire-manager',script),clusterHome)
 
-    print '{0} gemfire cluster control scripts installed in {1}'.format(ip, clusterHome)
+    #unpack the gemfire-toolkit
+    runQuietly('tar', '-C', clusterHome, '-xzf', '/tmp/setup/gemfire-manager/gemfire-toolkit/target/gemfire-toolkit-N-runtime.tar.gz')
 
-
-    {% if Servers[ServerNum].Installations[InstallationNum].GemToolsURL %}
-    if os.path.exists(os.path.join(clusterHome,'gemtools')):
-        shutil.rmtree(os.path.join(clusterHome,'gemtools'))
-        print '{0} removing and reinstalling gemfire toolkit'.format(ip)
-        
-    gemtoolsURL = '{{ Servers[ServerNum].Installations[InstallationNum].GemToolsURL }}'
-    gemtoolsArchive = basename(gemtoolsURL)
-
-    if gemtoolsURL.startswith('s3:'):
-        runQuietly('aws', 's3', 'cp', gemtoolsURL, '/tmp/setup')
-    else:
-        runQuietly('wget', '-P', '/tmp/setup', gemtoolsURL)
-
-    if gemtoolsArchive.endswith('.tar.gz'):
-        runQuietly('tar', '-C', clusterHome, '-xzf', '/tmp/setup/' + gemtoolsArchive)
-    elif gemtoolsArchive.endswith('.zip'):
-        runQuietly('unzip', '/tmp/setup/' + gemtoolsArchive, '-d', clusterHome)
-
-    print '{0} gemfire toolkit installed in {1}'.format(ip, os.path.join(clusterHome,'gemtools'))
-    {% endif %}
-
-
+    # copy the cluster definition file
     shutil.copy('/tmp/setup/cluster.json', clusterHome)
+
+    # and the config directory if it exists
     if os.path.exists('/tmp/setup/config'):
       targetDir = os.path.join(clusterHome,'config')
       if os.path.exists(targetDir):
@@ -83,5 +71,6 @@ if __name__ == '__main__':
 
       shutil.copytree('/tmp/setup/config',targetDir)
 
+    # change the owner
     runQuietly('chown', '-R', '{0}:{0}'.format('{{ Servers[ServerNum].SSHUser }}'), clusterHome)
-    print '{0} copied cluster definition into {1}'.format(ip, clusterHome)
+    print '{0} gemfire cluster set up at {1}'.format(ip, clusterHome)

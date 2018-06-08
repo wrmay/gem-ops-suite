@@ -14,7 +14,7 @@ represents a significant cost saving for environments, such as development
 clusters,  that do not need to run 24x7 .
 
 # Setup #
-* The local machine requires python3 to be installed and the following python
+* The local machine requires python2 to be installed and the following python
 packages
  * jina2
  * boto3

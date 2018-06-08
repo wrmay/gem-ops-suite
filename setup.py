@@ -14,7 +14,6 @@ import threading
 import time
 import tempfile
 import socket
-import clusterdef
 
 #args should be a list
 def runListQuietly(args):
