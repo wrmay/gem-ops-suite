@@ -9,8 +9,9 @@ if __name__ == '__main__':
    if os.path.exists(targetDir):
       shutil.rmtree(targetDir)
       print 'removed {0}'.format(targetDir)
-      
-   shutil.copytree('/tmp/setup',targetDir)
+
+   subprocess.check_call(['git','clone','https://github.com/Pivotal-Data-Engineering/people-loader.git', '/tmp/setup/people-loader'])
+   shutil.copytree('/tmp/setup/people-loader',targetDir)
    subprocess.check_call(['chown','-R',owner,targetDir])
    print 'copied people-loader to {0}'.format(targetDir)
 
@@ -18,4 +19,3 @@ if __name__ == '__main__':
    mvnEnv['JAVA_HOME'] = '/runtime/java'
    subprocess.check_call(['sudo','-u',owner,'-E', '/runtime/maven/bin/mvn','clean', 'install'],cwd=targetDir, env=mvnEnv)
    print 'built people-loader'
-   
