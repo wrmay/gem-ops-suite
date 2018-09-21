@@ -84,9 +84,9 @@
                             "LinkName" : "java"
                         },
                         {
-                            "Name" : "GemFire 9.1.1",
-                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.1.1/pivotal-gemfire-9.1.1.zip",
-                            "RootDir" : "pivotal-gemfire-9.1.1",
+                            "Name" : "GemFire 9.5.1",
+                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.5.1/pivotal-gemfire-9.5.1.zip",
+                            "RootDir" : "pivotal-gemfire-9.5.1",
                             "UnpackInDir" : "/runtime",
                             "LinkName" : "gemfire"
                         }
@@ -109,13 +109,6 @@
                 }
                 {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 ,{
-                  "Name" : "MavenUploadAndBuild",
-                  "AdditionalFiles" : ["gedi-geode-security-extensions"],
-                  "TargetDir" : "/runtime/gedi-geode-security-extensions",
-                  "Owner" : "ec2-user",
-                  "BuildTargets" : ["package"]
-                },
-                {
                     "Name" : "InstallGemFireCluster",
                     "ClusterHome" : "/runtime/gem_cluster_1",
                     "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py"]

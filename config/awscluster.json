@@ -1,0 +1,29 @@
+{
+  "EnvironmentName" : "IHGTest",
+  "RegionName" : "us-east-1",
+  "SSHKeyPairName" : "ihg-keypair",
+  "SSHKeyPath": "/Users/rmay/Downloads/ihg-keypair.pem",
+  "Servers" : [
+    {
+      "Name" : "gem1101",
+        "PrivateIP" : "192.168.1.101",
+        "AZ" : "A",
+        "InstanceType" : "m4.large",
+        "Roles" : ["DataNode", "Locator"]
+    },
+    {
+      "Name" : "gem1102",
+      "PrivateIP" : "192.168.1.102",
+      "AZ" : "A",
+      "InstanceType" : "m4.large",
+      "Roles" : ["DataNode", "Locator"]
+    },
+    {
+      "Name" : "gem1103",
+      "PrivateIP" : "192.168.1.103",
+      "AZ" : "A",
+      "InstanceType" : "m4.large",
+      "Roles" : ["DataNode"]
+    }
+  ]
+}
