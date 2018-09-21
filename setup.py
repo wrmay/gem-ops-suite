@@ -104,7 +104,15 @@ if __name__ == '__main__':
         ip = ipTable[serverName]
         server['PublicIpAddress'] = ip
         server['PublicIP'] = ip
-        server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + '.compute.amazonaws.com'
+
+        # According to https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-hostnames
+        #
+        # A public (external) DNS hostname takes the form ec2-public-ipv4-address.compute-1.amazonaws.com for the us-east-1 region,
+        # and ec2-public-ipv4-address.region.compute.amazonaws.com for other regions.
+        if context['RegionName'] == 'us-east-1':
+            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.compute-1.amazonaws.com'
+        else:
+            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + 'compute.amazonaws.com'
 
     serverNum = -1
     for server in context['Servers']:
