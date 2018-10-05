@@ -2,9 +2,9 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/runtime/java",
-        "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
-        "cluster-home" : "/runtime/gem_cluster_1",
-        "distributed-system-id": 1
+        "locators" : "{% for Server in Servers  if "Locator" in Server.Roles and Server.DSID == Servers[ServerNum].DSID  -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
+        "cluster-home" : "/runtime/gem_cluster_{{ Servers[ServerNum].DSID }}",
+        "distributed-system-id": "{{ Servers[ServerNum].DSID }}"
         {% if Environment and Environment.GemFire %}
         {% for key,val in Environment.GemFire if key.startswith('global-properties-') %}
         , "{{ key.substring(len('global-properties-')) }}" : "{{ val }}"
@@ -52,7 +52,7 @@
         {% endif %}
     },
     "hosts": {
-    {% for Server in Servers  if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
+    {% for Server in Servers  if Server.DSID == Servers[ServerNum].DSID  and ("DataNode" in Server.Roles or "Locator" in Server.Roles) %}
         "ip-{{ Server.PrivateIP | replace('.','-') }}" : {
             "host-properties" :  {
              },

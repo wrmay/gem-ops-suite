@@ -1,21 +1,23 @@
 {
-  "EnvironmentName" : "IHGTest",
+  "EnvironmentName" : "WRMAY",
   "RegionName" : "us-east-1",
   "SSHKeyPairName" : "ihg-keypair",
-  "SSHKeyPath": "/Users/rmay/Downloads/ihg-keypair.pem",
+  "SSHKeyPath": "ihg-keypair.pem",
   "Servers" : [
     {
       "Name" : "gem1101",
         "PrivateIP" : "192.168.1.101",
         "AZ" : "A",
         "InstanceType" : "m4.large",
-        "Roles" : ["DataNode", "Locator"]
+        "DSID" : "1",
+        "Roles" : ["DataNode", "Locator", "Pulse"]
     },
     {
       "Name" : "gem1102",
       "PrivateIP" : "192.168.1.102",
       "AZ" : "A",
       "InstanceType" : "m4.large",
+      "DSID" : "1",
       "Roles" : ["DataNode", "Locator"]
     },
     {
@@ -23,7 +25,48 @@
       "PrivateIP" : "192.168.1.103",
       "AZ" : "A",
       "InstanceType" : "m4.large",
+      "DSID" : "1",
       "Roles" : ["DataNode"]
+    },
+    {
+      "Name" : "gem1111",
+      "PrivateIP" : "192.168.1.111",
+      "AZ" : "A",
+      "DSID" : "1",
+      "InstanceType" : "m4.large",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem2101",
+        "PrivateIP" : "192.168.2.101",
+        "AZ" : "B",
+        "InstanceType" : "m4.large",
+        "DSID" : "2",
+        "Roles" : ["DataNode", "Locator","Pulse"]
+    },
+    {
+      "Name" : "gem2102",
+      "PrivateIP" : "192.168.2.102",
+      "AZ" : "B",
+      "InstanceType" : "m4.large",
+      "DSID" : "2",
+      "Roles" : ["DataNode", "Locator"]
+    },
+    {
+      "Name" : "gem2103",
+      "PrivateIP" : "192.168.2.103",
+      "AZ" : "B",
+      "InstanceType" : "m4.large",
+      "DSID" : "2",
+      "Roles" : ["DataNode"]
+    },
+    {
+      "Name" : "gem2111",
+      "PrivateIP" : "192.168.2.111",
+      "AZ" : "B",
+      "DSID" : "2",
+      "InstanceType" : "m4.large",
+      "Roles" : ["ETL"]
     }
   ]
 }

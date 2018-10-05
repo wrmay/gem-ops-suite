@@ -30,7 +30,7 @@ if __name__ == '__main__':
     with open('/tmp/setup/cluster.json','r') as f:
         config = json.load(f)
 
-    clusterHome = '{{ Servers[ServerNum].Installations[InstallationNum].ClusterHome }}'
+    clusterHome = '/runtime/gem_cluster_{{ Servers[ServerNum].DSID }}'
     clusterParent = os.path.dirname(clusterHome)
 
     {% if "AWSAccessKeyId" in Servers[ServerNum].Installations[InstallationNum] %}
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     if not os.path.exists(clusterHome):
       os.makedirs(clusterHome)
 
-    for script in ['cluster.py', 'gf.py', 'clusterdef.py','gemprops.py']:
+    for script in ['cluster.py', 'gf.py', 'clusterdef.py','gemprops.py', '{{ SSHKeyPath }}']:
       shutil.copy(os.path.join('/tmp/setup',script),clusterHome)
 
     print '{0} gemfire cluster control scripts installed in {1}'.format(ip, clusterHome)
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     if os.path.exists(os.path.join(clusterHome,'gemtools')):
         shutil.rmtree(os.path.join(clusterHome,'gemtools'))
         print '{0} removing and reinstalling gemfire toolkit'.format(ip)
-        
+
     gemtoolsURL = '{{ Servers[ServerNum].Installations[InstallationNum].GemToolsURL }}'
     gemtoolsArchive = basename(gemtoolsURL)
 

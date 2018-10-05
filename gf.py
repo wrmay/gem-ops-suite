@@ -461,7 +461,7 @@ def bounce():
 
 if __name__ == '__main__':
     here = os.path.dirname(sys.argv[0])
-    clusterDefFile = os.path.join(here, 'setuptasks','InstallGemFireCluster','cluster.json')
+    clusterDefFile = os.path.join(here,'cluster.json')
     if not os.path.isfile(clusterDefFile):
         sys.exit('could not find cluster definition file: ' + clusterDefFile)
 

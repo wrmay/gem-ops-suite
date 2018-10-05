@@ -8,7 +8,7 @@ if __name__ == '__main__':
    {% else %}
    owner = ''
    {% endif %}
-   cluster_home = '{{ Servers[ServerNum].Installations[InstallationNum].ClusterHome }}'
+   cluster_home = '/runtime/gem_cluster_{{ Servers[ServerNum].DSID }}'
 
    mvnEnv = dict()
    mvnEnv['JAVA_HOME'] = '/runtime/java'
