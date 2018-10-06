@@ -1,6 +1,7 @@
 .venv/
 *.pyc
 cluster.json
+inventory.ini
 aws_runtime.json
 aws_runtime_storage.json
 .classpath

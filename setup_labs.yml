@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+    ansible_ssh_private_key_file: ihg-keypair.pem
+  remote_user: ec2-user
+  become: no
+  tasks:
+  - name: copy files to home
+    copy:
+      src: gemfire-starter.zip
+      dest: /home/ec2-user

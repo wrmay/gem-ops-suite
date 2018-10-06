@@ -220,4 +220,8 @@ if __name__ == '__main__':
     with open(instanceMapFile, 'w') as runtimeFile:
         json.dump(ipTable, runtimeFile, indent = 3)
 
+    with open('inventory.ini', 'w') as inventoryFile:
+        for k,v in ipTable.iteritems():
+            inventoryFile.write(v + '\n')
+
     print('runtime information written to "{0}"'.format(instanceMapFile))

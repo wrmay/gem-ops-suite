@@ -113,9 +113,9 @@ public class LoadPeople {
     		System.exit(1);    		
     	}
     	
-//    	PdxSerializer serializer = new ReflectionBasedAutoSerializer("io.pivotal.pde.sample.*");
-//    	ClientCache cache = new ClientCacheFactory().setPdxSerializer(serializer).addPoolLocator(locatorHost, locatorPort).create();
-    	ClientCache cache = new ClientCacheFactory().addPoolLocator(locatorHost, locatorPort).create();
+    	PdxSerializer serializer = new ReflectionBasedAutoSerializer("io.pivotal.pde.sample.*");
+    	ClientCache cache = new ClientCacheFactory().setPdxSerializer(serializer).addPoolLocator(locatorHost, locatorPort).create();
+//    	ClientCache cache = new ClientCacheFactory().addPoolLocator(locatorHost, locatorPort).create();
 		personRegion = cache.createClientRegionFactory(ClientRegionShortcut.PROXY).create(regionName);
 		
 		Thread []workers = new Thread[threads];
