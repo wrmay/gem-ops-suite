@@ -23,6 +23,7 @@
             "PrivateIP" : "{{ Server.PrivateIP }}",
             "AZ" : "{{ Server.AZ }}",
             "SSHUser" : "ec2-user",
+            "DSID" : "{{ Server.DSID }}",
             "XMX" : "{{ Server.XMX }}",
             "XMN" : "{{ Server.XMN }}",
             "Roles" : [ {% for Role in Server.Roles -%}"{{ Role }}"{%if not loop.last -%},{%- endif %}{%- endfor %}],
@@ -107,16 +108,14 @@
                   "Name" : "ConfigureMaven",
                   "Owner" : "ec2-user"
                 }
-                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
                 ,{
                     "Name" : "InstallGemFireCluster",
-                    "ClusterHome" : "/runtime/gem_cluster_1",
-                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py"]
-                },
-                {
+                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py", "{{ SSHKeyPath }}"]
+                }
+                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
+                ,{
                   "Name" : "InstallGemFireToolkit",
                   "AdditionalFiles" : ["gemfire-toolkit"],
-                  "ClusterHome" : "/runtime/gem_cluster_1",
                   "Owner" : "ec2-user"
                 }
                 {% endif %}
