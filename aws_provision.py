@@ -222,6 +222,12 @@ if __name__ == '__main__':
 
     with open('inventory.ini', 'w') as inventoryFile:
         for k,v in ipTable.iteritems():
-            inventoryFile.write(v + '\n')
+            dsid = k[-4:-3]
+            inventoryFile.write(v + ' name={0} dsid={1}\n'.format(k,dsid))
+
+        inventoryFile.write('\n[locators]\n')
+        for k,v in ipTable.iteritems():
+            if k.endswith('101'):
+                inventoryFile.write(v + '\n')
 
     print('runtime information written to "{0}"'.format(instanceMapFile))

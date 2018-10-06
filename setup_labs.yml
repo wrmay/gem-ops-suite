@@ -5,7 +5,29 @@
   remote_user: ec2-user
   become: no
   tasks:
-  - name: copy files to home
+  - name: copy gemfire-starter.zip to ec2 user home
     copy:
       src: gemfire-starter.zip
       dest: /home/ec2-user
+
+- hosts: locators
+  vars:
+    ansible_ssh_private_key_file: ihg-keypair.pem
+  environment:
+    JAVA_HOME: /runtime/java
+  remote_user: ec2-user
+  become: no
+  tasks:
+  - name: copy gemfire-starter-2.zip to cluster home
+    copy:
+      src: gemfire-starter-2.zip
+      dest: /runtime/gem_cluster_{{ dsid}}/gemfire-starter-2.zip
+
+  - name: start the locators
+    shell: /runtime/gemfire/bin/gfsh start locator --name={{name}}-locator --dir=/runtime/gem_cluster_{{ dsid }}/{{name}}-locator --port=10000
+
+  - name: import the cluster configuration
+    shell: /runtime/gemfire/bin/gfsh -e "connect --locator=localhost[10000]" -e "import cluster-configuration --zip-file-name=/runtime/gem_cluster_{{ dsid}}/gemfire-starter-2.zip"
+
+  - name: stop locators
+    shell: /runtime/gemfire/bin/gfsh stop locator --dir=/runtime/gem_cluster_{{ dsid }}/{{ name }}-locator
