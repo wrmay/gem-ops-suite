@@ -63,15 +63,6 @@
                     "Name": "AddHostEntries"
                 },
                 {
-                    "Name": "YumInstallPackages",
-                    "Packages": ["gcc", "python35","python35-devel","python35-pip"]
-                },
-                {
-                    "Name": "PipInstallPackages",
-                    "Packages": ["netifaces"],
-                    "PipProgramName" : "pip-3.5"
-                },
-                {
                     "Name": "MountStorage"
                 },
                 {

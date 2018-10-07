@@ -1,40 +1,4 @@
 ---
-- hosts: all
-  vars:
-    ansible_ssh_private_key_file: ihg-keypair.pem
-  remote_user: ec2-user
-  become: no
-  tasks:
-  - name: copy gemfire-starter.zip to ec2 user home
-    copy:
-      src: gemfire-starter.zip
-      dest: /home/ec2-user
-
-  - name: install pssh
-    become: yes
-    pip:
-      name: pssh
-
-  - name: put the ihg keypair on every host
-    copy:
-      src: ihg-keypair.pem
-      dest: /home/ec2-user/.ssh/id_rsa
-      mode: '600'
-
-  - name: add everyone to the known_hosts file
-    script: sshkeys.sh
-
-  - name: put cluster1_hosts.txt in /home/ec2-user
-    copy:
-      src: cluster1_hosts.txt
-      dest: /home/ec2-user
-
-  - name: put cluster2_hosts.txt in /home/ec2-user
-    copy:
-      src: cluster2_hosts.txt
-      dest: /home/ec2-user
-
-
 - hosts: locators
   vars:
     ansible_ssh_private_key_file: ihg-keypair.pem
@@ -49,15 +13,12 @@
       dest: /runtime/gem_cluster_{{ dsid}}/gemfire-starter-2.zip
 
   - name: start the cluster
-    when: false
     command: /usr/bin/python gf.py start
     args:
       chdir: /runtime/gem_cluster_{{ dsid }}
 
   - name: import the cluster configuration
-    when: false
     command: /runtime/gemfire/bin/gfsh -e "connect --locator=localhost[10000]" -e "import cluster-configuration --zip-file-name=/runtime/gem_cluster_{{ dsid}}/gemfire-starter-2.zip"
 
   - name: stop the cluster
-    when: false
     command: /runtime/gemfire/bin/gfsh -e "connect --locator=localhost[10000]" -e "shutdown --include-locators=true"

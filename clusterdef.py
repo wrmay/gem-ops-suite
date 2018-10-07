@@ -2,17 +2,65 @@
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
 import gemprops
+import json
 import os
+import re
 import socket
 import subprocess
+import tempfile
 
+
+
+def subEnvVars(aString):
+    result = aString
+    varPattern = re.compile(r'\${(.*)}')
+    match = varPattern.search(result)
+    while match is not None:
+        envVarName = match.group(1)
+        if envVarName in os.environ:
+            result = result.replace(match.group(0), os.environ[envVarName])
+
+        match = varPattern.search(result, match.end(0) + 1)
+
+    return result
 
 
 class ClusterDef:
 
-    def __init__(self, cdef):
-        self.clusterDef = cdef
+    def __init__(self, cluster_def_filename):
+        # copy the whole file to a temp file line by line doing env var
+        # substitutions along the way, then load the cluster defintion
+        # from the temp file
+        with open(cluster_def_filename,'r') as f:
+            tfile = tempfile.NamedTemporaryFile(mode='wt',delete=False)
+            tfileName = tfile.name
+            with  tfile:
+                line = f.readline()
+                while(len(line) > 0):
+                    tfile.write(subEnvVars(line))
+                    line = f.readline()
+
+        with open(tfileName,'r') as f:
+            self.clusterDef = json.load(f)
+
+        os.remove(tfileName)
+
         self.thisHost = socket.gethostname()
+
+
+
+    @staticmethod
+    def determineExternalHost(ipaddress):
+
+             #Determine ip address
+            process = subprocess.Popen(["nslookup", ipaddress], stdout=subprocess.PIPE)
+            output = str(process.communicate()[0])
+            startEc2 = output.find("name = ec2-")
+            startEc2 = startEc2+7
+            endEc2 = output.find("amazonaws.com",startEc2)+13
+
+            externalHost = output[startEc2:endEc2]
+            return externalHost
 
     def hostName(self):
         return self.thisHost
@@ -131,7 +179,7 @@ class ClusterDef:
         if self.isBindAddressProperty(key):
             val = self.translateBindAddress(val)
 
-        if key in gemprops.GEMFIRE_PROPS:
+        if key in gemprops.GEMFIRE_PROPS or key.startswith('security-'):
             return '--J="-Dgemfire.{0}={1}"'.format(key,val)
 
         else:
