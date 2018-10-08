@@ -33,3 +33,8 @@
     copy:
       src: cluster2_hosts.txt
       dest: /home/ec2-user
+
+  - name: copy security.json to the cluster home directory
+    copy:
+      src: security.json
+      dest: /runtime/gem_cluster_{{ dsid }}
