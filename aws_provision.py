@@ -221,3 +221,11 @@ if __name__ == '__main__':
         json.dump(ipTable, runtimeFile, indent = 3)
 
     print('runtime information written to "{0}"'.format(instanceMapFile))
+
+    # now enhance the context with the public ip addresses so
+    # they can be used in templates
+    for server in context['Servers']:
+        server['PublicIpAddress'] = ipTable[server['Name']]
+
+    renderTemplate(templateDir,'inventory.ini.tpl',context,here)
+    print('ansible inventory file written to {}'.format(os.path.join(here,'inventory.ini')))
