@@ -8,9 +8,36 @@ import jinja2
 import json
 import os
 import os.path
+import subprocess
 import sys
 import threading
 import time
+
+def runListQuietly(args):
+    p = subprocess.Popen(args, stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    output = p.communicate()
+    if p.returncode != 0:
+        raise Exception('"{0}" failed with the following output: {1}'.format(' '.join(list(args)), output[0]))
+
+def runQuietly(*args):
+    runListQuietly(list(args))
+
+def runRemote(sshKeyPath, user, host, *args):
+    prefix = ['ssh', '-o','StrictHostKeyChecking=no',
+                        '-t','-q',
+                        '-i', sshKeyPath,
+                        '{0}@{1}'.format(user, host)]
+
+    subprocess.check_call(prefix + list(args))
+
+def runRemoteQuietly(sshKeyPath, user, host, *args):
+    prefix = ['ssh', '-o','StrictHostKeyChecking=no',
+                        '-t','-q',
+                        '-i', sshKeyPath,
+                        '{0}@{1}'.format(user, host)]
+
+    runListQuietly( prefix + list(args))
+
 
 def renderTemplate(directory, templateFile, context, outDir):
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(directory))
@@ -131,6 +158,7 @@ if __name__ == '__main__':
     templateDir = os.path.join(here,'templates')
     storageMapFile = os.path.join(here,'aws_runtime_storage.json')
     instanceMapFile = os.path.join(here,'aws_runtime.json')
+    setupTasksDir = os.path.join(here,'setuptasks')
 
     #read the environment file
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(configDir))
@@ -225,7 +253,42 @@ if __name__ == '__main__':
     # now enhance the context with the public ip addresses so
     # they can be used in templates
     for server in context['Servers']:
-        server['PublicIpAddress'] = ipTable[server['Name']]
+        ip = ipTable[server['Name']]
+        server['PublicIpAddress'] = ip
+        server['PublicIP'] = ip
+                
+        # According to https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-hostnames
+        #
+        # A public (external) DNS hostname takes the form ec2-public-ipv4-address.compute-1.amazonaws.com for the us-east-1 region,
+        # and ec2-public-ipv4-address.region.compute.amazonaws.com for other regions.
+        if context['RegionName'] == 'us-east-1':
+            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.compute-1.amazonaws.com'
+        else:
+            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + 'compute.amazonaws.com'
 
     renderTemplate(templateDir,'inventory.ini.tpl',context,here)
     print('ansible inventory file written to {}'.format(os.path.join(here,'inventory.ini')))
+    
+    # now do the final setup steps
+    serverNum = -1
+    for server in context['Servers']:
+        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'], 'sudo', 'yum','install','-y','wget','unzip', 'rsync')
+        serverNum += 1
+        context['ServerNum'] = serverNum
+        
+        # this is a simplified version of setup.py - at some point it may be useful 
+        # to bring in more functionality from setup.py like support for additional files and directories
+        for installation in ['MountStorage']:
+            installationDir = os.path.join(setupTasksDir,installation)
+            renderTemplate(installationDir,'setup.py.tpl',context,installationDir)
+            
+            runQuietly('rsync', '-avz','--delete',
+                '-e' ,'ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
+                installationDir + '/', server['SSHUser'] + '@' + server['PublicIP'] + ':/tmp/setup')
+
+            runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
+                        'sudo', 'python','/tmp/setup/setup.py')
+
+            runRemoteQuietly(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
+                        'rm','-rf', '/tmp/setup')
+

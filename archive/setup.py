@@ -117,7 +117,7 @@ if __name__ == '__main__':
     serverNum = -1
     for server in context['Servers']:
         # assuming a yum based linux
-        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'], 'sudo', 'yum','install','-y','wget','unzip')
+        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'], 'sudo', 'yum','install','-y','wget','unzip', 'rsync')
 
         serverNum += 1
         installationNum = -1
