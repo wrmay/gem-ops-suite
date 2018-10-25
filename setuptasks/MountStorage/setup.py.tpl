@@ -20,7 +20,8 @@ def hasFileSystem(deviceName):
     #TODO would be better to start with the assumption that there is a
     # file system and look for evidence that there is not
     result = False  
-    lsblk = subprocess.check_output(['lsblk','-o', 'NAME,FSTYPE', '-l', '--noheadings'])
+    p = subprocess.Popen(['lsblk','-o', 'NAME,FSTYPE', '-l', '--noheadings'],stdout=subprocess.PIPE, stderr = subprocess.STDOUT)
+    (lsblk,_) = p.communicate()
     for line in lsblk.splitlines():
         if line.startswith(deviceName):
             words = line.split()
@@ -31,7 +32,8 @@ def hasFileSystem(deviceName):
     return result
     
 def isMounted(deviceName):
-     mountOutput = subprocess.check_output(['mount'])
+     p = subprocess.Popen(['mount'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+     (mountOutput,_) = p.communicate()
      result = False
      for line in mountOutput.splitlines():
           if line.lower().find(deviceName.lower()) != -1:
