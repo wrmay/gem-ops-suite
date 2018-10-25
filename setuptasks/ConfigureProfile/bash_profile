@@ -7,9 +7,11 @@ fi
 
 # User specific environment and startup programs
 
-PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/runtime/gemfire/bin:/runtime/java/bin:/runtime/maven/bin
+
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/runtime/gemfire/bin:/runtime/maven/bin
+
 GEMFIRE=/runtime/gemfire
-JAVA_HOME=/runtime/java
+JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
 
 export PATH
 export GEMFIRE

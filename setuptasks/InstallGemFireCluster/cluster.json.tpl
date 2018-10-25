@@ -1,7 +1,7 @@
 {
     "global-properties":{
         "gemfire": "/runtime/gemfire",
-        "java-home" : "/runtime/java",
+        "java-home" : "/etc/alternatives/java_sdk_1.8.0",
         "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
