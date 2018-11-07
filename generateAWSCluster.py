@@ -21,7 +21,7 @@ def initializeRefData():
     regionProps = dict()
 
     #create instanceProps map
-    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64),('r4.xlarge',30),('r4.2xlarge',61),('r4.4xlarge',122)]
+    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64),('r4.xlarge',30),('r4.2xlarge',61),('r4.4xlarge',122),('m5.2xlarge',32)]
     for itype, ram in ramInfo:
         instanceProps[itype] = dict()
         instanceProps[itype]['RAM'] = ram
@@ -92,8 +92,8 @@ if __name__ == '__main__':
         server['XMN'] = Xmn
 
 
-    # AMI can be at the top level, at least for now
-    context['AMI'] = regionProps[context['RegionName']]['AMI']
+    # skipping AMI lookup since it is hard coded in this branch
+    # context['AMI'] = regionProps[context['RegionName']]['AMI']
 
     # process extensions
     if 'Extensions' in context:

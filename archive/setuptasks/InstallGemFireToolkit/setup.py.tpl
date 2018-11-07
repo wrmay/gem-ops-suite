@@ -11,7 +11,7 @@ if __name__ == '__main__':
    cluster_home = '{{ Servers[ServerNum].Installations[InstallationNum].ClusterHome }}'
 
    mvnEnv = dict()
-   mvnEnv['JAVA_HOME'] = '/runtime/java'
+   mvnEnv['JAVA_HOME'] = '/etc/alternatives/java_sdk_1.8.0'
 
    if len(owner) > 0:
       subprocess.check_call(['sudo','-u',owner,'-E', '/runtime/maven/bin/mvn','-DskipTests','package'], cwd='/tmp/setup' , env=mvnEnv)

@@ -1,0 +1,22 @@
+{
+  "EnvironmentName" : "Test",
+  "SSHKeyPairName" : "yak-keypair",
+  "RegionName": "NA",
+  "SSHKeyPath": "/Users/rmay/Downloads/yak-keypair.pem",
+  "Servers" : [
+    {
+      "Name" : "gem1101",
+        "PrivateIP" : "192.168.1.101",
+        "AZ" : "A",
+        "InstanceType" : "m4.2xlarge",
+        "Roles" : ["DataNode","Locator"]
+    },
+    {
+      "Name" : "gem1102",
+      "PrivateIP" : "192.168.1.102",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["DataNode"]
+    }
+  ]
+}

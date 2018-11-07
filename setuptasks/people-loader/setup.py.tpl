@@ -15,7 +15,7 @@ if __name__ == '__main__':
    print 'copied people-loader to {0}'.format(targetDir)
 
    mvnEnv = dict()
-   mvnEnv['JAVA_HOME'] = '/runtime/java'
+   mvnEnv['JAVA_HOME'] = '/etc/alternatives/java_sdk_1.8.0'
    subprocess.check_call(['sudo','-u',owner,'-E', '/runtime/maven/bin/mvn','clean', 'install'],cwd=targetDir, env=mvnEnv)
    print 'built people-loader'
    
