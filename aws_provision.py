@@ -266,6 +266,10 @@ if __name__ == '__main__':
         else:
             server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + 'compute.amazonaws.com'
 
+
+    renderTemplate(templateDir,'cluster.json.tpl',context,here)
+    print('cluster definition file written to {}'.format(os.path.join(here,'cluster.json')))
+
     renderTemplate(templateDir,'inventory.ini.tpl',context,here)
     print('ansible inventory file written to {}'.format(os.path.join(here,'inventory.ini')))
     

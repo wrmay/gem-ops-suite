@@ -2,9 +2,10 @@
 # Copyright (c) 2015-2016 Pivotal Software, Inc. All Rights Reserved.
 #
 
-HANDLED_PROPS=['gemfire','java-home','cluster-home', 'bind-address', 'port',
-               'jvm-options','server-bind-address', 'server-port', 'classpath'
-               , 'hostname-for-clients']
+HANDLED_PROPS=['gemfire','java-home','cluster-home',   'jvm-options', 'port',
+              'server-port', 'classpath', 'hostname-for-clients',
+              'properties-file','security-properties-file','user','password',
+              'max-threads', 'max-connections']
 
 
 GEMFIRE_PROPS=[
@@ -15,7 +16,7 @@ GEMFIRE_PROPS=[
     ,'async-distribution-timeout'
     ,'async-max-queue-size'
     ,'async-queue-timeout'
-#   ,'bind-address' handled by a gfsh --bind-address arg instead of a --J-D
+    ,'bind-address'
     ,'cache-xml-file'
     ,'cluster-configuration-dir'
     ,'cluster-ssl-ciphers'
@@ -116,11 +117,10 @@ GEMFIRE_PROPS=[
     ,'security-client-dhalgo'
     ,'security-log-file'
     ,'security-log-level'
-    ,'security-manager'
     ,'security-peer-auth-init'
     ,'security-peer-authenticator'
     ,'security-peer-verifymember-timeout'
-#   ,'server-bind-address'  this is set using a gfsh --server-bind-address argument not a --J-D argument
+    ,'server-bind-address'
     ,'server-ssl-ciphers'
     ,'server-ssl-enabled'
     ,'server-ssl-keystore'
@@ -133,9 +133,24 @@ GEMFIRE_PROPS=[
     ,'socket-buffer-size'
     ,'socket-lease-time'
     ,'ssl-ciphers'
+    ,'ssl-cluster-alias'
+    ,'ssl-default-alias'
     ,'ssl-enabled'
+    ,'ssl-enabled-components'
+    ,'ssl-gateway-alias'
+    ,'ssl-jmx-alias'
+    ,'ssl-keystore'
+    ,'ssl-keystore-password'
+    ,'ssl-keystore-type'
+    ,'ssl-locator-alias'
     ,'ssl-protocols'
     ,'ssl-require-authentication'
+    ,'ssl-server-alias'
+    ,'ssl-truststore'
+    ,'ssl-truststore-password'
+    ,'ssl-truststore-type'
+    ,'ssl-web-alias'
+    ,'ssl-web-require-authentication'
     ,'start-dev-rest-api'
     ,'start-locator'
     ,'statistic-archive-file'

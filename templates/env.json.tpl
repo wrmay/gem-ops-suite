@@ -57,66 +57,7 @@
       {% endif %}
               }
             ],
-            "Installations" : [
-                {
-                    "Name": "AddHostEntries"
-                },
-                {
-                    "Name": "MountStorage"
-                },
-                {
-                    "Name": "YumInstallPackages",
-                    "Packages": ["java-1.8.0-openjdk-devel.x86_64"]
-                },
-                {
-                    "Name" : "CopyArchives",
-                    "Archives" : [
-                        {
-                            "Name" : "GemFire 9.3.0",
-                            "ArchiveURL" : "http://download.pivotal.com.s3.amazonaws.com/gemfire/9.3.0/pivotal-gemfire-9.3.0.zip",
-                            "RootDir" : "pivotal-gemfire-9.3.0",
-                            "UnpackInDir" : "/runtime",
-                            "LinkName" : "gemfire"
-                        }
-                        , {
-                            "Name" : "Apache Maven 3.3.9",
-                            "ArchiveURL" : "https://s3-us-west-2.amazonaws.com/rmay.pivotal.io.software/apache-maven-3.3.9-bin.tar.gz",
-                            "RootDir" : "apache-maven-3.3.9",
-                            "UnpackInDir" : "/runtime",
-                            "LinkName" : "maven"
-                        }
-                    ]
-                },
-                {
-                    "Name" : "ConfigureProfile",
-                    "Owner" : "ec2-user"
-                }
-                ,{
-                  "Name" : "ConfigureMaven",
-                  "Owner" : "ec2-user"
-                }
-                {% if  "DataNode" in Server.Roles or "Locator" in Server.Roles %}
-                ,
-                {
-                    "Name" : "InstallGemFireCluster",
-                    "ClusterHome" : "/runtime/gem_cluster_1",
-                    "AdditionalFiles" : ["cluster.py","clusterdef.py","gemprops.py", "gf.py"]
-                },
-                {
-                  "Name" : "InstallGemFireToolkit",
-                  "AdditionalFiles" : ["gemfire-toolkit"],
-                  "ClusterHome" : "/runtime/gem_cluster_1",
-                  "Owner" : "ec2-user"
-                }
-                {% endif %}
-                {% if "ETL" in Server.Roles %}
-                , {
-                    "Name" : "people-loader",
-                    "TargetDir" : "/runtime/people-loader",
-                    "Owner" : "ec2-user"
-                }
-                {% endif %}
-            ]
+            "Installations" : []
         } {%if not loop.last -%},{%- endif %}
         {% endfor %}
     ]
