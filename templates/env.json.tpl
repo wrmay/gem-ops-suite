@@ -1,6 +1,6 @@
 {
     "EnvironmentName" : "{{ EnvironmentName }}",
-    "RegionName" : "us-east-1",
+    "RegionName" : "{{ RegionName }}",
     "KeyPair" : "{{ SSHKeyPairName }}",
     "SSHKeyPath" : "{{ SSHKeyPath }}",
     {% if Environment %}
@@ -18,7 +18,7 @@
     {% for Server in Servers %}
         {
             "Name" : "{{ Server.Name }}",
-            "ImageId" : "ami-dc4862a3",
+            "ImageId" : "{{ AMI }}",
             "InstanceType" : "{{ Server.InstanceType }}",
             "PrivateIP" : "{{ Server.PrivateIP }}",
             "AZ" : "{{ Server.AZ }}",
