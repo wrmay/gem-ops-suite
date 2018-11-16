@@ -12,4 +12,6 @@ config/env.json
 config/storage.json
 inventory.ini
 cluster.json
+yak-keypair.pem
+
 

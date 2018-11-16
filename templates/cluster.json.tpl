@@ -4,6 +4,7 @@
         "java-home" : "/etc/alternatives/java_sdk_1.8.0",
         "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
+        "security-properties-file" : "/runtime/gem_cluster_1/gfsecurity.properties",
         "distributed-system-id": 1
         {% if Environment and Environment.GemFire %}
         {% for key,val in Environment.GemFire if key.startswith('global-properties-') %}
@@ -32,7 +33,7 @@
         {% endif %}
     },
    "datanode-properties" : {
-        "conserve-sockets" : false,
+        "conserve-sockets" : "false",
         "log-level" : "config",
         "membership-port-range" : "10901-10999",
         "statistic-sampling-enabled" : "true",
