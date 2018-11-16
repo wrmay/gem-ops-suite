@@ -2,7 +2,7 @@
   "EnvironmentName" : "Test",
   "SSHKeyPairName" : "yak-keypair",
   "RegionName": "NA",
-  "SSHKeyPath": "/Users/rmay/Downloads/yak-keypair.pem",
+  "SSHKeyPath": "yak-keypair.pem",
   "Servers" : [
     {
       "Name" : "gem1101",
@@ -17,6 +17,62 @@
       "AZ" : "A",
       "InstanceType" : "m4.2xlarge",
       "Roles" : ["DataNode"]
+    },
+    {
+      "Name" : "gem1103",
+      "PrivateIP" : "192.168.1.103",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1104",
+      "PrivateIP" : "192.168.1.104",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1105",
+      "PrivateIP" : "192.168.1.105",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1106",
+      "PrivateIP" : "192.168.1.106",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1107",
+      "PrivateIP" : "192.168.1.107",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1108",
+      "PrivateIP" : "192.168.1.108",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1109",
+      "PrivateIP" : "192.168.1.109",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
+    },
+    {
+      "Name" : "gem1110",
+      "PrivateIP" : "192.168.1.110",
+      "AZ" : "A",
+      "InstanceType" : "m4.2xlarge",
+      "Roles" : ["ETL"]
     }
   ]
 }
