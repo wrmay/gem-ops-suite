@@ -1,0 +1,466 @@
+
+[info 2018/11/16 09:59:05.324 EST gem1101-server <ServerConnection on port 10100 Thread 33500> tid=0x8929] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:05.331 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56816 dom #1 port=38790> tid=0x1ee6] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.331 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56817 dom #1 port=38792> tid=0x5e8f] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:05.331 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.333 EST gem1101-server <ServerConnection on port 10100 Thread 33500> tid=0x8929] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:05.349 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56817 dom #1 port=38792> tid=0x5e8f] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:05.350 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.350 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56817 dom #1 port=38792> tid=0x5e8f] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.350 EST gem1101-server <ServerConnection on port 10100 Thread 33500> tid=0x8929] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.369 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56826 dom #1 port=38810> tid=0x1ffa] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:05.369 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56826 dom #1 port=38810> tid=0x1ffa] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:05.369 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.369 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56826 dom #1 port=38810> tid=0x1ffa] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.971 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56829 dom #1 port=38816> tid=0x1fab] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:05.971 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56829 dom #1 port=38816> tid=0x1fab] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:05.971 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:05.971 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56829 dom #1 port=38816> tid=0x1fab] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.140 EST gem1101-server <ServerConnection on port 10100 Thread 33754> tid=0x8a28] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.140 EST gem1101-server <ServerConnection on port 10100 Thread 33754> tid=0x8a28] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.140 EST gem1101-server <ServerConnection on port 10100 Thread 33756> tid=0x8a2a] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.140 EST gem1101-server <ServerConnection on port 10100 Thread 33756> tid=0x8a2a] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.140 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.141 EST gem1101-server <ServerConnection on port 10100 Thread 33757> tid=0x8a2b] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.141 EST gem1101-server <ServerConnection on port 10100 Thread 33754> tid=0x8a28] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.141 EST gem1101-server <ServerConnection on port 10100 Thread 33757> tid=0x8a2b] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.141 EST gem1101-server <ServerConnection on port 10100 Thread 33756> tid=0x8a2a] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.141 EST gem1101-server <ServerConnection on port 10100 Thread 33757> tid=0x8a2b] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.145 EST gem1101-server <ServerConnection on port 10100 Thread 33758> tid=0x8a2c] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.145 EST gem1101-server <ServerConnection on port 10100 Thread 33758> tid=0x8a2c] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.145 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.145 EST gem1101-server <ServerConnection on port 10100 Thread 33758> tid=0x8a2c] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.154 EST gem1101-server <ServerConnection on port 10100 Thread 33760> tid=0x8a2e] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.154 EST gem1101-server <ServerConnection on port 10100 Thread 33760> tid=0x8a2e] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.154 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.154 EST gem1101-server <ServerConnection on port 10100 Thread 33760> tid=0x8a2e] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33761> tid=0x8a2f] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33761> tid=0x8a2f] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33762> tid=0x8a30] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33762> tid=0x8a30] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33761> tid=0x8a2f] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.156 EST gem1101-server <ServerConnection on port 10100 Thread 33762> tid=0x8a30] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.170 EST gem1101-server <ServerConnection on port 10100 Thread 33768> tid=0x8a36] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.170 EST gem1101-server <ServerConnection on port 10100 Thread 33768> tid=0x8a36] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.170 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.170 EST gem1101-server <ServerConnection on port 10100 Thread 33768> tid=0x8a36] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.174 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56588 dom #1 port=38334> tid=0x6593] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.174 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56588 dom #1 port=38334> tid=0x6593] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.174 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.174 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56588 dom #1 port=38334> tid=0x6593] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.216 EST gem1101-server <ServerConnection on port 10100 Thread 33790> tid=0x8a4c] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.216 EST gem1101-server <ServerConnection on port 10100 Thread 33790> tid=0x8a4c] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.216 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.216 EST gem1101-server <ServerConnection on port 10100 Thread 33790> tid=0x8a4c] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.233 EST gem1101-server <ServerConnection on port 10100 Thread 33794> tid=0x8a50] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.233 EST gem1101-server <ServerConnection on port 10100 Thread 33794> tid=0x8a50] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.233 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.233 EST gem1101-server <ServerConnection on port 10100 Thread 33794> tid=0x8a50] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57276 dom #1 port=39710> tid=0x5da4] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57299 dom #1 port=39756> tid=0x5b36] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57276 dom #1 port=39710> tid=0x5da4] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57299 dom #1 port=39756> tid=0x5b36] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.415 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57276 dom #1 port=39710> tid=0x5da4] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57296 dom #1 port=39750> tid=0x6177] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57241 dom #1 port=39640> tid=0x1844] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57296 dom #1 port=39750> tid=0x6177] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57241 dom #1 port=39640> tid=0x1844] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57299 dom #1 port=39756> tid=0x5b36] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57300 dom #1 port=39758> tid=0x643] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57300 dom #1 port=39758> tid=0x643] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57241 dom #1 port=39640> tid=0x1844] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57296 dom #1 port=39750> tid=0x6177] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57300 dom #1 port=39758> tid=0x643] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57301 dom #1 port=39760> tid=0x1c58] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57301 dom #1 port=39760> tid=0x1c58] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57294 dom #1 port=39746> tid=0x5d77] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57294 dom #1 port=39746> tid=0x5d77] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57301 dom #1 port=39760> tid=0x1c58] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56683 dom #1 port=38524> tid=0x65a0] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57234 dom #1 port=39636> tid=0x5f85] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57294 dom #1 port=39746> tid=0x5d77] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56683 dom #1 port=38524> tid=0x65a0] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57273 dom #1 port=39704> tid=0x5c84] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57234 dom #1 port=39636> tid=0x5f85] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57273 dom #1 port=39704> tid=0x5c84] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.418 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57273 dom #1 port=39704> tid=0x5c84] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56683 dom #1 port=38524> tid=0x65a0] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57225 dom #1 port=39606> tid=0x1836] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57234 dom #1 port=39636> tid=0x5f85] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57225 dom #1 port=39606> tid=0x1836] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57297 dom #1 port=39752> tid=0x1cc4] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57297 dom #1 port=39752> tid=0x1cc4] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57305 dom #1 port=39768> tid=0x1fd8] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57305 dom #1 port=39768> tid=0x1fd8] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57225 dom #1 port=39606> tid=0x1836] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57297 dom #1 port=39752> tid=0x1cc4] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.420 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57305 dom #1 port=39768> tid=0x1fd8] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56181 dom #1 port=37520> tid=0x5e0f] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56181 dom #1 port=37520> tid=0x5e0f] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.421 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56181 dom #1 port=37520> tid=0x5e0f] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.424 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57308 dom #1 port=39774> tid=0x5fa0] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.424 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57308 dom #1 port=39774> tid=0x5fa0] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.424 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.424 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57308 dom #1 port=39774> tid=0x5fa0] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.425 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57309 dom #1 port=39776> tid=0x5dc3] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.425 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57309 dom #1 port=39776> tid=0x5dc3] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.425 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.425 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57309 dom #1 port=39776> tid=0x5dc3] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.429 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57311 dom #1 port=39780> tid=0x1cfb] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.429 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57311 dom #1 port=39780> tid=0x1cfb] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.429 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.429 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57311 dom #1 port=39780> tid=0x1cfb] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.440 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57320 dom #1 port=39798> tid=0x1f77] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:06.440 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57320 dom #1 port=39798> tid=0x1f77] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:06.440 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.440 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57320 dom #1 port=39798> tid=0x1f77] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.627 EST gem1101-server <ServerConnection on port 10100 Thread 31605> tid=0x81bb] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.627 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=55580 dom #1 port=36316> tid=0x1c0] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.628 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=52678 dom #1 port=57950> tid=0x195] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.630 EST gem1101-server <ServerConnection on port 10100 Thread 31485> tid=0x8143] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.631 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=52399 dom #1 port=57394> tid=0x2c11] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.631 EST gem1101-server <ServerConnection on port 10100 Thread 31388> tid=0x80e3] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.632 EST gem1101-server <ServerConnection on port 10100 Thread 31409> tid=0x80f7] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.635 EST gem1101-server <ServerConnection on port 10100 Thread 31677> tid=0x8203] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.635 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=53994 dom #1 port=32792> tid=0x5c55] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.636 EST gem1101-server <ServerConnection on port 10100 Thread 31483> tid=0x8141] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:06.638 EST gem1101-server <ServerConnection on port 10100 Thread 34354> tid=0x8c83] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.012 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=52594 dom #1 port=57784> tid=0x6178] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.321 EST gem1101-server <ServerConnection on port 10100 Thread 33495> tid=0x8925] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.321 EST gem1101-server <ServerConnection on port 10100 Thread 33496> tid=0x8926] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.325 EST gem1101-server <ServerConnection on port 10100 Thread 33496> tid=0x8926] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.326 EST gem1101-server <ServerConnection on port 10100 Thread 33495> tid=0x8925] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.349 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56816 dom #1 port=38790> tid=0x1ee6] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.356 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56817 dom #1 port=38792> tid=0x5e8f] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.356 EST gem1101-server <ServerConnection on port 10100 Thread 33500> tid=0x8929] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.365 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56816 dom #1 port=38790> tid=0x1ee6] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.366 EST gem1101-server <ServerConnection on port 10100 Thread 33500> tid=0x8929] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.367 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56817 dom #1 port=38792> tid=0x5e8f] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.370 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56826 dom #1 port=38810> tid=0x1ffa] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.371 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56826 dom #1 port=38810> tid=0x1ffa] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.734 EST gem1101-server <ServerConnection on port 10100 Thread 34036> tid=0x8b42] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:07.734 EST gem1101-server <ServerConnection on port 10100 Thread 34036> tid=0x8b42] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:07.734 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.735 EST gem1101-server <ServerConnection on port 10100 Thread 34036> tid=0x8b42] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.782 EST gem1101-server <ServerConnection on port 10100 Thread 34037> tid=0x8b43] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:07.782 EST gem1101-server <ServerConnection on port 10100 Thread 34037> tid=0x8b43] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:07.782 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.782 EST gem1101-server <ServerConnection on port 10100 Thread 34037> tid=0x8b43] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.817 EST gem1101-server <ServerConnection on port 10100 Thread 34042> tid=0x8b48] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:07.817 EST gem1101-server <ServerConnection on port 10100 Thread 34042> tid=0x8b48] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:07.817 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.817 EST gem1101-server <ServerConnection on port 10100 Thread 34042> tid=0x8b48] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.841 EST gem1101-server <ServerConnection on port 10100 Thread 34043> tid=0x8b49] Connection: shared=false ordered=true failed to connect to peer 192.168.1.102(gem1102-server:18879)<v11>:10901 because: java.net.ConnectException: Connection timed out (Connection timed out)
+
+[info 2018/11/16 09:59:07.841 EST gem1101-server <ServerConnection on port 10100 Thread 34043> tid=0x8b49] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:07.841 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.841 EST gem1101-server <ServerConnection on port 10100 Thread 34043> tid=0x8b49] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:07.971 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56829 dom #1 port=38816> tid=0x1fab] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:07.973 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56829 dom #1 port=38816> tid=0x1fab] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.130 EST gem1101-server <ServerConnection on port 10100 Thread 33091> tid=0x878f] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:08.130 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.130 EST gem1101-server <ServerConnection on port 10100 Thread 33091> tid=0x878f] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.141 EST gem1101-server <ServerConnection on port 10100 Thread 33754> tid=0x8a28] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.141 EST gem1101-server <ServerConnection on port 10100 Thread 33756> tid=0x8a2a] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.142 EST gem1101-server <ServerConnection on port 10100 Thread 33757> tid=0x8a2b] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.145 EST gem1101-server <ServerConnection on port 10100 Thread 33754> tid=0x8a28] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.146 EST gem1101-server <ServerConnection on port 10100 Thread 33758> tid=0x8a2c] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.146 EST gem1101-server <ServerConnection on port 10100 Thread 33756> tid=0x8a2a] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.147 EST gem1101-server <ServerConnection on port 10100 Thread 33757> tid=0x8a2b] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.148 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=55012 dom #1 port=35180> tid=0x1827] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.149 EST gem1101-server <ServerConnection on port 10100 Thread 33758> tid=0x8a2c] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.154 EST gem1101-server <ServerConnection on port 10100 Thread 33760> tid=0x8a2e] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.156 EST gem1101-server <ServerConnection on port 10100 Thread 33760> tid=0x8a2e] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.156 EST gem1101-server <ServerConnection on port 10100 Thread 33761> tid=0x8a2f] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.157 EST gem1101-server <ServerConnection on port 10100 Thread 33762> tid=0x8a30] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.158 EST gem1101-server <ServerConnection on port 10100 Thread 33761> tid=0x8a2f] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.159 EST gem1101-server <ServerConnection on port 10100 Thread 33762> tid=0x8a30] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.171 EST gem1101-server <ServerConnection on port 10100 Thread 33768> tid=0x8a36] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.172 EST gem1101-server <ServerConnection on port 10100 Thread 33768> tid=0x8a36] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.174 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56588 dom #1 port=38334> tid=0x6593] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.176 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56588 dom #1 port=38334> tid=0x6593] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.216 EST gem1101-server <ServerConnection on port 10100 Thread 33790> tid=0x8a4c] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.218 EST gem1101-server <ServerConnection on port 10100 Thread 33790> tid=0x8a4c] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.234 EST gem1101-server <ServerConnection on port 10100 Thread 33794> tid=0x8a50] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.235 EST gem1101-server <ServerConnection on port 10100 Thread 33794> tid=0x8a50] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57276 dom #1 port=39710> tid=0x5da4] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57299 dom #1 port=39756> tid=0x5b36] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.416 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57241 dom #1 port=39640> tid=0x1844] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57296 dom #1 port=39750> tid=0x6177] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.417 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57300 dom #1 port=39758> tid=0x643] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57301 dom #1 port=39760> tid=0x1c58] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.418 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57294 dom #1 port=39746> tid=0x5d77] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57273 dom #1 port=39704> tid=0x5c84] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56683 dom #1 port=38524> tid=0x65a0] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.419 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57234 dom #1 port=39636> tid=0x5f85] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.420 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57225 dom #1 port=39606> tid=0x1836] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.420 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57297 dom #1 port=39752> tid=0x1cc4] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.420 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57305 dom #1 port=39768> tid=0x1fd8] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57276 dom #1 port=39710> tid=0x5da4] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57299 dom #1 port=39756> tid=0x5b36] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.421 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56181 dom #1 port=37520> tid=0x5e0f] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.422 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57241 dom #1 port=39640> tid=0x1844] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.423 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57296 dom #1 port=39750> tid=0x6177] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.425 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57308 dom #1 port=39774> tid=0x5fa0] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.425 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57300 dom #1 port=39758> tid=0x643] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.426 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57309 dom #1 port=39776> tid=0x5dc3] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.426 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57301 dom #1 port=39760> tid=0x1c58] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.428 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57294 dom #1 port=39746> tid=0x5d77] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.429 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57273 dom #1 port=39704> tid=0x5c84] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.429 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57311 dom #1 port=39780> tid=0x1cfb] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.430 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56683 dom #1 port=38524> tid=0x65a0] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.431 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57234 dom #1 port=39636> tid=0x5f85] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.433 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57225 dom #1 port=39606> tid=0x1836] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.434 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57297 dom #1 port=39752> tid=0x1cc4] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.435 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57305 dom #1 port=39768> tid=0x1fd8] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.437 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=56181 dom #1 port=37520> tid=0x5e0f] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.438 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57308 dom #1 port=39774> tid=0x5fa0] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:08.440 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57320 dom #1 port=39798> tid=0x1f77] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.470 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57309 dom #1 port=39776> tid=0x5dc3] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.471 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57311 dom #1 port=39780> tid=0x1cfb] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:08.472 EST gem1101-server <P2P message reader for 192.168.1.102(gem1102-server:18879)<v11>:10901 unshared ordered uid=57320 dom #1 port=39798> tid=0x1f77] 192.168.1.101(gem1101-server:6514)<v12>:10901: Successfully reestablished connection to peer 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:09.735 EST gem1101-server <ServerConnection on port 10100 Thread 34036> tid=0x8b42] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:09.782 EST gem1101-server <ServerConnection on port 10100 Thread 34037> tid=0x8b43] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:09.818 EST gem1101-server <ServerConnection on port 10100 Thread 34042> tid=0x8b48] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[warning 2018/11/16 09:59:09.842 EST gem1101-server <ServerConnection on port 10100 Thread 34043> tid=0x8b49] Connection: Attempting reconnect to peer  192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:10.204 EST gem1101-server <ServerConnection on port 10100 Thread 34312> tid=0x8c59] Performing final check for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901 reason=Unable to form a TCP/IP connection in a reasonable amount of time
+
+[info 2018/11/16 09:59:10.204 EST gem1101-server <unicast receiver,ip-192-168-1-101-33930> tid=0x21] No longer suspecting 192.168.1.102(gem1102-server:18879)<v11>:10901
+
+[info 2018/11/16 09:59:10.205 EST gem1101-server <ServerConnection on port 10100 Thread 34312> tid=0x8c59] Final check passed for suspect member 192.168.1.102(gem1102-server:18879)<v11>:10901

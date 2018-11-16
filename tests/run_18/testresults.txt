@@ -1,0 +1,83 @@
+# Summary
+
+In this run we did not set p2p.backlog 
+
+# Load Test Results 
+
+TASK [debug] *********************************************************************************************************************************************************************
+ok: [54.210.135.88] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 290282",
+        "FAILURES: 165217"
+    ]
+}
+ok: [54.221.139.123] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 277662",
+        "FAILURES: 173323"
+    ]
+}
+ok: [18.234.83.20] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 293659",
+        "FAILURES: 176122"
+    ]
+}
+ok: [75.101.224.194] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 301098",
+        "FAILURES: 173375"
+    ]
+}
+ok: [52.73.43.206] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 287422",
+        "FAILURES: 200180"
+    ]
+}
+ok: [54.209.179.194] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 777038",
+        "FAILURES: 86496"
+    ]
+}
+ok: [18.234.170.178] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 728493",
+        "FAILURES: 81910"
+    ]
+}
+ok: [52.23.161.132] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 703022",
+        "FAILURES: 91821"
+    ]
+}
+
+# GemFire Servers 
+
+```
+[ec2-user@ip-192-168-1-101 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           34045              0.0
+TcpExtListenDrops               34045              0.0
+
+
+[ec2-user@ip-192-168-1-102 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           45777              0.0
+TcpExtListenDrops               45777              0.0
+```
+
+

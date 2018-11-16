@@ -1,0 +1,63 @@
+With p2p.backlog=1280
+
+ok: [54.198.174.112] => {
+    "msg": [
+        "SUCCESSES: 499994",
+        "FAILURES: 6"
+    ]
+}
+ok: [54.209.176.140] => {
+    "msg": [
+        "SUCCESSES: 499991",
+        "FAILURES: 9"
+    ]
+}
+ok: [54.82.241.86] => {
+    "msg": [
+        "SUCCESSES: 499999",
+        "FAILURES: 1"
+    ]
+}
+ok: [18.212.87.161] => {
+    "msg": [
+        "SUCCESSES: 499988",
+        "FAILURES: 12"
+    ]
+}
+ok: [18.212.102.212] => {
+    "msg": [
+        "SUCCESSES: 499980",
+        "FAILURES: 20"
+    ]
+}
+ok: [18.234.148.15] => {
+    "msg": [
+        "SUCCESSES: 499997",
+        "FAILURES: 3"
+    ]
+}
+ok: [34.203.223.219] => {
+    "msg": [
+        "SUCCESSES: 499992",
+        "FAILURES: 8"
+    ]
+}
+ok: [54.85.16.68] => {
+    "msg": [
+        "SUCCESSES: 499997",
+        "FAILURES: 3"
+    ]
+}
+
+
+Accept 	Queue Overflows
+
+[ec2-user@ip-192-168-1-101 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+
+
+[ec2-user@ip-192-168-1-102 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+

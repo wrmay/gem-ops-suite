@@ -1,0 +1,1644 @@
+
+[info 2018/11/16 11:02:41.590 EST gem1102-server <main> tid=0x1] Renamed old log file to "/runtime/gem_cluster_1/gem1102-server/gem1102-server-07-31.log".
+
+[info 2018/11/16 11:02:41.596 EST gem1102-server <main> tid=0x1] Startup Configuration:
+   ### GemFire Properties defined with system property ###
+  archive-disk-space-limit=100
+  archive-file-size-limit=10
+  conserve-sockets=false
+  distributed-system-id=1
+  enable-network-partition-detection=true
+  locators=ec2-34-201-143-20.compute-1.amazonaws.com[10000]
+  log-disk-space-limit=100
+  log-file-size-limit=10
+  log-level=config
+  membership-port-range=10901-10999
+  start-dev-rest-api=false
+  statistic-archive-file=datanode.gfs
+  statistic-sampling-enabled=true
+  tcp-port=10001
+  use-cluster-configuration=true
+  ### GemFire Properties defined with api ###
+  name=gem1102-server
+  ### GemFire Properties defined with file:/runtime/gem_cluster_1/gfsecurity.properties ###
+  ssl-ciphers=********
+  ssl-default-alias=********
+  ssl-enabled-components=********
+  ssl-keystore=********
+  ssl-keystore-password=********
+  ssl-keystore-type=********
+  ssl-protocols=********
+  ssl-truststore=********
+  ssl-truststore-password=********
+  ssl-truststore-type=********
+  ### GemFire Properties defined with launcher ###
+  log-file=/runtime/gem_cluster_1/gem1102-server/gem1102-server.log
+  ### GemFire Properties using default values ###
+  ack-severe-alert-threshold=0
+  ack-wait-threshold=15
+  async-distribution-timeout=0
+  async-max-queue-size=8
+  async-queue-timeout=60000
+  bind-address=
+  cache-xml-file=cache.xml
+  cluster-configuration-dir=
+  cluster-ssl-ciphers=any
+  cluster-ssl-enabled=false
+  cluster-ssl-keystore=
+  cluster-ssl-keystore-password=
+  cluster-ssl-keystore-type=
+  cluster-ssl-protocols=any
+  cluster-ssl-require-authentication=true
+  cluster-ssl-truststore=
+  cluster-ssl-truststore-password=
+  conflate-events=server
+  delta-propagation=true
+  deploy-working-dir=/runtime/gem_cluster_1/gem1102-server
+  disable-auto-reconnect=false
+  disable-tcp=false
+  distributed-transactions=false
+  durable-client-id=
+  durable-client-timeout=300
+  enable-cluster-configuration=true
+  enable-time-statistics=false
+  enforce-unique-host=false
+  gateway-ssl-ciphers=any
+  gateway-ssl-enabled=false
+  gateway-ssl-keystore=
+  gateway-ssl-keystore-password=
+  gateway-ssl-keystore-type=
+  gateway-ssl-protocols=any
+  gateway-ssl-require-authentication=true
+  gateway-ssl-truststore=
+  gateway-ssl-truststore-password=
+  groups=
+  http-service-bind-address=
+  http-service-port=7070
+  http-service-ssl-ciphers=any
+  http-service-ssl-enabled=false
+  http-service-ssl-keystore=
+  http-service-ssl-keystore-password=
+  http-service-ssl-keystore-type=
+  http-service-ssl-protocols=any
+  http-service-ssl-require-authentication=false
+  http-service-ssl-truststore=
+  http-service-ssl-truststore-password=
+  jmx-manager=false
+  jmx-manager-access-file=
+  jmx-manager-bind-address=
+  jmx-manager-hostname-for-clients=
+  jmx-manager-http-port=7070
+  jmx-manager-password-file=
+  jmx-manager-port=1099
+  jmx-manager-ssl-ciphers=any
+  jmx-manager-ssl-enabled=false
+  jmx-manager-ssl-keystore=
+  jmx-manager-ssl-keystore-password=
+  jmx-manager-ssl-keystore-type=
+  jmx-manager-ssl-protocols=any
+  jmx-manager-ssl-require-authentication=true
+  jmx-manager-ssl-truststore=
+  jmx-manager-ssl-truststore-password=
+  jmx-manager-start=false
+  jmx-manager-update-rate=2000
+  load-cluster-configuration-from-dir=false
+  locator-wait-time=0
+  lock-memory=false
+  max-num-reconnect-tries=3
+  max-wait-time-reconnect=60000
+  mcast-address=239.192.81.1
+  mcast-flow-control=1048576, 0.25, 5000
+  mcast-port=0
+  mcast-recv-buffer-size=1048576
+  mcast-send-buffer-size=65535
+  mcast-ttl=32
+  member-timeout=5000
+  memcached-bind-address=
+  memcached-port=0
+  memcached-protocol=ASCII
+  off-heap-memory-size=
+  redis-bind-address=
+  redis-password=
+  redis-port=0
+  redundancy-zone=
+  remote-locators=
+  remove-unresponsive-client=false
+  roles=
+  security-client-accessor=
+  security-client-accessor-pp=
+  security-client-auth-init=
+  security-client-authenticator=
+  security-client-dhalgo=
+  security-log-file=
+  security-log-level=config
+  security-manager=
+  security-peer-auth-init=
+  security-peer-authenticator=
+  security-peer-verifymember-timeout=1000
+  security-post-processor=
+  security-udp-dhalgo=
+  serializable-object-filter=!*
+  server-bind-address=
+  server-ssl-ciphers=any
+  server-ssl-enabled=false
+  server-ssl-keystore=
+  server-ssl-keystore-password=
+  server-ssl-keystore-type=
+  server-ssl-protocols=any
+  server-ssl-require-authentication=true
+  server-ssl-truststore=
+  server-ssl-truststore-password=
+  socket-buffer-size=32768
+  socket-lease-time=60000
+  ssl-cluster-alias=
+  ssl-gateway-alias=
+  ssl-jmx-alias=
+  ssl-locator-alias=
+  ssl-require-authentication=true
+  ssl-server-alias=
+  ssl-web-alias=
+  ssl-web-require-authentication=false
+  start-locator=
+  statistic-sample-rate=1000
+  udp-fragment-size=60000
+  udp-recv-buffer-size=1048576
+  udp-send-buffer-size=65535
+  user-command-packages=
+  validate-serializable-objects=false
+  
+
+[info 2018/11/16 11:02:41.628 EST gem1102-server <main> tid=0x1] 
+  ---------------------------------------------------------------------------
+    
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with this
+    work for additional information regarding copyright ownership.
+     
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+    License for the specific language governing permissions and limitations
+    under the License.
+    
+  ---------------------------------------------------------------------------
+  Build-Date: 2018-01-27 01:04:22 +0000
+  Build-Id: root 12
+  Build-Java-Version: 1.8.0_161
+  Build-Platform: Linux 4.4.0-62-generic amd64
+  GemFire-Source-Date: 2018-01-12 16:54:53 +0000
+  GemFire-Source-Repository: support/9.3
+  GemFire-Source-Revision: 65ac182e9236ed9afb50dcf960212a5d6f3ef527
+  Product-Name: Pivotal GemFire
+  Product-Version: 9.3.0
+  Source-Date: 2018-01-26 16:35:20 +0000
+  Source-Repository: support/9.3
+  Source-Revision: 47d3d26957f6378f711698868350dafb996d7e10
+  Native version: native code unavailable
+  Running on: /192.168.1.102, 8 cpu(s), amd64 Linux 2.6.32-696.30.1.el6.x86_64 
+  Communications version: 75
+  Process ID: 10664
+  User: ec2-user
+  Current dir: /runtime/gem_cluster_1/gem1102-server
+  Home dir: /home/ec2-user
+  Command Line Parameters:
+    -DgemfireSecurityPropertyFile=/runtime/gem_cluster_1/gfsecurity.properties
+    -Dgemfire.start-dev-rest-api=false
+    -Dgemfire.use-cluster-configuration=true
+    -Dgemfire.conserve-sockets=false
+    -Dgemfire.log-level=config
+    -Dgemfire.archive-disk-space-limit=100
+    -Dp2p.backlog=1280
+    -Dgemfire.archive-file-size-limit=10
+    -Dgemfire.membership-port-range=10901-10999
+    -Dtype=datanode
+    -Dgemfire.ALLOW_PERSISTENT_TRANSACTIONS=true
+    -Dgemfire.log-disk-space-limit=100
+    -Dgemfire.locators=ec2-34-201-143-20.compute-1.amazonaws.com[10000]
+    -Dgemfire.log-file-size-limit=10
+    -Dgemfire.enable-network-partition-detection=true
+    -Dgemfire.statistic-archive-file=datanode.gfs
+    -Dgemfire.tcp-port=10001
+    -Dgemfire.distributed-system-id=1
+    -Dgemfire.statistic-sampling-enabled=true
+    -Xmx27500m
+    -Xms27500m
+    -Xmn3388m
+    -XX:+UseConcMarkSweepGC
+    -XX:+UseParNewGC
+    -XX:CMSInitiatingOccupancyFraction=85
+    -Dgemfire.launcher.registerSignalHandlers=true
+    -Djava.awt.headless=true
+    -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
+  Class Path:
+    /runtime/gemfire/lib/geode-core-9.3.0.jar
+    /runtime/gemfire/lib/geode-dependencies.jar
+  Library Path:
+    /usr/java/packages/lib/amd64
+    /usr/lib64
+    /lib64
+    /lib
+    /usr/lib
+  System Properties:
+      awt.toolkit = sun.awt.X11.XToolkit
+      file.encoding = UTF-8
+      file.encoding.pkg = sun.io
+      file.separator = /
+      gemfire.ALLOW_PERSISTENT_TRANSACTIONS = true
+      gemfire.archive-disk-space-limit = 100
+      gemfire.archive-file-size-limit = 10
+      gemfire.conserve-sockets = false
+      gemfire.distributed-system-id = 1
+      gemfire.enable-network-partition-detection = true
+      gemfire.launcher.registerSignalHandlers = true
+      gemfire.locators = ec2-34-201-143-20.compute-1.amazonaws.com[10000]
+      gemfire.log-disk-space-limit = 100
+      gemfire.log-file-size-limit = 10
+      gemfire.log-level = config
+      gemfire.membership-port-range = 10901-10999
+      gemfire.start-dev-rest-api = false
+      gemfire.statistic-archive-file = datanode.gfs
+      gemfire.statistic-sampling-enabled = true
+      gemfire.tcp-port = 10001
+      gemfire.use-cluster-configuration = true
+      gemfireSecurityPropertyFile = /runtime/gem_cluster_1/gfsecurity.properties
+      java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+      java.awt.headless = true
+      java.awt.printerjob = sun.print.PSPrinterJob
+      java.class.version = 52.0
+      java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/endorsed
+      java.ext.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/ext:/usr/java/packages/lib/ext
+      java.home = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre
+      java.io.tmpdir = /tmp
+      java.rmi.server.randomIDs = true
+      java.runtime.name = OpenJDK Runtime Environment
+      java.runtime.version = 1.8.0_191-b12
+      java.specification.name = Java Platform API Specification
+      java.specification.vendor = Oracle Corporation
+      java.specification.version = 1.8
+      java.vendor = Oracle Corporation
+      java.vendor.url = http://java.oracle.com/
+      java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+      java.version = 1.8.0_191
+      java.vm.info = mixed mode
+      java.vm.name = OpenJDK 64-Bit Server VM
+      java.vm.specification.name = Java Virtual Machine Specification
+      java.vm.specification.vendor = Oracle Corporation
+      java.vm.specification.version = 1.8
+      java.vm.vendor = Oracle Corporation
+      java.vm.version = 25.191-b12
+      jna.platform.library.path = /usr/lib64:/lib64:/usr/lib:/lib
+      jnidispatch.path = /tmp/jna--924648796/jna1206875789100522553.tmp
+      line.separator = 
+      os.version = 2.6.32-696.30.1.el6.x86_64
+      p2p.backlog = 1280
+      path.separator = :
+      sun.arch.data.model = 64
+      sun.boot.class.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/classes
+      sun.boot.library.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el6_10.x86_64/jre/lib/amd64
+      sun.cpu.endian = little
+      sun.cpu.isalist = 
+      sun.io.unicode.encoding = UnicodeLittle
+      sun.java.command = org.apache.geode.distributed.ServerLauncher start gem1102-server --server-port=10100
+      sun.java.launcher = SUN_STANDARD
+      sun.jnu.encoding = UTF-8
+      sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+      sun.nio.ch.bugLevel = 
+      sun.os.patch.level = unknown
+      sun.rmi.dgc.server.gcInterval = 9223372036854775806
+      type = datanode
+      user.country = US
+      user.language = en
+      user.timezone = America/New_York
+  Log4J 2 Configuration:
+      jar:file:/runtime/pivotal-gemfire-9.3.0/lib/geode-core-9.3.0.jar!/log4j2.xml
+  ---------------------------------------------------------------------------
+  
+
+[info 2018/11/16 11:02:41.636 EST gem1102-server <main> tid=0x1] Startup Configuration:
+   ### GemFire Properties defined with system property ###
+  archive-disk-space-limit=100
+  archive-file-size-limit=10
+  conserve-sockets=false
+  distributed-system-id=1
+  enable-network-partition-detection=true
+  locators=ec2-34-201-143-20.compute-1.amazonaws.com[10000]
+  log-disk-space-limit=100
+  log-file-size-limit=10
+  log-level=config
+  membership-port-range=10901-10999
+  start-dev-rest-api=false
+  statistic-archive-file=datanode.gfs
+  statistic-sampling-enabled=true
+  tcp-port=10001
+  use-cluster-configuration=true
+  ### GemFire Properties defined with api ###
+  name=gem1102-server
+  ### GemFire Properties defined with file:/runtime/gem_cluster_1/gfsecurity.properties ###
+  ssl-ciphers=********
+  ssl-default-alias=********
+  ssl-enabled-components=********
+  ssl-keystore=********
+  ssl-keystore-password=********
+  ssl-keystore-type=********
+  ssl-protocols=********
+  ssl-truststore=********
+  ssl-truststore-password=********
+  ssl-truststore-type=********
+  ### GemFire Properties defined with launcher ###
+  log-file=/runtime/gem_cluster_1/gem1102-server/gem1102-server.log
+  ### GemFire Properties using default values ###
+  ack-severe-alert-threshold=0
+  ack-wait-threshold=15
+  async-distribution-timeout=0
+  async-max-queue-size=8
+  async-queue-timeout=60000
+  bind-address=
+  cache-xml-file=cache.xml
+  cluster-configuration-dir=
+  cluster-ssl-ciphers=any
+  cluster-ssl-enabled=false
+  cluster-ssl-keystore=
+  cluster-ssl-keystore-password=
+  cluster-ssl-keystore-type=
+  cluster-ssl-protocols=any
+  cluster-ssl-require-authentication=true
+  cluster-ssl-truststore=
+  cluster-ssl-truststore-password=
+  conflate-events=server
+  delta-propagation=true
+  deploy-working-dir=/runtime/gem_cluster_1/gem1102-server
+  disable-auto-reconnect=false
+  disable-tcp=false
+  distributed-transactions=false
+  durable-client-id=
+  durable-client-timeout=300
+  enable-cluster-configuration=true
+  enable-time-statistics=false
+  enforce-unique-host=false
+  gateway-ssl-ciphers=any
+  gateway-ssl-enabled=false
+  gateway-ssl-keystore=
+  gateway-ssl-keystore-password=
+  gateway-ssl-keystore-type=
+  gateway-ssl-protocols=any
+  gateway-ssl-require-authentication=true
+  gateway-ssl-truststore=
+  gateway-ssl-truststore-password=
+  groups=
+  http-service-bind-address=
+  http-service-port=7070
+  http-service-ssl-ciphers=any
+  http-service-ssl-enabled=false
+  http-service-ssl-keystore=
+  http-service-ssl-keystore-password=
+  http-service-ssl-keystore-type=
+  http-service-ssl-protocols=any
+  http-service-ssl-require-authentication=false
+  http-service-ssl-truststore=
+  http-service-ssl-truststore-password=
+  jmx-manager=false
+  jmx-manager-access-file=
+  jmx-manager-bind-address=
+  jmx-manager-hostname-for-clients=
+  jmx-manager-http-port=7070
+  jmx-manager-password-file=
+  jmx-manager-port=1099
+  jmx-manager-ssl-ciphers=any
+  jmx-manager-ssl-enabled=false
+  jmx-manager-ssl-keystore=
+  jmx-manager-ssl-keystore-password=
+  jmx-manager-ssl-keystore-type=
+  jmx-manager-ssl-protocols=any
+  jmx-manager-ssl-require-authentication=true
+  jmx-manager-ssl-truststore=
+  jmx-manager-ssl-truststore-password=
+  jmx-manager-start=false
+  jmx-manager-update-rate=2000
+  load-cluster-configuration-from-dir=false
+  locator-wait-time=0
+  lock-memory=false
+  max-num-reconnect-tries=3
+  max-wait-time-reconnect=60000
+  mcast-address=239.192.81.1
+  mcast-flow-control=1048576, 0.25, 5000
+  mcast-port=0
+  mcast-recv-buffer-size=1048576
+  mcast-send-buffer-size=65535
+  mcast-ttl=32
+  member-timeout=5000
+  memcached-bind-address=
+  memcached-port=0
+  memcached-protocol=ASCII
+  off-heap-memory-size=
+  redis-bind-address=
+  redis-password=
+  redis-port=0
+  redundancy-zone=
+  remote-locators=
+  remove-unresponsive-client=false
+  roles=
+  security-client-accessor=
+  security-client-accessor-pp=
+  security-client-auth-init=
+  security-client-authenticator=
+  security-client-dhalgo=
+  security-log-file=
+  security-log-level=config
+  security-manager=
+  security-peer-auth-init=
+  security-peer-authenticator=
+  security-peer-verifymember-timeout=1000
+  security-post-processor=
+  security-udp-dhalgo=
+  serializable-object-filter=!*
+  server-bind-address=
+  server-ssl-ciphers=any
+  server-ssl-enabled=false
+  server-ssl-keystore=
+  server-ssl-keystore-password=
+  server-ssl-keystore-type=
+  server-ssl-protocols=any
+  server-ssl-require-authentication=true
+  server-ssl-truststore=
+  server-ssl-truststore-password=
+  socket-buffer-size=32768
+  socket-lease-time=60000
+  ssl-cluster-alias=
+  ssl-gateway-alias=
+  ssl-jmx-alias=
+  ssl-locator-alias=
+  ssl-require-authentication=true
+  ssl-server-alias=
+  ssl-web-alias=
+  ssl-web-require-authentication=false
+  start-locator=
+  statistic-sample-rate=1000
+  udp-fragment-size=60000
+  udp-recv-buffer-size=1048576
+  udp-send-buffer-size=65535
+  user-command-packages=
+  validate-serializable-objects=false
+  
+
+[info 2018/11/16 11:02:41.642 EST gem1102-server <main> tid=0x1] initializing InternalDataSerializer with 3 services
+
+[info 2018/11/16 11:02:41.817 EST gem1102-server <main> tid=0x1] Starting membership services
+
+[info 2018/11/16 11:02:41.909 EST gem1102-server <main> tid=0x1] JGroups channel created (took 91ms)
+
+[info 2018/11/16 11:02:42.072 EST gem1102-server <main> tid=0x1] GemFire P2P Listener started on /192.168.1.102:10001
+
+[info 2018/11/16 11:02:42.074 EST gem1102-server <Geode Failure Detection Server thread 0> tid=0x25] Started failure detection server thread on /192.168.1.102:10976.
+
+[info 2018/11/16 11:02:42.090 EST gem1102-server <main> tid=0x1] Attempting to join the distributed system through coordinator 192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024 using address 192.168.1.102(gem1102-server:10664):10901
+
+[info 2018/11/16 11:02:42.315 EST gem1102-server <unicast receiver,ip-192-168-1-102-42405> tid=0x21] received new view: View[192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024|3] members: [192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024, 192.168.1.101(gem1101-server:14957)<v3>:10901{lead}, 192.168.1.102(gem1102-server:10664)<v3>:10901]
+  old view is: null
+
+[info 2018/11/16 11:02:42.322 EST gem1102-server <main> tid=0x1] Finished joining (took 247ms).
+
+[info 2018/11/16 11:02:42.322 EST gem1102-server <main> tid=0x1] Starting DistributionManager 192.168.1.102(gem1102-server:10664)<v3>:10901.  (took 630 ms)
+
+[info 2018/11/16 11:02:42.325 EST gem1102-server <main> tid=0x1] Initial (distribution manager) view =  View[192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024|3] members: [192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024, 192.168.1.101(gem1101-server:14957)<v3>:10901{lead}, 192.168.1.102(gem1102-server:10664)<v3>:10901]
+
+[info 2018/11/16 11:02:42.325 EST gem1102-server <main> tid=0x1] Admitting member <192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024>. Now there are 1 non-admin member(s).
+
+[info 2018/11/16 11:02:42.326 EST gem1102-server <main> tid=0x1] Admitting member <192.168.1.101(gem1101-server:14957)<v3>:10901>. Now there are 2 non-admin member(s).
+
+[info 2018/11/16 11:02:42.326 EST gem1102-server <main> tid=0x1] Admitting member <192.168.1.102(gem1102-server:10664)<v3>:10901>. Now there are 3 non-admin member(s).
+
+[info 2018/11/16 11:02:42.598 EST gem1102-server <Pooled High Priority Message Processor 3> tid=0x30] Member 192.168.1.101(gem1101-server:14957)<v3>:10901 is not equivalent or in the same redundancy zone.
+
+[info 2018/11/16 11:02:42.607 EST gem1102-server <P2P message reader for 192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024 shared unordered uid=6 port=50378> tid=0x2d] Member 192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024 is not equivalent or in the same redundancy zone.
+
+[info 2018/11/16 11:02:42.608 EST gem1102-server <P2P message reader for 192.168.1.101(gem1101-server:14957)<v3>:10901 shared unordered uid=1 port=50376> tid=0x2c] Member 192.168.1.101(gem1101-server:14957)<v3>:10901 is not equivalent or in the same redundancy zone.
+
+[info 2018/11/16 11:02:42.729 EST gem1102-server <main> tid=0x1] Received cluster configuration from the locator
+
+[info 2018/11/16 11:02:42.863 EST gem1102-server <main> tid=0x1] 
+  ***************************************************************
+  Configuration for  'cluster'
+  
+  Jar files to deployed
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <cache xmlns="http://geode.apache.org/schema/cache" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" copy-on-read="false" is-server="false" lock-lease="120" lock-timeout="60" search-timeout="300" version="1.0" xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd">
+  
+  <disk-store allow-force-compaction="true" max-oplog-size="50" name="pdx-disk-store">
+      <disk-dirs>
+        <disk-dir>/data/pdx</disk-dir>
+      </disk-dirs>
+    </disk-store>
+  <disk-store allow-force-compaction="true" max-oplog-size="200" name="person-disk-store">
+      <disk-dirs>
+        <disk-dir>/data/person</disk-dir>
+      </disk-dirs>
+    </disk-store>
+  <pdx disk-store-name="pdx-disk-store" persistent="true" read-serialized="true"/>
+  <region name="person">
+      <region-attributes data-policy="partition" disk-store-name="person-disk-store" statistics-enabled="true">
+        <entry-idle-time>
+          <expiration-attributes action="destroy" timeout="60"/>
+        </entry-idle-time>
+        <partition-attributes redundant-copies="1"/>
+        <eviction-attributes>
+          <lru-heap-percentage action="overflow-to-disk"/>
+        </eviction-attributes>
+      </region-attributes>
+    </region>
+  </cache>
+  
+
+[info 2018/11/16 11:02:43.060 EST gem1102-server <main> tid=0x1] Requesting cluster configuration
+
+[info 2018/11/16 11:02:43.247 EST gem1102-server <main> tid=0x1] Initializing region _monitoringRegion_192.168.1.102<v3>10901
+
+[info 2018/11/16 11:02:43.283 EST gem1102-server <main> tid=0x1] Region _monitoringRegion_192.168.1.102<v3>10901 requesting initial image from 192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024
+
+[info 2018/11/16 11:02:43.287 EST gem1102-server <main> tid=0x1] _monitoringRegion_192.168.1.102<v3>10901 is done getting image from 192.168.1.101(gem1101-locator:26095:locator)<ec><v0>:1024. isDeltaGII is false
+
+[info 2018/11/16 11:02:43.288 EST gem1102-server <main> tid=0x1] Initialization of region _monitoringRegion_192.168.1.102<v3>10901 completed
+
+[info 2018/11/16 11:02:43.979 EST gem1102-server <main> tid=0x1] Initialized cache service org.apache.geode.connectors.jdbc.internal.JdbcConnectorServiceImpl
+
+[info 2018/11/16 11:02:43.997 EST gem1102-server <main> tid=0x1] Initialized cache service org.apache.geode.cache.lucene.internal.LuceneServiceImpl
+
+[info 2018/11/16 11:02:44.000 EST gem1102-server <main> tid=0x1] Initialized cache service com.gemstone.gemfire.OldClientSupportProvider
+
+[info 2018/11/16 11:02:44.166 EST gem1102-server <main> tid=0x1] Recovered disk store pdx-disk-store with unique id cae1e7e75c42431e-b2930059f66fde33
+
+[info 2018/11/16 11:02:44.172 EST gem1102-server <main> tid=0x1] Recovering oplog#7 /data/pdx/BACKUPpdx-disk-store_7.drf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.172 EST gem1102-server <main> tid=0x1] Recovering oplog#1 /data/pdx/BACKUPpdx-disk-store_1.drf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.175 EST gem1102-server <main> tid=0x1] Recovering oplog#7 /data/pdx/BACKUPpdx-disk-store_7.crf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.176 EST gem1102-server <main> tid=0x1] Recovering oplog#1 /data/pdx/BACKUPpdx-disk-store_1.krf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.187 EST gem1102-server <main> tid=0x1] recovery oplog load took 15 ms
+
+[info 2018/11/16 11:02:44.189 EST gem1102-server <Oplog Delete Task> tid=0x55] Deleted oplog#7 crf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.189 EST gem1102-server <Oplog Delete Task> tid=0x55] Deleted oplog#7 drf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.193 EST gem1102-server <main> tid=0x1] Created oplog#8 drf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.195 EST gem1102-server <main> tid=0x1] Created oplog#8 crf for disk store pdx-disk-store.
+
+[info 2018/11/16 11:02:44.197 EST gem1102-server <main> tid=0x1] recovery region initialization took 8 ms
+
+[info 2018/11/16 11:02:44.207 EST gem1102-server <main> tid=0x1] Initializing region PdxTypes
+
+[info 2018/11/16 11:02:44.339 EST gem1102-server <main> tid=0x1] Region PdxTypes requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:02:44.343 EST gem1102-server <main> tid=0x1] PdxTypes is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is true
+
+[info 2018/11/16 11:02:44.343 EST gem1102-server <main> tid=0x1] Region PdxTypes initialized persistent id: /192.168.1.102:/data/pdx created at timestamp 1542384164205 version 0 diskStoreId cae1e7e75c42431e-b2930059f66fde33 name gem1102-server with data from 192.168.1.101(gem1101-server:14957)<v3>:10901.
+
+[info 2018/11/16 11:02:44.344 EST gem1102-server <main> tid=0x1] Initialization of region PdxTypes completed
+
+[info 2018/11/16 11:02:44.349 EST gem1102-server <main> tid=0x1] Created disk store person-disk-store with unique id 7f45b611bc814a3c-b65e6623094d92b1
+
+[info 2018/11/16 11:02:44.350 EST gem1102-server <main> tid=0x1] recovery region initialization took 0 ms
+
+[info 2018/11/16 11:02:44.394 EST gem1102-server <main> tid=0x1] Initializing region __PR
+
+[info 2018/11/16 11:02:44.403 EST gem1102-server <main> tid=0x1] Region __PR requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:02:44.416 EST gem1102-server <main> tid=0x1] __PR is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:02:44.417 EST gem1102-server <main> tid=0x1] Initialization of region __PR completed
+
+[info 2018/11/16 11:02:44.429 EST gem1102-server <main> tid=0x1] Partitioned Region /person is created with prId=2
+
+[info 2018/11/16 11:02:44.464 EST gem1102-server <main> tid=0x1] Overridding MemoryPoolMXBean heap threshold bytes 0 on pool CMS Old Gen
+
+[info 2018/11/16 11:02:44.535 EST gem1102-server <main> tid=0x1] Cache server connection listener bound to address ip-192-168-1-102.ec2.internal-0.0.0.0/0.0.0.0:10100 with backlog 1,000.
+
+[info 2018/11/16 11:02:44.544 EST gem1102-server <main> tid=0x1] ClientHealthMonitorThread maximum allowed time between pings: 60,000
+
+[warning 2018/11/16 11:02:44.545 EST gem1102-server <main> tid=0x1] Handshaker max Pool size: 4
+
+[info 2018/11/16 11:02:44.554 EST gem1102-server <main> tid=0x1] CacheServer Configuration:   port=10100 max-connections=800 max-threads=0 notify-by-subscription=true socket-buffer-size=32768 maximum-time-between-pings=60000 maximum-message-count=230000 message-time-to-live=180 eviction-policy=none capacity=1 overflow directory=. groups=[] loadProbe=ConnectionCountProbe loadPollInterval=5000 tcpNoDelay=true
+
+[info 2018/11/16 11:03:32.853 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Caching PdxType[dsid=1, typenum=14170621
+          name=io.pivotal.pde.sample.Address
+          fields=[
+          street:String:0:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=-1
+          city:String:1:1:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=1
+          state:String:2:2:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=2
+          zip:String:3:3:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=3]]
+
+[info 2018/11/16 11:03:32.888 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Caching PdxType[dsid=1, typenum=15593274
+          name=io.pivotal.pde.sample.Person
+          fields=[
+          age:int:0:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=0
+          lastName:String:1:idx0(relativeOffset)=4:idx1(vlfOffsetIndex)=-1
+          firstName:String:2:1:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=1
+          phone:String:3:2:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=2
+          address:Object:4:3:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=3
+          gender:String:5:4:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=4
+          id:Object:6:5:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=5]]
+
+[info 2018/11/16 11:03:32.920 EST gem1102-server <ServerConnection on port 10100 Thread 11> tid=0x74] Server connection from [identity(192.168.1.103(27109:loner):45112:945a431d,connection=1; port=48354]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:32.997 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_74
+
+[info 2018/11/16 11:03:33.005 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] Initializing region _B__person_42
+
+[info 2018/11/16 11:03:33.008 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Region _B__person_74 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.010 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] _B__person_74 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.010 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] Region _B__person_42 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.010 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_74 completed
+
+[info 2018/11/16 11:03:33.012 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] _B__person_42 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.012 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] Initialization of region _B__person_42 completed
+
+[info 2018/11/16 11:03:33.012 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.038 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_6
+
+[info 2018/11/16 11:03:33.038 EST gem1102-server <ServerConnection on port 10100 Thread 76> tid=0xb7] Initializing region _B__person_69
+
+[info 2018/11/16 11:03:33.039 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_6 completed
+
+[info 2018/11/16 11:03:33.039 EST gem1102-server <ServerConnection on port 10100 Thread 76> tid=0xb7] Initialization of region _B__person_69 completed
+
+[info 2018/11/16 11:03:33.071 EST gem1102-server <Pooled Waiting Message Processor 1> tid=0xac] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.112 EST gem1102-server <ServerConnection on port 10100 Thread 74> tid=0xb3] Initializing region _B__person_23
+
+[info 2018/11/16 11:03:33.117 EST gem1102-server <ServerConnection on port 10100 Thread 74> tid=0xb3] Initialization of region _B__person_23 completed
+
+[info 2018/11/16 11:03:33.141 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_35
+
+[info 2018/11/16 11:03:33.157 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Region _B__person_35 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.158 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] _B__person_35 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.159 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_35 completed
+
+[info 2018/11/16 11:03:33.159 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.221 EST gem1102-server <ServerConnection on port 10100 Thread 172> tid=0x11e] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35798]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:33.245 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_47
+
+[info 2018/11/16 11:03:33.250 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_47 completed
+
+[info 2018/11/16 11:03:33.270 EST gem1102-server <ServerConnection on port 10100 Thread 75> tid=0xb6] Initializing region _B__person_25
+
+[info 2018/11/16 11:03:33.275 EST gem1102-server <ServerConnection on port 10100 Thread 75> tid=0xb6] Initialization of region _B__person_25 completed
+
+[info 2018/11/16 11:03:33.306 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.337 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_57
+
+[info 2018/11/16 11:03:33.341 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_57 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.343 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_57 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.344 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_57 completed
+
+[info 2018/11/16 11:03:33.348 EST gem1102-server <ServerConnection on port 10100 Thread 73> tid=0xb4] Initializing region _B__person_1
+
+[info 2018/11/16 11:03:33.358 EST gem1102-server <ServerConnection on port 10100 Thread 73> tid=0xb4] Region _B__person_1 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.359 EST gem1102-server <ServerConnection on port 10100 Thread 73> tid=0xb4] _B__person_1 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.359 EST gem1102-server <ServerConnection on port 10100 Thread 73> tid=0xb4] Initialization of region _B__person_1 completed
+
+[info 2018/11/16 11:03:33.359 EST gem1102-server <ServerConnection on port 10100 Thread 73> tid=0xb4] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.372 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_67
+
+[info 2018/11/16 11:03:33.380 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_67 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.381 EST gem1102-server <ServerConnection on port 10100 Thread 72> tid=0xb5] Initializing region _B__person_60
+
+[info 2018/11/16 11:03:33.381 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_67 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.381 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_67 completed
+
+[info 2018/11/16 11:03:33.382 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.382 EST gem1102-server <ServerConnection on port 10100 Thread 72> tid=0xb5] Initialization of region _B__person_60 completed
+
+[info 2018/11/16 11:03:33.400 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_64
+
+[info 2018/11/16 11:03:33.401 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.402 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_64 completed
+
+[info 2018/11/16 11:03:33.415 EST gem1102-server <ServerConnection on port 10100 Thread 71> tid=0xb2] Initializing region _B__person_73
+
+[info 2018/11/16 11:03:33.416 EST gem1102-server <ServerConnection on port 10100 Thread 71> tid=0xb2] Initialization of region _B__person_73 completed
+
+[info 2018/11/16 11:03:33.431 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.441 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_37
+
+[info 2018/11/16 11:03:33.444 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_37 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.445 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_37 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.445 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_37 completed
+
+[info 2018/11/16 11:03:33.446 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.450 EST gem1102-server <ServerConnection on port 10100 Thread 67> tid=0xb1] Initializing region _B__person_61
+
+[info 2018/11/16 11:03:33.456 EST gem1102-server <ServerConnection on port 10100 Thread 67> tid=0xb1] Region _B__person_61 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.457 EST gem1102-server <ServerConnection on port 10100 Thread 67> tid=0xb1] _B__person_61 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.457 EST gem1102-server <ServerConnection on port 10100 Thread 67> tid=0xb1] Initialization of region _B__person_61 completed
+
+[info 2018/11/16 11:03:33.458 EST gem1102-server <ServerConnection on port 10100 Thread 67> tid=0xb1] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.463 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_27
+
+[info 2018/11/16 11:03:33.468 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_27 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.470 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_27 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.471 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_27 completed
+
+[info 2018/11/16 11:03:33.471 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.471 EST gem1102-server <ServerConnection on port 10100 Thread 69> tid=0xb0] Initializing region _B__person_5
+
+[info 2018/11/16 11:03:33.473 EST gem1102-server <ServerConnection on port 10100 Thread 69> tid=0xb0] Initialization of region _B__person_5 completed
+
+[info 2018/11/16 11:03:33.490 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_15
+
+[info 2018/11/16 11:03:33.490 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.492 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_15 completed
+
+[info 2018/11/16 11:03:33.503 EST gem1102-server <ServerConnection on port 10100 Thread 68> tid=0xae] Initializing region _B__person_41
+
+[info 2018/11/16 11:03:33.505 EST gem1102-server <ServerConnection on port 10100 Thread 68> tid=0xae] Initialization of region _B__person_41 completed
+
+[info 2018/11/16 11:03:33.524 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.541 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_59
+
+[info 2018/11/16 11:03:33.544 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_59 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.546 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_59 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.546 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_59 completed
+
+[info 2018/11/16 11:03:33.548 EST gem1102-server <ServerConnection on port 10100 Thread 65> tid=0xaa] Initializing region _B__person_24
+
+[info 2018/11/16 11:03:33.552 EST gem1102-server <ServerConnection on port 10100 Thread 65> tid=0xaa] Region _B__person_24 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.554 EST gem1102-server <ServerConnection on port 10100 Thread 65> tid=0xaa] _B__person_24 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.554 EST gem1102-server <ServerConnection on port 10100 Thread 65> tid=0xaa] Initialization of region _B__person_24 completed
+
+[info 2018/11/16 11:03:33.554 EST gem1102-server <ServerConnection on port 10100 Thread 65> tid=0xaa] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.564 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_34
+
+[info 2018/11/16 11:03:33.573 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_34 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.574 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_34 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.575 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_34 completed
+
+[info 2018/11/16 11:03:33.576 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Initializing region _B__person_20
+
+[info 2018/11/16 11:03:33.582 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Region _B__person_20 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.584 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] _B__person_20 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.584 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Initialization of region _B__person_20 completed
+
+[info 2018/11/16 11:03:33.585 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.586 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_16
+
+[info 2018/11/16 11:03:33.587 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_16 completed
+
+[info 2018/11/16 11:03:33.603 EST gem1102-server <ServerConnection on port 10100 Thread 53> tid=0x9f] Initializing region _B__person_29
+
+[info 2018/11/16 11:03:33.604 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.606 EST gem1102-server <ServerConnection on port 10100 Thread 53> tid=0x9f] Initialization of region _B__person_29 completed
+
+[info 2018/11/16 11:03:33.621 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_33
+
+[info 2018/11/16 11:03:33.625 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_33 completed
+
+[info 2018/11/16 11:03:33.637 EST gem1102-server <ServerConnection on port 10100 Thread 60> tid=0xa6] Initializing region _B__person_26
+
+[info 2018/11/16 11:03:33.638 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.639 EST gem1102-server <ServerConnection on port 10100 Thread 60> tid=0xa6] Initialization of region _B__person_26 completed
+
+[info 2018/11/16 11:03:33.657 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_70
+
+[info 2018/11/16 11:03:33.663 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Region _B__person_70 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.664 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] _B__person_70 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.664 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_70 completed
+
+[info 2018/11/16 11:03:33.665 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.669 EST gem1102-server <ServerConnection on port 10100 Thread 63> tid=0xa9] Initializing region _B__person_3
+
+[info 2018/11/16 11:03:33.675 EST gem1102-server <ServerConnection on port 10100 Thread 63> tid=0xa9] Region _B__person_3 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.676 EST gem1102-server <ServerConnection on port 10100 Thread 63> tid=0xa9] _B__person_3 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.677 EST gem1102-server <ServerConnection on port 10100 Thread 63> tid=0xa9] Initialization of region _B__person_3 completed
+
+[info 2018/11/16 11:03:33.677 EST gem1102-server <ServerConnection on port 10100 Thread 63> tid=0xa9] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.681 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initializing region _B__person_11
+
+[info 2018/11/16 11:03:33.686 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Region _B__person_11 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.687 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] _B__person_11 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.688 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Initialization of region _B__person_11 completed
+
+[info 2018/11/16 11:03:33.688 EST gem1102-server <Pooled Waiting Message Processor 0> tid=0x2a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.702 EST gem1102-server <ServerConnection on port 10100 Thread 61> tid=0xa8] Initializing region _B__person_54
+
+[info 2018/11/16 11:03:33.706 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_36
+
+[info 2018/11/16 11:03:33.706 EST gem1102-server <ServerConnection on port 10100 Thread 61> tid=0xa8] Region _B__person_54 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.707 EST gem1102-server <ServerConnection on port 10100 Thread 61> tid=0xa8] _B__person_54 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.708 EST gem1102-server <ServerConnection on port 10100 Thread 61> tid=0xa8] Initialization of region _B__person_54 completed
+
+[info 2018/11/16 11:03:33.708 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_36 completed
+
+[info 2018/11/16 11:03:33.708 EST gem1102-server <ServerConnection on port 10100 Thread 61> tid=0xa8] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.730 EST gem1102-server <ServerConnection on port 10100 Thread 62> tid=0xa7] Initializing region _B__person_52
+
+[info 2018/11/16 11:03:33.731 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.733 EST gem1102-server <ServerConnection on port 10100 Thread 62> tid=0xa7] Initialization of region _B__person_52 completed
+
+[info 2018/11/16 11:03:33.742 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_43
+
+[info 2018/11/16 11:03:33.744 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_43 completed
+
+[info 2018/11/16 11:03:33.745 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.759 EST gem1102-server <ServerConnection on port 10100 Thread 64> tid=0xab] Initializing region _B__person_21
+
+[info 2018/11/16 11:03:33.760 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.761 EST gem1102-server <ServerConnection on port 10100 Thread 64> tid=0xab] Initialization of region _B__person_21 completed
+
+[info 2018/11/16 11:03:33.780 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.784 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_68
+
+[info 2018/11/16 11:03:33.788 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_68 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.789 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_68 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.789 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_68 completed
+
+[info 2018/11/16 11:03:33.789 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.796 EST gem1102-server <ServerConnection on port 10100 Thread 57> tid=0xa3] Initializing region _B__person_51
+
+[info 2018/11/16 11:03:33.801 EST gem1102-server <ServerConnection on port 10100 Thread 57> tid=0xa3] Region _B__person_51 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.802 EST gem1102-server <ServerConnection on port 10100 Thread 57> tid=0xa3] _B__person_51 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.803 EST gem1102-server <ServerConnection on port 10100 Thread 57> tid=0xa3] Initialization of region _B__person_51 completed
+
+[info 2018/11/16 11:03:33.805 EST gem1102-server <ServerConnection on port 10100 Thread 57> tid=0xa3] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.813 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_72
+
+[info 2018/11/16 11:03:33.818 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_72 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.819 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_72 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.820 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_72 completed
+
+[info 2018/11/16 11:03:33.821 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.828 EST gem1102-server <ServerConnection on port 10100 Thread 56> tid=0xa2] Initializing region _B__person_8
+
+[info 2018/11/16 11:03:33.835 EST gem1102-server <ServerConnection on port 10100 Thread 56> tid=0xa2] Region _B__person_8 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.836 EST gem1102-server <ServerConnection on port 10100 Thread 56> tid=0xa2] _B__person_8 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.836 EST gem1102-server <ServerConnection on port 10100 Thread 56> tid=0xa2] Initialization of region _B__person_8 completed
+
+[info 2018/11/16 11:03:33.836 EST gem1102-server <ServerConnection on port 10100 Thread 56> tid=0xa2] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.837 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_56
+
+[info 2018/11/16 11:03:33.838 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_56 completed
+
+[info 2018/11/16 11:03:33.849 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.850 EST gem1102-server <ServerConnection on port 10100 Thread 58> tid=0xa4] Initializing region _B__person_31
+
+[info 2018/11/16 11:03:33.851 EST gem1102-server <ServerConnection on port 10100 Thread 58> tid=0xa4] Initialization of region _B__person_31 completed
+
+[info 2018/11/16 11:03:33.858 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_65
+
+[info 2018/11/16 11:03:33.859 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_65 completed
+
+[info 2018/11/16 11:03:33.867 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.874 EST gem1102-server <ServerConnection on port 10100 Thread 59> tid=0xa5] Initializing region _B__person_39
+
+[info 2018/11/16 11:03:33.877 EST gem1102-server <ServerConnection on port 10100 Thread 59> tid=0xa5] Region _B__person_39 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.879 EST gem1102-server <ServerConnection on port 10100 Thread 59> tid=0xa5] _B__person_39 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.879 EST gem1102-server <ServerConnection on port 10100 Thread 59> tid=0xa5] Initialization of region _B__person_39 completed
+
+[info 2018/11/16 11:03:33.880 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_32
+
+[info 2018/11/16 11:03:33.883 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_32 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.885 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_32 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.885 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_32 completed
+
+[info 2018/11/16 11:03:33.885 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.894 EST gem1102-server <ServerConnection on port 10100 Thread 54> tid=0xa0] Initializing region _B__person_58
+
+[info 2018/11/16 11:03:33.895 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_17
+
+[info 2018/11/16 11:03:33.896 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_17 completed
+
+[info 2018/11/16 11:03:33.896 EST gem1102-server <ServerConnection on port 10100 Thread 54> tid=0xa0] Region _B__person_58 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.897 EST gem1102-server <ServerConnection on port 10100 Thread 54> tid=0xa0] _B__person_58 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.897 EST gem1102-server <ServerConnection on port 10100 Thread 54> tid=0xa0] Initialization of region _B__person_58 completed
+
+[info 2018/11/16 11:03:33.903 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.912 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_22
+
+[info 2018/11/16 11:03:33.914 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_22 completed
+
+[info 2018/11/16 11:03:33.915 EST gem1102-server <ServerConnection on port 10100 Thread 52> tid=0x9c] Initializing region _B__person_28
+
+[info 2018/11/16 11:03:33.916 EST gem1102-server <ServerConnection on port 10100 Thread 52> tid=0x9c] Initialization of region _B__person_28 completed
+
+[info 2018/11/16 11:03:33.928 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.941 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_45
+
+[info 2018/11/16 11:03:33.942 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_45 completed
+
+[info 2018/11/16 11:03:33.945 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Initializing region _B__person_12
+
+[info 2018/11/16 11:03:33.947 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Region _B__person_12 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.947 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] _B__person_12 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.948 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Initialization of region _B__person_12 completed
+
+[info 2018/11/16 11:03:33.949 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.964 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_53
+
+[info 2018/11/16 11:03:33.965 EST gem1102-server <ServerConnection on port 10100 Thread 45> tid=0x93] Initializing region _B__person_14
+
+[info 2018/11/16 11:03:33.967 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_53 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.967 EST gem1102-server <ServerConnection on port 10100 Thread 45> tid=0x93] Region _B__person_14 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.967 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_53 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.967 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_53 completed
+
+[info 2018/11/16 11:03:33.968 EST gem1102-server <ServerConnection on port 10100 Thread 45> tid=0x93] _B__person_14 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.968 EST gem1102-server <ServerConnection on port 10100 Thread 45> tid=0x93] Initialization of region _B__person_14 completed
+
+[info 2018/11/16 11:03:33.968 EST gem1102-server <ServerConnection on port 10100 Thread 45> tid=0x93] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.981 EST gem1102-server <ServerConnection on port 10100 Thread 41> tid=0x96] Initializing region _B__person_50
+
+[info 2018/11/16 11:03:33.984 EST gem1102-server <ServerConnection on port 10100 Thread 41> tid=0x96] Region _B__person_50 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:33.985 EST gem1102-server <ServerConnection on port 10100 Thread 41> tid=0x96] _B__person_50 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:33.985 EST gem1102-server <ServerConnection on port 10100 Thread 41> tid=0x96] Initialization of region _B__person_50 completed
+
+[info 2018/11/16 11:03:33.985 EST gem1102-server <ServerConnection on port 10100 Thread 41> tid=0x96] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:33.993 EST gem1102-server <ServerConnection on port 10100 Thread 44> tid=0x94] Initializing region _B__person_7
+
+[info 2018/11/16 11:03:33.994 EST gem1102-server <ServerConnection on port 10100 Thread 44> tid=0x94] Initialization of region _B__person_7 completed
+
+[info 2018/11/16 11:03:33.997 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_0
+
+[info 2018/11/16 11:03:33.999 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_0 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.000 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_0 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.000 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_0 completed
+
+[info 2018/11/16 11:03:34.001 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.019 EST gem1102-server <ServerConnection on port 10100 Thread 43> tid=0x95] Initializing region _B__person_46
+
+[info 2018/11/16 11:03:34.023 EST gem1102-server <ServerConnection on port 10100 Thread 43> tid=0x95] Region _B__person_46 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.023 EST gem1102-server <ServerConnection on port 10100 Thread 43> tid=0x95] _B__person_46 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.024 EST gem1102-server <ServerConnection on port 10100 Thread 43> tid=0x95] Initialization of region _B__person_46 completed
+
+[info 2018/11/16 11:03:34.024 EST gem1102-server <ServerConnection on port 10100 Thread 43> tid=0x95] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.033 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_66
+
+[info 2018/11/16 11:03:34.033 EST gem1102-server <ServerConnection on port 10100 Thread 46> tid=0x97] Initializing region _B__person_10
+
+[info 2018/11/16 11:03:34.034 EST gem1102-server <ServerConnection on port 10100 Thread 46> tid=0x97] Initialization of region _B__person_10 completed
+
+[info 2018/11/16 11:03:34.036 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_66 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.037 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_66 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.037 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_66 completed
+
+[info 2018/11/16 11:03:34.042 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.045 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_63
+
+[info 2018/11/16 11:03:34.046 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_63 completed
+
+[info 2018/11/16 11:03:34.054 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.055 EST gem1102-server <ServerConnection on port 10100 Thread 38> tid=0x8e] Initializing region _B__person_2
+
+[info 2018/11/16 11:03:34.056 EST gem1102-server <ServerConnection on port 10100 Thread 38> tid=0x8e] Initialization of region _B__person_2 completed
+
+[info 2018/11/16 11:03:34.065 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.070 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_18
+
+[info 2018/11/16 11:03:34.072 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_18 completed
+
+[info 2018/11/16 11:03:34.077 EST gem1102-server <ServerConnection on port 10100 Thread 22> tid=0x87] Initializing region _B__person_62
+
+[info 2018/11/16 11:03:34.080 EST gem1102-server <ServerConnection on port 10100 Thread 22> tid=0x87] Region _B__person_62 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.081 EST gem1102-server <ServerConnection on port 10100 Thread 22> tid=0x87] _B__person_62 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.081 EST gem1102-server <ServerConnection on port 10100 Thread 22> tid=0x87] Initialization of region _B__person_62 completed
+
+[info 2018/11/16 11:03:34.081 EST gem1102-server <ServerConnection on port 10100 Thread 22> tid=0x87] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.098 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_71
+
+[info 2018/11/16 11:03:34.101 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_71 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.102 EST gem1102-server <ServerConnection on port 10100 Thread 27> tid=0x81] Initializing region _B__person_48
+
+[info 2018/11/16 11:03:34.102 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_71 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.102 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_71 completed
+
+[info 2018/11/16 11:03:34.107 EST gem1102-server <ServerConnection on port 10100 Thread 27> tid=0x81] Region _B__person_48 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.108 EST gem1102-server <ServerConnection on port 10100 Thread 27> tid=0x81] _B__person_48 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.108 EST gem1102-server <ServerConnection on port 10100 Thread 27> tid=0x81] Initialization of region _B__person_48 completed
+
+[info 2018/11/16 11:03:34.109 EST gem1102-server <ServerConnection on port 10100 Thread 27> tid=0x81] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.125 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_13
+
+[info 2018/11/16 11:03:34.126 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_13 completed
+
+[info 2018/11/16 11:03:34.129 EST gem1102-server <ServerConnection on port 10100 Thread 30> tid=0x84] Initializing region _B__person_49
+
+[info 2018/11/16 11:03:34.130 EST gem1102-server <ServerConnection on port 10100 Thread 30> tid=0x84] Initialization of region _B__person_49 completed
+
+[info 2018/11/16 11:03:34.139 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.154 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Initializing region _B__person_55
+
+[info 2018/11/16 11:03:34.155 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_19
+
+[info 2018/11/16 11:03:34.157 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Region _B__person_55 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.157 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_19 completed
+
+[info 2018/11/16 11:03:34.158 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] _B__person_55 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.159 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Initialization of region _B__person_55 completed
+
+[info 2018/11/16 11:03:34.168 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.185 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_40
+
+[info 2018/11/16 11:03:34.188 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_40 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.189 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_40 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.190 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_40 completed
+
+[info 2018/11/16 11:03:34.190 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.201 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_44
+
+[info 2018/11/16 11:03:34.203 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_44 completed
+
+[info 2018/11/16 11:03:34.212 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.223 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_103
+
+[info 2018/11/16 11:03:34.225 EST gem1102-server <ServerConnection on port 10100 Thread 25> tid=0x86] Initializing region _B__person_77
+
+[info 2018/11/16 11:03:34.226 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_103 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.227 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_103 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.227 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_103 completed
+
+[info 2018/11/16 11:03:34.230 EST gem1102-server <ServerConnection on port 10100 Thread 25> tid=0x86] Region _B__person_77 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.231 EST gem1102-server <ServerConnection on port 10100 Thread 25> tid=0x86] _B__person_77 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.231 EST gem1102-server <ServerConnection on port 10100 Thread 25> tid=0x86] Initialization of region _B__person_77 completed
+
+[info 2018/11/16 11:03:34.232 EST gem1102-server <ServerConnection on port 10100 Thread 25> tid=0x86] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.240 EST gem1102-server <ServerConnection on port 10100 Thread 23> tid=0x7f] Initializing region _B__person_87
+
+[info 2018/11/16 11:03:34.241 EST gem1102-server <ServerConnection on port 10100 Thread 23> tid=0x7f] Initialization of region _B__person_87 completed
+
+[info 2018/11/16 11:03:34.241 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_85
+
+[info 2018/11/16 11:03:34.244 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_85 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.246 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_85 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.246 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_85 completed
+
+[info 2018/11/16 11:03:34.253 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.256 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_75
+
+[info 2018/11/16 11:03:34.258 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_75 completed
+
+[info 2018/11/16 11:03:34.260 EST gem1102-server <ServerConnection on port 10100 Thread 24> tid=0x8a] Initializing region _B__person_90
+
+[info 2018/11/16 11:03:34.261 EST gem1102-server <ServerConnection on port 10100 Thread 24> tid=0x8a] Initialization of region _B__person_90 completed
+
+[info 2018/11/16 11:03:34.273 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.276 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_30
+
+[info 2018/11/16 11:03:34.279 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_30 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.279 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Initializing region _B__person_78
+
+[info 2018/11/16 11:03:34.280 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_30 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.280 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_30 completed
+
+[info 2018/11/16 11:03:34.281 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Region _B__person_78 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.282 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] _B__person_78 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.282 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Initialization of region _B__person_78 completed
+
+[info 2018/11/16 11:03:34.282 EST gem1102-server <ServerConnection on port 10100 Thread 0> tid=0x64] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.286 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_111
+
+[info 2018/11/16 11:03:34.287 EST gem1102-server <ServerConnection on port 10100 Thread 15> tid=0x78] Initializing region _B__person_91
+
+[info 2018/11/16 11:03:34.288 EST gem1102-server <ServerConnection on port 10100 Thread 15> tid=0x78] Initialization of region _B__person_91 completed
+
+[info 2018/11/16 11:03:34.289 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_111 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.290 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_111 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.290 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_111 completed
+
+[info 2018/11/16 11:03:34.294 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_4
+
+[info 2018/11/16 11:03:34.295 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_4 completed
+
+[info 2018/11/16 11:03:34.298 EST gem1102-server <ServerConnection on port 10100 Thread 37> tid=0x8d] Initializing region _B__person_89
+
+[info 2018/11/16 11:03:34.299 EST gem1102-server <ServerConnection on port 10100 Thread 37> tid=0x8d] Initialization of region _B__person_89 completed
+
+[info 2018/11/16 11:03:34.306 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.308 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_98
+
+[info 2018/11/16 11:03:34.310 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_98 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.311 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_98 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.311 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_98 completed
+
+[info 2018/11/16 11:03:34.311 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Initializing region _B__person_86
+
+[info 2018/11/16 11:03:34.313 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Region _B__person_86 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.314 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] _B__person_86 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.314 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Initialization of region _B__person_86 completed
+
+[info 2018/11/16 11:03:34.314 EST gem1102-server <ServerConnection on port 10100 Thread 26> tid=0x80] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.318 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_109
+
+[info 2018/11/16 11:03:34.318 EST gem1102-server <ServerConnection on port 10100 Thread 28> tid=0x82] Initializing region _B__person_81
+
+[info 2018/11/16 11:03:34.319 EST gem1102-server <ServerConnection on port 10100 Thread 28> tid=0x82] Initialization of region _B__person_81 completed
+
+[info 2018/11/16 11:03:34.320 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Region _B__person_109 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.320 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] _B__person_109 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.320 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_109 completed
+
+[info 2018/11/16 11:03:34.324 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_104
+
+[info 2018/11/16 11:03:34.325 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_104 completed
+
+[info 2018/11/16 11:03:34.325 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.330 EST gem1102-server <ServerConnection on port 10100 Thread 30> tid=0x84] Initializing region _B__person_38
+
+[info 2018/11/16 11:03:34.331 EST gem1102-server <ServerConnection on port 10100 Thread 30> tid=0x84] Initialization of region _B__person_38 completed
+
+[info 2018/11/16 11:03:34.336 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_97
+
+[info 2018/11/16 11:03:34.337 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_97 completed
+
+[info 2018/11/16 11:03:34.346 EST gem1102-server <ServerConnection on port 10100 Thread 29> tid=0x83] Initializing region _B__person_99
+
+[info 2018/11/16 11:03:34.350 EST gem1102-server <ServerConnection on port 10100 Thread 29> tid=0x83] Region _B__person_99 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.351 EST gem1102-server <ServerConnection on port 10100 Thread 29> tid=0x83] _B__person_99 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.351 EST gem1102-server <ServerConnection on port 10100 Thread 29> tid=0x83] Initialization of region _B__person_99 completed
+
+[info 2018/11/16 11:03:34.352 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_102
+
+[info 2018/11/16 11:03:34.355 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_102 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.356 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_102 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.356 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_102 completed
+
+[info 2018/11/16 11:03:34.356 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.359 EST gem1102-server <ServerConnection on port 10100 Thread 36> tid=0x8c] Initializing region _B__person_80
+
+[info 2018/11/16 11:03:34.361 EST gem1102-server <ServerConnection on port 10100 Thread 36> tid=0x8c] Region _B__person_80 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.362 EST gem1102-server <ServerConnection on port 10100 Thread 36> tid=0x8c] _B__person_80 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.362 EST gem1102-server <ServerConnection on port 10100 Thread 36> tid=0x8c] Initialization of region _B__person_80 completed
+
+[info 2018/11/16 11:03:34.363 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_82
+
+[info 2018/11/16 11:03:34.365 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_82 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.366 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_82 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.366 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_82 completed
+
+[info 2018/11/16 11:03:34.366 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.370 EST gem1102-server <ServerConnection on port 10100 Thread 38> tid=0x8e] Initializing region _B__person_106
+
+[info 2018/11/16 11:03:34.371 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_96
+
+[info 2018/11/16 11:03:34.372 EST gem1102-server <ServerConnection on port 10100 Thread 38> tid=0x8e] Initialization of region _B__person_106 completed
+
+[info 2018/11/16 11:03:34.372 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_96 completed
+
+[info 2018/11/16 11:03:34.380 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.383 EST gem1102-server <ServerConnection on port 10100 Thread 46> tid=0x97] Initializing region _B__person_112
+
+[info 2018/11/16 11:03:34.384 EST gem1102-server <ServerConnection on port 10100 Thread 46> tid=0x97] Initialization of region _B__person_112 completed
+
+[info 2018/11/16 11:03:34.386 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_95
+
+[info 2018/11/16 11:03:34.386 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_95 completed
+
+[info 2018/11/16 11:03:34.393 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.403 EST gem1102-server <ServerConnection on port 10100 Thread 42> tid=0x92] Initializing region _B__person_100
+
+[info 2018/11/16 11:03:34.406 EST gem1102-server <ServerConnection on port 10100 Thread 42> tid=0x92] Region _B__person_100 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.407 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_110
+
+[info 2018/11/16 11:03:34.407 EST gem1102-server <ServerConnection on port 10100 Thread 42> tid=0x92] _B__person_100 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.407 EST gem1102-server <ServerConnection on port 10100 Thread 42> tid=0x92] Initialization of region _B__person_100 completed
+
+[info 2018/11/16 11:03:34.414 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_110 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.418 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_110 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.419 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_110 completed
+
+[info 2018/11/16 11:03:34.419 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.423 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Initializing region _B__person_83
+
+[info 2018/11/16 11:03:34.427 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Region _B__person_83 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.428 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] _B__person_83 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.428 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_107
+
+[info 2018/11/16 11:03:34.428 EST gem1102-server <ServerConnection on port 10100 Thread 51> tid=0x9d] Initialization of region _B__person_83 completed
+
+[info 2018/11/16 11:03:34.431 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_107 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.433 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_107 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.433 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_107 completed
+
+[info 2018/11/16 11:03:34.433 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.434 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Initializing region _B__person_108
+
+[info 2018/11/16 11:03:34.435 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Initialization of region _B__person_108 completed
+
+[info 2018/11/16 11:03:34.439 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_92
+
+[info 2018/11/16 11:03:34.440 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_92 completed
+
+[info 2018/11/16 11:03:34.446 EST gem1102-server <ServerConnection on port 10100 Thread 49> tid=0x9b] Initializing region _B__person_9
+
+[info 2018/11/16 11:03:34.446 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.447 EST gem1102-server <ServerConnection on port 10100 Thread 49> tid=0x9b] Initialization of region _B__person_9 completed
+
+[info 2018/11/16 11:03:34.456 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_76
+
+[info 2018/11/16 11:03:34.463 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_76 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.464 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_76 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.465 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_76 completed
+
+[info 2018/11/16 11:03:34.465 EST gem1102-server <ServerConnection on port 10100 Thread 207> tid=0x1cf] Initializing region _B__person_88
+
+[info 2018/11/16 11:03:34.468 EST gem1102-server <ServerConnection on port 10100 Thread 207> tid=0x1cf] Region _B__person_88 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.469 EST gem1102-server <ServerConnection on port 10100 Thread 207> tid=0x1cf] _B__person_88 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.469 EST gem1102-server <ServerConnection on port 10100 Thread 207> tid=0x1cf] Initialization of region _B__person_88 completed
+
+[info 2018/11/16 11:03:34.469 EST gem1102-server <ServerConnection on port 10100 Thread 207> tid=0x1cf] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.475 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_101
+
+[info 2018/11/16 11:03:34.482 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Region _B__person_101 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.487 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] _B__person_101 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.487 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_101 completed
+
+[info 2018/11/16 11:03:34.487 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Initializing region _B__person_93
+
+[info 2018/11/16 11:03:34.487 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.491 EST gem1102-server <ServerConnection on port 10100 Thread 66> tid=0xad] Initialization of region _B__person_93 completed
+
+[info 2018/11/16 11:03:34.502 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initializing region _B__person_94
+
+[info 2018/11/16 11:03:34.503 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Initialization of region _B__person_94 completed
+
+[info 2018/11/16 11:03:34.525 EST gem1102-server <Pooled Waiting Message Processor 3> tid=0x15e] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.533 EST gem1102-server <ServerConnection on port 10100 Thread 53> tid=0x9f] Initializing region _B__person_105
+
+[info 2018/11/16 11:03:34.535 EST gem1102-server <ServerConnection on port 10100 Thread 53> tid=0x9f] Initialization of region _B__person_105 completed
+
+[info 2018/11/16 11:03:34.555 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.578 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initializing region _B__person_84
+
+[info 2018/11/16 11:03:34.579 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Initialization of region _B__person_84 completed
+
+[info 2018/11/16 11:03:34.609 EST gem1102-server <Pooled Waiting Message Processor 2> tid=0xff] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:34.622 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Initializing region _B__person_79
+
+[info 2018/11/16 11:03:34.625 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Region _B__person_79 requesting initial image from 192.168.1.101(gem1101-server:14957)<v3>:10901
+
+[info 2018/11/16 11:03:34.626 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] _B__person_79 is done getting image from 192.168.1.101(gem1101-server:14957)<v3>:10901. isDeltaGII is false
+
+[info 2018/11/16 11:03:34.626 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Initialization of region _B__person_79 completed
+
+[info 2018/11/16 11:03:34.626 EST gem1102-server <ServerConnection on port 10100 Thread 50> tid=0x9a] Configured redundancy of 2 copies has been restored to /person
+
+[info 2018/11/16 11:03:35.319 EST gem1102-server <ServerConnection on port 10100 Thread 146> tid=0x105] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47136]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.326 EST gem1102-server <ServerConnection on port 10100 Thread 85> tid=0xc2] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34014]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.355 EST gem1102-server <ServerConnection on port 10100 Thread 128> tid=0xed] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57720]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.360 EST gem1102-server <ServerConnection on port 10100 Thread 119> tid=0xe4] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47048]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.363 EST gem1102-server <ServerConnection on port 10100 Thread 124> tid=0xeb] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47064]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.384 EST gem1102-server <ServerConnection on port 10100 Thread 114> tid=0xe6] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57686]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.384 EST gem1102-server <ServerConnection on port 10100 Thread 192> tid=0x138] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35828]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.386 EST gem1102-server <ServerConnection on port 10100 Thread 160> tid=0x115] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59698]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.389 EST gem1102-server <ServerConnection on port 10100 Thread 168> tid=0x11a] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47164]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.393 EST gem1102-server <ServerConnection on port 10100 Thread 107> tid=0xda] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57614]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.395 EST gem1102-server <ServerConnection on port 10100 Thread 112> tid=0xde] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57646]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.400 EST gem1102-server <ServerConnection on port 10100 Thread 101> tid=0xd4] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34146]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.410 EST gem1102-server <ServerConnection on port 10100 Thread 154> tid=0x10a] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59662]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.435 EST gem1102-server <ServerConnection on port 10100 Thread 132> tid=0xf3] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57726]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.443 EST gem1102-server <ServerConnection on port 10100 Thread 100> tid=0xd5] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34154]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.465 EST gem1102-server <ServerConnection on port 10100 Thread 105> tid=0xd8] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57612]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.470 EST gem1102-server <ServerConnection on port 10100 Thread 99> tid=0xd2] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34142]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.487 EST gem1102-server <ServerConnection on port 10100 Thread 106> tid=0xd9] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57618]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.498 EST gem1102-server <ServerConnection on port 10100 Thread 104> tid=0xd6] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57604]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.533 EST gem1102-server <ServerConnection on port 10100 Thread 1> tid=0x66] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57566]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.557 EST gem1102-server <ServerConnection on port 10100 Thread 135> tid=0xfa] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47096]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.650 EST gem1102-server <ServerConnection on port 10100 Thread 156> tid=0x10c] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59666]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.656 EST gem1102-server <ServerConnection on port 10100 Thread 80> tid=0xbb] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34026]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.661 EST gem1102-server <ServerConnection on port 10100 Thread 118> tid=0xe3] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47040]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.671 EST gem1102-server <ServerConnection on port 10100 Thread 83> tid=0xc1] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34048]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.677 EST gem1102-server <ServerConnection on port 10100 Thread 92> tid=0xc9] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34098]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.689 EST gem1102-server <ServerConnection on port 10100 Thread 98> tid=0xcd] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34140]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.715 EST gem1102-server <ServerConnection on port 10100 Thread 131> tid=0xf1] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57728]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.728 EST gem1102-server <ServerConnection on port 10100 Thread 93> tid=0xd0] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34102]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.735 EST gem1102-server <ServerConnection on port 10100 Thread 116> tid=0xe5] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57690]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.765 EST gem1102-server <ServerConnection on port 10100 Thread 108> tid=0xdb] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=46986]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.821 EST gem1102-server <ServerConnection on port 10100 Thread 182> tid=0x12e] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59782]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.852 EST gem1102-server <ServerConnection on port 10100 Thread 3> tid=0x68] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=46976]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:35.872 EST gem1102-server <ServerConnection on port 10100 Thread 84> tid=0xc4] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34010]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.015 EST gem1102-server <ServerConnection on port 10100 Thread 153> tid=0x109] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59658]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.103 EST gem1102-server <ServerConnection on port 10100 Thread 76> tid=0xb7] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=43390]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.183 EST gem1102-server <ServerConnection on port 10100 Thread 2> tid=0x67] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59596]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.190 EST gem1102-server <ServerConnection on port 10100 Thread 5> tid=0x6e] Server connection from [identity(192.168.1.103(27109:loner):45112:945a431d,connection=1; port=48336]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.196 EST gem1102-server <ServerConnection on port 10100 Thread 89> tid=0xc6] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34080]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.202 EST gem1102-server <ServerConnection on port 10100 Thread 90> tid=0xc5] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34074]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.211 EST gem1102-server <ServerConnection on port 10100 Thread 183> tid=0x12d] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35814]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.217 EST gem1102-server <ServerConnection on port 10100 Thread 88> tid=0xc7] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34030]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.229 EST gem1102-server <ServerConnection on port 10100 Thread 186> tid=0x133] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35820]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.246 EST gem1102-server <ServerConnection on port 10100 Thread 157> tid=0x10d] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59670]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.291 EST gem1102-server <ServerConnection on port 10100 Thread 167> tid=0x121] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47160]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.292 EST gem1102-server <ServerConnection on port 10100 Thread 141> tid=0x103] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57754]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.300 EST gem1102-server <ServerConnection on port 10100 Thread 161> tid=0x113] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59700]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.373 EST gem1102-server <ServerConnection on port 10100 Thread 129> tid=0xf2] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57724]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.386 EST gem1102-server <ServerConnection on port 10100 Thread 121> tid=0xe8] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57700]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.426 EST gem1102-server <ServerConnection on port 10100 Thread 147> tid=0x104] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59626]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.507 EST gem1102-server <ServerConnection on port 10100 Thread 145> tid=0x102] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47134]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.536 EST gem1102-server <ServerConnection on port 10100 Thread 79> tid=0xba] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34016]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.572 EST gem1102-server <ServerConnection on port 10100 Thread 95> tid=0xce] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34106]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.579 EST gem1102-server <ServerConnection on port 10100 Thread 82> tid=0xbe] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34040]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.585 EST gem1102-server <ServerConnection on port 10100 Thread 91> tid=0xca] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34090]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.598 EST gem1102-server <ServerConnection on port 10100 Thread 180> tid=0x131] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59776]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.601 EST gem1102-server <ServerConnection on port 10100 Thread 70> tid=0xaf] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=43362]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.611 EST gem1102-server <ServerConnection on port 10100 Thread 173> tid=0x126] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35804]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.614 EST gem1102-server <ServerConnection on port 10100 Thread 96> tid=0xcb] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34118]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.636 EST gem1102-server <ServerConnection on port 10100 Thread 150> tid=0x112] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47144]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.684 EST gem1102-server <ServerConnection on port 10100 Thread 102> tid=0xd3] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57588]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.732 EST gem1102-server <ServerConnection on port 10100 Thread 138> tid=0xfc] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47116]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.900 EST gem1102-server <ServerConnection on port 10100 Thread 122> tid=0xea] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47020]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.909 EST gem1102-server <ServerConnection on port 10100 Thread 134> tid=0xf7] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47090]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.925 EST gem1102-server <ServerConnection on port 10100 Thread 133> tid=0xf6] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47078]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.945 EST gem1102-server <ServerConnection on port 10100 Thread 151> tid=0x111] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=47146]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:36.948 EST gem1102-server <ServerConnection on port 10100 Thread 181> tid=0x130] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59778]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.196 EST gem1102-server <ServerConnection on port 10100 Thread 301> tid=0x270] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57790]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.201 EST gem1102-server <ServerConnection on port 10100 Thread 103> tid=0xd7] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57602]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.231 EST gem1102-server <ServerConnection on port 10100 Thread 302> tid=0x273] Server connection from [identity(192.168.1.108(26920:loner):57566:6f5d431d,connection=1; port=57792]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.257 EST gem1102-server <ServerConnection on port 10100 Thread 152> tid=0x108] Server connection from [identity(192.168.1.109(12258:loner):59596:125f431d,connection=1; port=59648]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.423 EST gem1102-server <ServerConnection on port 10100 Thread 349> tid=0x2a1] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=35936]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:37.463 EST gem1102-server <ServerConnection on port 10100 Thread 294> tid=0x268] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=34240]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:03:52.240 EST gem1102-server <ServerConnection on port 10100 Thread 3866> tid=0x1099] Server connection from [identity(192.168.1.110(26555:loner):46976:3d5b431d,connection=1; port=48976]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:09:42.548 EST gem1102-server <ServerConnection on port 10100 Thread 106330> tid=0x1a116] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=59274]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:41.510 EST gem1102-server <ServerConnection on port 10100 Thread 124926> tid=0x1e9bb] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=49914]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:44.257 EST gem1102-server <ServerConnection on port 10100 Thread 126039> tid=0x1ee14] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=50592]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:44.805 EST gem1102-server <ServerConnection on port 10100 Thread 126307> tid=0x1ef20] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=41504]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:55.437 EST gem1102-server <ServerConnection on port 10100 Thread 131678> tid=0x2041b] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=46044]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:56.308 EST gem1102-server <ServerConnection on port 10100 Thread 132023> tid=0x20574] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=44488]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:56.719 EST gem1102-server <ServerConnection on port 10100 Thread 132133> tid=0x205e2] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=44608]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:56.772 EST gem1102-server <ServerConnection on port 10100 Thread 132127> tid=0x205dc] Server connection from [identity(192.168.1.105(26960:loner):53028:b85d431d,connection=1; port=44628]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:57.625 EST gem1102-server <ServerConnection on port 10100 Thread 132172> tid=0x20609] Server connection from [identity(192.168.1.103(27109:loner):45112:945a431d,connection=1; port=60382]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:57.840 EST gem1102-server <ServerConnection on port 10100 Thread 132165> tid=0x20602] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=46628]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:58.438 EST gem1102-server <ServerConnection on port 10100 Thread 132126> tid=0x205db] Server connection from [identity(192.168.1.104(27211:loner):37028:635f431d,connection=1; port=46730]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:10:58.640 EST gem1102-server <ServerConnection on port 10100 Thread 132126> tid=0x205db] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=54232]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:11:01.416 EST gem1102-server <ServerConnection on port 10100 Thread 132179> tid=0x20610] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=54626]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:11:01.581 EST gem1102-server <ServerConnection on port 10100 Thread 132195> tid=0x20620] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=54646]: connection disconnect detected by EOF.
+
+[info 2018/11/16 11:11:01.975 EST gem1102-server <ServerConnection on port 10100 Thread 132195> tid=0x20620] Server connection from [identity(192.168.1.106(27030:loner):34224:185c431d,connection=1; port=54668]: connection disconnect detected by EOF.

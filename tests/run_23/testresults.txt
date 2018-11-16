@@ -1,0 +1,66 @@
+In this test I just reduced the --count argument on the load test so the test
+could finish in time.
+
+```
+ok: [18.234.83.20] => {
+    "msg": [
+        "SUCCESSES: 499998",
+        "FAILURES: 2"
+    ]
+}
+ok: [52.73.43.206] => {
+    "msg": [
+        "SUCCESSES: 499997",
+        "FAILURES: 3"
+    ]
+}
+ok: [54.210.135.88] => {
+    "msg": [
+        "SUCCESSES: 499994",
+        "FAILURES: 6"
+    ]
+}
+ok: [54.221.139.123] => {
+    "msg": [
+        "SUCCESSES: 499998",
+        "FAILURES: 2"
+    ]
+}
+ok: [75.101.224.194] => {
+    "msg": [
+        "SUCCESSES: 499998",
+        "FAILURES: 2"
+    ]
+}
+ok: [54.209.179.194] => {
+    "msg": [
+        "SUCCESSES: 499977",
+        "FAILURES: 23"
+    ]
+}
+ok: [18.234.170.178] => {
+    "msg": [
+        "SUCCESSES: 499996",
+        "FAILURES: 4"
+    ]
+}
+ok: [52.23.161.132] => {
+    "msg": [
+        "SUCCESSES: 499991",
+        "FAILURES: 9"
+    ]
+}
+```
+
+```
+[ec2-user@ip-192-168-1-101 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+```
+
+```
+[ec2-user@ip-192-168-1-102 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+```
+

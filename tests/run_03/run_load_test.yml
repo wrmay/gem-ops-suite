@@ -1,0 +1,13 @@
+---
+- hosts: etls
+  vars:
+    ansible_ssh_user: ec2-user
+  tasks:
+    - name: launch the test
+      command: /usr/bin/python peopleloader.py --locator=192.168.1.101[10000] --region=person --threads=64 --sleep=50 --keys=250 --count=200000
+      args:
+        chdir: /runtime/load-generator
+      environment:
+        JAVA_HOME: /etc/alternatives/java_sdk_1.8.0
+      async: 1200
+      poll: 10

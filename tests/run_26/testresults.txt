@@ -1,0 +1,90 @@
+This was without setting p2p.backlog
+
+
+ok: [54.198.174.112] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 161892",
+        "FAILURES: 240812"
+    ]
+}
+ok: [54.209.176.140] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 168535",
+        "FAILURES: 244387"
+    ]
+}
+ok: [54.82.241.86] => {
+    "msg": [
+        "SUCCESSES: 205340",
+        "FAILURES: 275883"
+    ]
+}
+ok: [18.212.87.161] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 163581",
+        "FAILURES: 253170"
+    ]
+}
+ok: [18.212.102.212] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 196839",
+        "FAILURES: 268161"
+    ]
+}
+ok: [18.234.148.15] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 192501",
+        "FAILURES: 258688"
+    ]
+}
+ok: [34.203.223.219] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 203408",
+        "FAILURES: 267737"
+    ]
+}
+ok: [54.85.16.68] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 159794",
+        "FAILURES: 234997"
+    ]
+
+}
+
+ccept Queue Overflows
+
+[ec2-user@ip-192-168-1-101 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           32603              0.0
+TcpExtListenDrops               32603              0.0
+
+
+[ec2-user@ip-192-168-1-102 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           31544              0.0
+TcpExtListenDrops               31544              0.0
+

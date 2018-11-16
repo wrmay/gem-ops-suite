@@ -1,0 +1,72 @@
+# Summary
+
+somaxconn=1280 and p22.backlog=1280
+
+This was a good run but I don't understand how it is different from
+the previous run.
+
+```
+ok: [18.234.83.20] => {
+    "msg": [
+        "SUCCESSES: 695119",
+        "FAILURES: 21"
+    ]
+}
+ok: [52.73.43.206] => {
+    "msg": [
+        "SUCCESSES: 688073",
+        "FAILURES: 5"
+    ]
+}
+ok: [54.210.135.88] => {
+    "msg": [
+        "SUCCESSES: 696560",
+        "FAILURES: 2"
+    ]
+}
+ok: [54.221.139.123] => {
+    "msg": [
+        "SUCCESSES: 691467",
+        "FAILURES: 9"
+    ]
+}
+ok: [75.101.224.194] => {
+    "msg": [
+        "SUCCESSES: 687310",
+        "FAILURES: 14"
+    ]
+}
+ok: [54.209.179.194] => {
+    "msg": [
+        "SUCCESSES: 688867",
+        "FAILURES: 2"
+    ]
+}
+ok: [18.234.170.178] => {
+    "msg": [
+        "SUCCESSES: 690388",
+        "FAILURES: 4"
+    ]
+}
+ok: [52.23.161.132] => {
+    "msg": [
+        "SUCCESSES: 683901",
+        "FAILURES: 7"
+    ]
+}
+
+```
+
+```
+[ec2-user@ip-192-168-1-101 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+
+```
+
+```
+[ec2-user@ip-192-168-1-102 ~]$ nstat -z | grep Listen
+TcpExtListenOverflows           0                  0.0
+TcpExtListenDrops               0                  0.0
+
+```

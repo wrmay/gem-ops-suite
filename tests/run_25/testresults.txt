@@ -1,0 +1,59 @@
+This was without p2p.backlog set.
+
+ok: [54.198.174.112] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 210368",
+        "FAILURES: 243592"
+    ]
+}
+ok: [54.209.176.140] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 200040",
+        "FAILURES: 252288"
+    ]
+}
+ok: [54.82.241.86] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 206280",
+        "FAILURES: 276037"
+    ]
+}
+ok: [18.212.87.161] => {
+    "msg": [
+        "SUCCESSES: 202317",
+        "FAILURES: 276261"
+    ]
+}
+ok: [18.212.102.212] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "THREAD IS STUCK",
+        "SUCCESSES: 212219",
+        "FAILURES: 259307"
+    ]
+}
+ok: [18.234.148.15] => {
+    "msg": [
+        "SUCCESSES: 212351",
+        "FAILURES: 276680"
+    ]
+}
+ok: [34.203.223.219] => {
+    "msg": [
+        "SUCCESSES: 216075",
+        "FAILURES: 252455"
+    ]
+}
+ok: [54.85.16.68] => {
+    "msg": [
+        "THREAD IS STUCK",
+        "SUCCESSES: 200360",
+        "FAILURES: 257259"
+    ]
+}
