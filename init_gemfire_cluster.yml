@@ -1,0 +1,37 @@
+---
+- hosts: locators
+  become: no
+  vars:
+    ansible_ssh_user: ec2-user
+  tasks:
+    - name: copy cluster initial config to first locator 
+      copy:
+        src: setuptasks/InitCluster/cluster.zip 
+        dest: /runtime/gem_cluster_1
+      when: inventory_hostname == play_hosts[0]
+    
+    - name: start the locator(s)
+      command: python gf.py start gem1101-locator
+      args:
+        chdir: /runtime/gem_cluster_1
+      when: inventory_hostname == play_hosts[0]
+
+    
+    - name: import the cluster configuration
+      command: 
+      args:
+        chdir: /runtime/gem_cluster_1 
+        argv:
+          - /runtime/gemfire/bin/gfsh 
+          - -e 
+          - connect --locator=192.168.1.101[10000]
+          - -e 
+          - import cluster-configuration --zip-file-name=cluster.zip 
+      when: inventory_hostname == play_hosts[0]
+        
+    - name: stop the locator(s) 
+      command: python gf.py stop gem1101-locator
+      args:
+        chdir: /runtime/gem_cluster_1
+      when: inventory_hostname == play_hosts[0]
+    
