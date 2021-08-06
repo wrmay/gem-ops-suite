@@ -29,7 +29,7 @@ def initializeRefData():
     #and aws region map
     regions = ['us-east-1', 'us-east-2','us-west-1','us-west-2','ca-central-1','eu-west-1','eu-central-1','eu-west-2','ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2', 'ap-south-1','sa-east-1']
     amis =    ['ami-0b33d91d', 'ami-c55673a0', 'ami-165a0876', 'ami-f173cc91','ami-ebed508f', 'ami-70edb016	' ,'ami-af0fc0c0','ami-f1949e95','ami-56d4ad31','ami-dac312b4','ami-dc9339bf','ami-1c47407f', 'ami-f9daac96','ami-80086dec']
-    regionInfo = zip(regions, amis)
+    regionInfo = list(zip(regions, amis))
     for region, ami in regionInfo:
         regionProps[region] = dict()
         regionProps[region]['AMI'] = ami
@@ -58,7 +58,7 @@ def validate(ctx):
                 sys.exit('server {0} is missing a required key: {1}'.format(index,requiredKey))
 
         if  server['InstanceType'] not in instanceProps:
-            sys.exit('server {0} failed a validation: "InstanceType" must be one of the following - {1}'.format(index,','.join(list(instanceProps.keys))))
+            sys.exit('server {0} failed a validation: "InstanceType" must be one of the following - {1}'.format(index,','.join(iter(instanceProps))))
 
         if not server['PrivateIP'].startswith('192.168.'):
             sys.exit('server {0} failed a validation: "PrivateIP" must start with "192.168."'.format(index))
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 # now we can add 'locator-properties-' and 'datanode-properties-' and 'global-properties-'
 
             else:
-                print 'warning: unknown extension: {0}'.format(k)
+                print('warning: unknown extension: {0}'.format(k))
 
     # generate security related information
     # if context['SecurityProvider'] is not None:
