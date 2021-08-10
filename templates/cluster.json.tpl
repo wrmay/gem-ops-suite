@@ -1,7 +1,7 @@
 {
     "global-properties":{
         "gemfire": "/runtime/gemfire",
-        "java-home" : "/etc/alternatives/java_sdk_1.8.0",
+        "java-home" : "/etc/alternatives/jre-11-openjdk",
         "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
@@ -24,7 +24,7 @@
         "archive-file-size-limit" : "10",
         "archive-disk-space-limit" : "100",
         "enable-network-partition-detection" : "true",
-        "jvm-options" : ["-Xmx2g","-Xms2g", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC" ]
+        "jvm-options" : ["-Xmx2g","-Xms2g", "-XX:+UseConcMarkSweepGC"]
         {% if Environment and Environment.GemFire %}
         {% for key,val in Environment.GemFire if key.startswith('locator-properties-') %}
         , "{{ key.substring(len('locator-properties-')) }}" : "{{ val }}"
@@ -32,6 +32,7 @@
         {% endif %}
     },
    "datanode-properties" : {
+        "cache-xml-file" : "../cache.xml",
         "conserve-sockets" : false,
         "log-level" : "config",
         "membership-port-range" : "10901-10999",
@@ -53,7 +54,7 @@
     },
     "hosts": {
     {% for Server in Servers  if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
-        "ip-{{ Server.PrivateIP | replace('.','-') }}" : {
+        "ip-{{ Server.PrivateIP | replace('.','-') }}.{{ RegionName }}.compute.internal" : {
             "host-properties" :  {
              },
              "processes" : {
@@ -69,7 +70,7 @@
                {%if "DataNode" in Server.Roles %}
                 {% if "Locator" in Server.Roles -%},{% endif %}"{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m","-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC",  "-XX:CMSInitiatingOccupancyFraction=85"]
+                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m","-XX:+UseConcMarkSweepGC",  "-XX:CMSInitiatingOccupancyFraction=85"]
                     {% if "REST" in Server.Roles %}
                     , "http-service-port": 18080,
                     "start-dev-rest-api" : "true"

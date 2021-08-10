@@ -12,7 +12,7 @@
 {{ server.PublicIpAddress }}
 {% endfor %}
 
-[etls]
-{% for server in Servers if 'ETL' in server.Roles %}
+[grinder]
+{% for server in Servers if 'Grinder' in server.Roles %}
 {{ server.PublicIpAddress }}
 {% endfor %}

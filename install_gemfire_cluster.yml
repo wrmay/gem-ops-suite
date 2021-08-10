@@ -1,25 +1,27 @@
 ---
-- hosts: all
+- hosts: 
+    - datanodes
+    - locators
   vars:
     ansible_ssh_user: ec2-user
   tasks:
     - name: install required software 
       become: yes
       yum: 
-        name: ['java-1.8.0-openjdk-devel.x86_64', 'nc', 'git','lsof']
+        name: ['java-11-amazon-corretto-headless.x86_64', 'nc', 'git','lsof']
     
-    - name: disable iptables
-      become: yes
-      service: 
-        name: iptables
-        enabled: no 
-        state: stopped
+    # - name: disable iptables
+    #   become: yes
+    #   service: 
+    #     name: iptables
+    #     enabled: no 
+    #     state: stopped
     
-    - name: download and unpack GemFire 9.3 
+    - name: download and unpack GemFire 9.10.5 
       become: no
       unarchive:
         remote_src: yes
-        src: http://download.pivotal.com.s3.amazonaws.com/gemfire/9.3.0/pivotal-gemfire-9.3.0.zip
+        src: http://download.pivotal.com.s3.amazonaws.com/gemfire/9.10.5/pivotal-gemfire-9.10.5.tgz
         dest: /runtime
         owner: ec2-user
         group: ec2-user
@@ -28,7 +30,7 @@
       become: no 
       file: 
         path: /runtime/gemfire 
-        src: /runtime/pivotal-gemfire-9.3.0
+        src: /runtime/pivotal-gemfire-9.10.5
         state: link
         owner: ec2-user 
         group: ec2-user 
@@ -37,7 +39,7 @@
       become: no
       unarchive:
         remote_src: yes
-        src:  http://apache.cs.utah.edu/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+        src:  https://mirror.cogentco.com/pub/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
         dest: /runtime
         owner: ec2-user
         group: ec2-user
@@ -46,8 +48,7 @@
       become: no 
       file: 
         path: /runtime/maven 
-        src: /runtime/apache-maven-3.6.0
-        remote_src: yes
+        src: /runtime/apache-maven-3.8.1
         state: link
         owner: ec2-user 
         group: ec2-user 
@@ -81,10 +82,11 @@
     - name: setup the cluster working directories
       become: no
       copy: 
-        src: cluster.json 
+        src: "{{ item }}"
         dest: /runtime/gem_cluster_1/
         owner: ec2-user 
         group: ec2-user 
+      loop: ['cluster.json', 'cache.xml']
 
     - name: copy gemfire-manager scripts to cluster working directory 
       become: no

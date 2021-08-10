@@ -264,7 +264,7 @@ if __name__ == '__main__':
         if context['RegionName'] == 'us-east-1':
             server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.compute-1.amazonaws.com'
         else:
-            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + 'compute.amazonaws.com'
+            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + '.compute.amazonaws.com'
 
 
     renderTemplate(templateDir,'cluster.json.tpl',context,here)

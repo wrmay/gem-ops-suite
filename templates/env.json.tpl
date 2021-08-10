@@ -18,7 +18,7 @@
     {% for Server in Servers %}
         {
             "Name" : "{{ Server.Name }}",
-            "ImageId" : "{{ AMI }}",
+            "ImageId" : "ami-0443305dabd4be2bc",
             "InstanceType" : "{{ Server.InstanceType }}",
             "PrivateIP" : "{{ Server.PrivateIP }}",
             "AZ" : "{{ Server.AZ }}",
