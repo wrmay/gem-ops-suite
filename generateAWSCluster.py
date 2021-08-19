@@ -60,8 +60,8 @@ def validate(ctx):
         if  server['InstanceType'] not in instanceProps:
             sys.exit('server {0} failed a validation: "InstanceType" must be one of the following - {1}'.format(index,','.join(iter(instanceProps))))
 
-        if not server['PrivateIP'].startswith('192.168.'):
-            sys.exit('server {0} failed a validation: "PrivateIP" must start with "192.168."'.format(index))
+        # if not server['PrivateIP'].startswith('192.168.'):
+        #     sys.exit('server {0} failed a validation: "PrivateIP" must start with "192.168."'.format(index))
 
 if __name__ == '__main__':
     #now dir should be set

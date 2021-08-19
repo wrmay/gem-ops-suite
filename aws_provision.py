@@ -242,7 +242,7 @@ if __name__ == '__main__':
             for tag in instance['Tags']:
                 if tag['Key'] == 'Name':
                     shortName = tag['Value'][len(context['EnvironmentName'] + 'Server'):]
-                    ipTable[shortName] = instance['PublicIpAddress']
+                    ipTable[shortName] = instance['PrivateIpAddress']
                     break
 
     with open(instanceMapFile, 'w') as runtimeFile:
