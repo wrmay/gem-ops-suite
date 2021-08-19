@@ -36,6 +36,6 @@
       copy:
         remote_src: no
         src: grinder/
-        dest: /runtime/grinder/
+        dest: /runtime/grinder/agent/
         owner: ec2-user
         group: ec2-user

@@ -5,5 +5,5 @@
   tasks:
     - name: launch grinder agents 
       become: no
-      shell: cd /runtime/grinder;nohup java -cp grinder-3.11/lib/grinder.jar net.grinder.Grinder </dev/null >/dev/null 2>&1 &
+      shell: cd /runtime/grinder/agent;nohup java -cp ../grinder-3.11/lib/grinder.jar net.grinder.Grinder </dev/null >/dev/null 2>&1 &
     

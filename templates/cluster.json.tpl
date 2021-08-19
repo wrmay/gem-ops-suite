@@ -70,7 +70,28 @@
                {%if "DataNode" in Server.Roles %}
                 {% if "Locator" in Server.Roles -%},{% endif %}"{{ Server.Name }}-server" : {
                     "type" : "datanode",
-                    "jvm-options" : ["-Xmx{{ Server.XMX }}m","-Xms{{ Server.XMX }}m","-Xmn{{ Server.XMN }}m","-XX:+UseConcMarkSweepGC",  "-XX:CMSInitiatingOccupancyFraction=85"]
+                    "jvm-options" : [
+                        "-Xss100m",
+                        "-XX:SurvivorRatio=1",
+                        "-XX:MaxTenuringThreshold=2",
+                        "-XX:ConcGCThreads=2",
+                        "-Xmx12g",
+                        "-Xms12g",
+                        "-XX:+HeapDumpOnOutOfMemoryError",
+                        "-XX:HeapDumpPath=jvmdumps",
+                        "-Xlog:gc*,age*=debug,ergo*=debug:gc.log:time:filecount=10,filesize=10k",
+                        "-XX:NewSize=1536m",
+                        "-XX:MaxNewSize=1536m",
+                        "-XX:+UseConcMarkSweepGC",
+                        "-XX:+CMSClassUnloadingEnabled",
+                        "-XX:CMSInitiatingOccupancyFraction=80",
+                        "-XX:+UseCMSInitiatingOccupancyOnly",
+                        "-XX:+ExplicitGCInvokesConcurrent",
+                        "-XX:+UnlockDiagnosticVMOptions",
+                        "-XX:+ScavengeBeforeFullGC",
+                        "-XX:+CMSScavengeBeforeRemark",
+                        "-XX:+CMSParallelRemarkEnabled",
+                        "-XX:+AlwaysPreTouch"]
                     {% if "REST" in Server.Roles %}
                     , "http-service-port": 18080,
                     "start-dev-rest-api" : "true"
