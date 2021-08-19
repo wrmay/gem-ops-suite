@@ -11,7 +11,7 @@ fi
 PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/runtime/gemfire/bin:/runtime/maven/bin
 
 GEMFIRE=/runtime/gemfire
-GF_JAVA=/etc/alternatives/jre-11-openjdk/bin/java
+GF_JAVA=/usr/lib/jvm/java-11-openjdk-11.0.12.0.7-0.el7_9.x86_64/bin/java
 
 export PATH
 export GEMFIRE

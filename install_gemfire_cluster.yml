@@ -8,14 +8,15 @@
     - name: install required software 
       become: yes
       yum: 
-        name: ['java-11-amazon-corretto-headless.x86_64', 'nc', 'git','lsof']
-    
-    # - name: disable iptables
-    #   become: yes
-    #   service: 
-    #     name: iptables
-    #     enabled: no 
-    #     state: stopped
+        # name: ['java-11-amazon-corretto-headless.x86_64', 'nc', 'git','lsof']
+        name: ['java-11-openjdk-headless', 'nc', 'git','lsof']
+
+    - name: disable iptables
+      become: yes
+      service: 
+        name: iptables
+        enabled: no 
+        state: stopped
     
     - name: download and unpack GemFire 9.10.5 
       become: no

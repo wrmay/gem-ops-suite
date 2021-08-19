@@ -1,7 +1,7 @@
 {
     "global-properties":{
         "gemfire": "/runtime/gemfire",
-        "java-home" : "/etc/alternatives/jre-11-openjdk",
+        "java-home" : "/usr/lib/jvm/java-11-openjdk-11.0.12.0.7-0.el7_9.x86_64",
         "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
@@ -54,14 +54,14 @@
     },
     "hosts": {
     {% for Server in Servers  if "DataNode" in Server.Roles or "Locator" in Server.Roles %}
-        "ip-{{ Server.PrivateIP | replace('.','-') }}.{{ RegionName }}.compute.internal" : {
+        "ip-{{ Server.PrivateIP | replace('.','-') }}.bfsnpss.bfsaws.net" : {
             "host-properties" :  {
              },
              "processes" : {
                {% if "Locator" in Server.Roles %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "jmx-manager-hostname-for-clients" : "{{ Server.PublicHostName }}"
+                    "jmx-manager-hostname-for-clients" : "ip-{{ Server.PrivateIP | replace('.','-') }}.bfsnpss.bfsaws.net"
                     {% if "Pulse" in Server.Roles %}
                     , "jmx-manager-start" : "true"
                     {% endif %}
@@ -100,7 +100,7 @@
               {% endif %}
              },
              "ssh" : {
-                "host" : "{{ Server.PublicHostName }}",
+                "host" : "{{ Server.PrivateIP }}",
                 "user" : "{{ Server.SSHUser }}",
                 "key-file" : "{{ SSHKeyPath }}"
              }

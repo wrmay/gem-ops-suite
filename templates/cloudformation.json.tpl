@@ -2,135 +2,16 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Resources": {
     {######### VPC Definitions #############}
-    "VPC" : {
-       "Type" : "AWS::EC2::VPC",
-       "Properties" : {
-          "CidrBlock" : "192.168.0.0/16",
-          "EnableDnsHostnames" : "true",
-          "EnableDnsSupport" : "true",
-          "Tags" : [
-            {
-              "Key": "Name",
-              "Value": "{{ EnvironmentName }}VPC"
-            }
-          ]
-       }
-    },
-    "SubnetA" : {
-      "Type" : "AWS::EC2::Subnet",
-      "Properties" : {
-         "AvailabilityZone" : "{{ RegionName }}a",
-         "CidrBlock" : "192.168.1.0/24",
-         "MapPublicIpOnLaunch" : true,
-          "Tags" : [
-            {
-              "Key": "Name",
-              "Value": "{{ EnvironmentName }}SubnetA"
-            }
-          ],
-         "VpcId" : { "Ref" : "VPC" }
-      }
-    },
-    "SubnetB" : {
-      "Type" : "AWS::EC2::Subnet",
-      "Properties" : {
-         "AvailabilityZone" : "{{ RegionName }}b",
-         "CidrBlock" : "192.168.2.0/24",
-         "MapPublicIpOnLaunch" : true,
-          "Tags" : [
-            {
-              "Key": "Name",
-              "Value": "{{ EnvironmentName }}SubnetB"
-            }
-          ],
-         "VpcId" : { "Ref" : "VPC" }
-      }
-    },
-    "SubnetC" : {
-      "Type" : "AWS::EC2::Subnet",
-      "Properties" : {
-         "AvailabilityZone" : "{{ RegionName }}c",
-         "CidrBlock" : "192.168.3.0/24",
-         "MapPublicIpOnLaunch" : true,
-          "Tags" : [
-            {
-              "Key": "Name",
-              "Value": "{{ EnvironmentName }}SubnetC"
-            }
-          ],
-         "VpcId" : { "Ref" : "VPC" }
-      }
-    },
-    "InternetGateway":{
-      "Type" : "AWS::EC2::InternetGateway",
-      "Properties" : {
-        "Tags" : [
-          {
-            "Key": "Name",
-            "Value": "{{ EnvironmentName }}InternetGateway"
-          }
-        ]
-      }
-    },
-    "RouteTable" : {
-      "Type" : "AWS::EC2::RouteTable",
-      "Properties" : {
-        "VpcId" : {"Ref": "VPC"},
-        "Tags" : [
-          {
-            "Key": "Name",
-            "Value" : "{{ EnvironmentName }}RouteTable"
-          }
-        ]
-      }
-    },
-    "RouteToInternet" : {
-      "Type" : "AWS::EC2::Route",
-      "Properties" : {
-        "DestinationCidrBlock" : "0.0.0.0/0",
-        "GatewayId" : {"Ref": "InternetGateway"},
-        "RouteTableId" : {"Ref":  "RouteTable"}
-      },
-      "DependsOn": ["VPCGatewayAttachment"]
-    },
-    "SubnetARouteTableAssociation" : {
-      "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-      "Properties" : {
-         "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetA"}
-      }
-    },
-    "SubnetBRouteTableAssociation" : {
-      "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-      "Properties" : {
-         "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetB"}
-      }
-    },
-    "SubnetCRouteTableAssociation" : {
-      "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-      "Properties" : {
-         "RouteTableId" : {"Ref" : "RouteTable"},
-         "SubnetId" : {"Ref" : "SubnetC"}
-      }
-    },
-    "VPCGatewayAttachment":{
-      "Type" : "AWS::EC2::VPCGatewayAttachment",
-      "Properties" : {
-         "InternetGatewayId" : {"Ref" : "InternetGateway"  },
-         "VpcId" : {"Ref" : "VPC"}
-      }
-    },
     "SecurityGroup":{
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
          "GroupDescription" : "{{ EnvironmentName }}SecurityGroup",
-         "VpcId" : {"Ref" : "VPC"},
+         "VpcId" : "vpc-09575f1fdf7a3b90c",
          {#####  When No Egress Rules are Specified Default Allows All #####}
          "SecurityGroupIngress" : [
             {
               "IpProtocol" : "-1",
-               "CidrIp" : { "Fn::GetAtt": ["VPC","CidrBlock"]}
+               "CidrIp" : "10.53.0.0/16"
             },
             {
               "IpProtocol" : "tcp",
@@ -159,19 +40,19 @@
     "{{ Server.Name }}" : {
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
-         "AvailabilityZone" : "{{ RegionName }}{{ Server.AZ | lower }}",
+         "AvailabilityZone" : "us-east-1b",
          {% if Server.InstanceType.startswith('m4') %}
          "EbsOptimized" : true,
          {% else%}
          "EbsOptimized" : false,
          {% endif %}
-         "ImageId" : "{{ Server.ImageId }}",
+         "ImageId" : "ami-0503fae4f316477fb",
          "InstanceInitiatedShutdownBehavior" : "stop",
          "InstanceType" : "{{ Server.InstanceType }}",
          "KeyName" : "{{ KeyPair }}",
          "PrivateIpAddress" : "{{ Server.PrivateIP }}",
          "SecurityGroupIds" : [ { "Ref" : "SecurityGroup"}],
-         "SubnetId" : { "Ref" : "Subnet{{ Server.AZ }}" },
+         "SubnetId" :"subnet-04a03ae3e7ed8225d",
          "Tags" : [
             {
               "Key": "Name",
