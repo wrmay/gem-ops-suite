@@ -17,14 +17,25 @@ regionProps = None
 def initializeRefData():
     global instanceProps, regionProps
 
-    instanceProps = dict()
-    regionProps = dict()
+    instanceProps = {
+        'm4.large': { 'RAM': 8},
+        'm4.xlarge' : { 'RAM': 16},
+        'm4.2xlarge' : { 'RAM': 32},
+        'm4.4xlarge' : { 'RAM': 64},
+        'r4.xlarge' : { 'RAM': 30},
+        'r4.2xlarge' : { 'RAM': 61},
+        'r4.4xlarge' : { 'RAM': 122},
+        'r5.24xlarge' : { 'RAM': 768},
+        'r5.16xlarge' : { 'RAM': 512},
+        'r5.12xlarge' : { 'RAM': 384},
+        'r5.8xlarge' : { 'RAM': 256},
+        'r5.4xlarge' : { 'RAM': 128},
+        'r5.2xlarge' : { 'RAM': 64},
+        'r5.xlarge' : { 'RAM': 32},
+        'r5.large' : { 'RAM': 16 }
+    }
 
-    #create instanceProps map
-    ramInfo = [('m4.large',8),('m4.xlarge',16),('m4.2xlarge',32),('m4.4xlarge',64),('r4.xlarge',30),('r4.2xlarge',61),('r4.4xlarge',122)]
-    for itype, ram in ramInfo:
-        instanceProps[itype] = dict()
-        instanceProps[itype]['RAM'] = ram
+    regionProps = dict()
 
     #and aws region map
     regions = ['us-east-1', 'us-east-2','us-west-1','us-west-2','ca-central-1','eu-west-1','eu-central-1','eu-west-2','ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2', 'ap-south-1','sa-east-1']
