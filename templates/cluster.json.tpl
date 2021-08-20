@@ -2,7 +2,7 @@
     "global-properties":{
         "gemfire": "/runtime/gemfire",
         "java-home" : "/usr/lib/jvm/java-11-openjdk-11.0.12.0.7-0.el7_9.x86_64",
-        "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PublicHostName}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
+        "locators" : "{% for Server in Servers  if "Locator" in Server.Roles -%}{{Server.PrivateIP}}[10000]{% if not loop.last -%},{%- endif %}{%- endfor %}",
         "cluster-home" : "/runtime/gem_cluster_1",
         "distributed-system-id": 1
         {% if Environment and Environment.GemFire %}
@@ -33,6 +33,7 @@
     },
    "datanode-properties" : {
         "cache-xml-file" : "../cache.xml",
+        "classpath" : "/runtime/gem_cluster_1/lib/*",
         "conserve-sockets" : false,
         "log-level" : "config",
         "membership-port-range" : "10901-10999",
@@ -61,7 +62,7 @@
                {% if "Locator" in Server.Roles %}
                 "{{ Server.Name }}-locator" : {
                     "type" : "locator",
-                    "jmx-manager-hostname-for-clients" : "ip-{{ Server.PrivateIP | replace('.','-') }}.bfsnpss.bfsaws.net"
+                    "jmx-manager-hostname-for-clients" : "{{ Server.PrivateIP }}"
                     {% if "Pulse" in Server.Roles %}
                     , "jmx-manager-start" : "true"
                     {% endif %}
@@ -75,13 +76,13 @@
                         "-XX:SurvivorRatio=1",
                         "-XX:MaxTenuringThreshold=2",
                         "-XX:ConcGCThreads=2",
-                        "-Xmx12g",
-                        "-Xms12g",
+                        "-Xmx300g",
+                        "-Xms300g",
                         "-XX:+HeapDumpOnOutOfMemoryError",
                         "-XX:HeapDumpPath=jvmdumps",
                         "-Xlog:gc*,age*=debug,ergo*=debug:gc.log:time:filecount=10,filesize=10k",
-                        "-XX:NewSize=1536m",
-                        "-XX:MaxNewSize=1536m",
+                        "-XX:NewSize=40g",
+                        "-XX:MaxNewSize=40g",
                         "-XX:+UseConcMarkSweepGC",
                         "-XX:+CMSClassUnloadingEnabled",
                         "-XX:CMSInitiatingOccupancyFraction=80",
