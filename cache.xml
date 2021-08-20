@@ -7,7 +7,7 @@
 		notify-by-subscription="true" />
 
 	<disk-store name="PDX_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
-		max-oplog-size="10">
+		max-oplog-size="512">
 		<disk-dirs>
 			<disk-dir><![CDATA[/data/pdx]]></disk-dir>
 		</disk-dirs>
@@ -15,13 +15,13 @@
 	
 	
 	<disk-store name="Accounts_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
-		max-oplog-size="10">
+		max-oplog-size="512">
 		<disk-dirs>
 			<disk-dir><![CDATA[/data/Accounts]]></disk-dir>
 		</disk-dirs>
 	</disk-store>
 	<disk-store name="SecurityPrices_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
-		max-oplog-size="10">
+		max-oplog-size="512">
 		<disk-dirs>
 			<disk-dir><![CDATA[/data/SecurityPrices]]></disk-dir>
 		</disk-dirs>
@@ -55,14 +55,20 @@
 		refid="REPLICATE_PERSISTENT" ignore-jta="true"> 
 	</region-attributes>
 
-	<region name="Accounts">
-		<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="Accounts_DISK_STORE">
-		</region-attributes>
-	</region>
+	<region name="firm">
+		<region-attributes/>
+		<region name="0">
 
-	<region name="SecurityPrices">
-		<region-attributes refid="REPLICATE_PERSISTENT_REGION_TYPE" disk-store-name="SecurityPrices_DISK_STORE">
-		</region-attributes>
+			<region name="accountDetails">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="Accounts_DISK_STORE">
+				</region-attributes>
+			</region>
+
+			<region name="SecurityPrice">
+				<region-attributes refid="REPLICATE_PERSISTENT_REGION_TYPE" disk-store-name="SecurityPrices_DISK_STORE">
+				</region-attributes>
+			</region>
+		</region>
 	</region>
 
 	<function-service >
