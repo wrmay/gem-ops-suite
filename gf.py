@@ -469,6 +469,7 @@ def bounce():
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         printUsage()
+        exit(0)
 
     here = os.path.dirname(sys.argv[0])
 
