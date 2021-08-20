@@ -1,18 +1,18 @@
 {% for server in Servers %}
-{{ server.PublicIpAddress }}
+{{ server.PrivateIP }}
 {% endfor %}
 
 [locators]
 {% for server in Servers if 'Locator' in server.Roles %}
-{{ server.PublicIpAddress }}
+{{ server.PrivateIP }}
 {% endfor %}
 
 [datanodes]
 {% for server in Servers if 'DataNode' in server.Roles %}
-{{ server.PublicIpAddress }}
+{{ server.PrivateIP }}
 {% endfor %}
 
 [grinder]
 {% for server in Servers if 'Grinder' in server.Roles %}
-{{ server.PublicIpAddress }}
+{{ server.PrivateIP }}
 {% endfor %}

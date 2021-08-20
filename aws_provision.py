@@ -252,19 +252,19 @@ if __name__ == '__main__':
 
     # now enhance the context with the public ip addresses so
     # they can be used in templates
-    for server in context['Servers']:
-        ip = ipTable[server['Name']]
-        server['PublicIpAddress'] = ip
-        server['PublicIP'] = ip
+    # for server in context['Servers']:
+    #     ip = ipTable[server['Name']]
+    #     server['PublicIpAddress'] = ip
+    #     server['PublicIP'] = ip
                 
-        # According to https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-hostnames
-        #
-        # A public (external) DNS hostname takes the form ec2-public-ipv4-address.compute-1.amazonaws.com for the us-east-1 region,
-        # and ec2-public-ipv4-address.region.compute.amazonaws.com for other regions.
-        if context['RegionName'] == 'us-east-1':
-            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.compute-1.amazonaws.com'
-        else:
-            server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + '.compute.amazonaws.com'
+    #     # According to https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-hostnames
+    #     #
+    #     # A public (external) DNS hostname takes the form ec2-public-ipv4-address.compute-1.amazonaws.com for the us-east-1 region,
+    #     # and ec2-public-ipv4-address.region.compute.amazonaws.com for other regions.
+    #     if context['RegionName'] == 'us-east-1':
+    #         server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.compute-1.amazonaws.com'
+    #     else:
+    #         server['PublicHostName'] = 'ec2-' + ip.replace('.','-') + '.' + context['RegionName'] + '.compute.amazonaws.com'
 
 
     renderTemplate(templateDir,'cluster.json.tpl',context,here)
@@ -276,7 +276,7 @@ if __name__ == '__main__':
     # now do the final setup steps
     serverNum = -1
     for server in context['Servers']:
-        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'], 'sudo', 'yum','install','-y','wget','unzip', 'rsync')
+        runRemote(context['SSHKeyPath'], server['SSHUser'], server['PrivateIP'], 'sudo', 'yum','install','-y','wget','unzip', 'rsync')
         serverNum += 1
         context['ServerNum'] = serverNum
         
@@ -288,11 +288,11 @@ if __name__ == '__main__':
             
             runQuietly('rsync', '-avz','--delete',
                 '-e' ,'ssh -o StrictHostKeyChecking=no  -o UserKnownHostsFile=/dev/null -i {0}'.format(context['SSHKeyPath']),
-                installationDir + '/', server['SSHUser'] + '@' + server['PublicIP'] + ':/tmp/setup')
+                installationDir + '/', server['SSHUser'] + '@' + server['PrivateIP'] + ':/tmp/setup')
 
-            runRemote(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
+            runRemote(context['SSHKeyPath'], server['SSHUser'], server['PrivateIP'],
                         'sudo', 'python','/tmp/setup/setup.py')
 
-            runRemoteQuietly(context['SSHKeyPath'], server['SSHUser'], server['PublicIP'],
+            runRemoteQuietly(context['SSHKeyPath'], server['SSHUser'], server['PrivateIP'],
                         'rm','-rf', '/tmp/setup')
 
