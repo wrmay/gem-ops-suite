@@ -80,6 +80,17 @@
         depth: 1
         dest: /runtime/gemfire-manager
         
+    # need to paramterize the name of the key file!
+    - name: copy ssh key to remote servers
+      become: no
+      copy: 
+        src: /home/ec2-user/rmay.pem
+        dest: /home/ec2-user/rmay.pem
+        owner: ec2-user 
+        group: ec2-user 
+        mode: '600'
+      
+
     - name: setup the cluster working directories
       become: no
       copy: 
