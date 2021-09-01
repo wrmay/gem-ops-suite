@@ -9,7 +9,13 @@
       become: yes
       yum: 
         # name: ['java-11-amazon-corretto-headless.x86_64', 'nc', 'git','lsof']
-        name: ['java-11-openjdk-headless', 'nc', 'git','lsof']
+        name: ['java-11-openjdk-headless', 'nc','lsof']
+
+    - name: configure hosts entry
+      become: yes 
+      template: 
+        src: templates/hosts.tpl
+        dest: /etc/hosts 
 
     - name: disable iptables
       become: yes
@@ -18,11 +24,13 @@
         enabled: no 
         state: stopped
     
-    - name: download and unpack GemFire 9.10.5 
+    - name: upload and unpack GemFire 9.10.5 
       become: no
       unarchive:
-        remote_src: yes
-        src: http://download.pivotal.com.s3.amazonaws.com/gemfire/9.10.5/pivotal-gemfire-9.10.5.tgz
+        remote_src: no
+        creates: /runtime/pivotal-gemfire-9.10.5
+        # src: http://download.pivotal.com.s3.amazonaws.com/gemfire/9.10.5/pivotal-gemfire-9.10.5.tgz
+        src: resources/pivotal-gemfire-9.10.5.tgz
         dest: /runtime
         owner: ec2-user
         group: ec2-user
@@ -36,23 +44,24 @@
         owner: ec2-user 
         group: ec2-user 
         
-    - name: download and unpack Maven
-      become: no
-      unarchive:
-        remote_src: yes
-        src:  https://mirror.cogentco.com/pub/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
-        dest: /runtime
-        owner: ec2-user
-        group: ec2-user
+    # - name: download and unpack Maven
+    #   become: no
+    #   unarchive:
+    #     remote_src: yes
+    #     src:  https://mirror.cogentco.com/pub/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
+    #     dest: /runtime
+    #     creates: /runtime/apache-maven-3.8.1
+    #     owner: ec2-user
+    #     group: ec2-user
         
-    - name: create Maven symbolic link
-      become: no 
-      file: 
-        path: /runtime/maven 
-        src: /runtime/apache-maven-3.8.1
-        state: link
-        owner: ec2-user 
-        group: ec2-user 
+    # - name: create Maven symbolic link
+    #   become: no 
+    #   file: 
+    #     path: /runtime/maven 
+    #     src: /runtime/apache-maven-3.8.1
+    #     state: link
+    #     owner: ec2-user 
+    #     group: ec2-user 
 
     - name: configure the bash profile 
       become: no 
@@ -62,23 +71,23 @@
         owner: ec2-user 
         group: ec2-user 
         
-    - name: configure maven 
-      become: no
-      copy:
-        src: setuptasks/ConfigureMaven/settings.xml 
-        dest: /home/ec2-user/.m2/
-        owner: ec2-user 
-        group: ec2-user 
+    # - name: configure maven 
+    #   become: no
+    #   copy:
+    #     src: setuptasks/ConfigureMaven/settings.xml 
+    #     dest: /home/ec2-user/.m2/
+    #     owner: ec2-user 
+    #     group: ec2-user 
         
-    - name: git clone  gemfire-manager 
-      become: no
-      git:
-        repo: https://github.com/Pivotal-Data-Engineering/gemfire-manager
-        clone: yes 
-        version: 2.1 
-        recursive: no 
-        depth: 1
-        dest: /runtime/gemfire-manager
+    # - name: git clone  gemfire-manager 
+    #   become: no
+    #   git:
+    #     repo: https://github.com/Pivotal-Data-Engineering/gemfire-manager
+    #     clone: yes 
+    #     version: 2.1 
+    #     recursive: no 
+    #     depth: 1
+    #     dest: /runtime/gemfire-manager
         
     # need to paramterize the name of the key file!
     - name: copy ssh key to remote servers
@@ -100,37 +109,44 @@
         group: ec2-user 
       loop: ['cluster.json', 'cache.xml']
 
+    - name: copy application configuration to runtime folder 
+      become: no
+      copy: 
+        src: resources/pr.properties
+        dest: /runtime
+        owner: ec2-user 
+        group: ec2-user
+
     - name: copy gemfire-manager scripts to cluster working directory 
       become: no
       copy: 
-        src: /runtime/gemfire-manager/{{ item }}
-        remote_src: yes
+        src: "{{ item }}"
         dest: /runtime/gem_cluster_1/
         owner: ec2-user 
         group: ec2-user 
       loop: ['gf.py', 'cluster.py', 'clusterdef.py', 'gemprops.py']
       
-    - name: git clone  gemfire-toolkit
-      become: no
-      git:
-        repo: https://github.com/Pivotal-Data-Engineering/gemfire-toolkit
-        clone: yes 
-        version: gemfire-toolkit-2.1 
-        recursive: no 
-        depth: 1
-        dest: /runtime/gemfire-toolkit 
+    # - name: git clone  gemfire-toolkit
+    #   become: no
+    #   git:
+    #     repo: https://github.com/Pivotal-Data-Engineering/gemfire-toolkit
+    #     clone: yes 
+    #     version: gemfire-toolkit-2.1 
+    #     recursive: no 
+    #     depth: 1
+    #     dest: /runtime/gemfire-toolkit 
         
-    - name: build gemfire-toolkit 
-      become: no
-      command: /runtime/maven/bin/mvn package
-      args:
-        chdir: /runtime/gemfire-toolkit
+    # - name: build gemfire-toolkit 
+    #   become: no
+    #   command: /runtime/maven/bin/mvn package
+    #   args:
+    #     chdir: /runtime/gemfire-toolkit
       
     - name: install gemfire-toolkit
       become: no       
       unarchive:
-        remote_src: yes
-        src:  /runtime/gemfire-toolkit/target/gemfire-toolkit-2.1-runtime.tar.gz
+        remote_src: no
+        src:  resources/gemfire-toolkit-2.1-runtime.tar.gz
         dest: /runtime/gem_cluster_1 
         owner: ec2-user
         group: ec2-user

@@ -1,0 +1,36 @@
+{
+  "EnvironmentName" : "RMAYLAB",
+  "RegionName" : "us-east-1",
+  "SSHKeyPairName" : "rmay",
+  "SSHKeyPath": "/home/ec2-user/rmay.pem",
+  "Servers" : [
+    {
+      "Name" : "gem45",
+        "PrivateIP" : "10.53.36.45",
+        "AZ" : "B",
+        "InstanceType" : "r5.12xlarge",
+        "Roles" : ["DataNode", "Locator","Pulse"]
+    },
+    {
+      "Name" : "gem57",
+      "PrivateIP" : "10.53.36.57",
+      "AZ" : "B",
+      "InstanceType" : "r5.12xlarge",
+      "Roles" : ["DataNode"]
+    },
+    {
+      "Name" : "gem58",
+      "PrivateIP" : "10.53.36.58",
+      "AZ" : "B",
+      "InstanceType" : "r5.12xlarge",
+      "Roles" : ["DataNode"]
+    },
+    {
+      "Name" : "gem59",
+      "PrivateIP" : "10.53.36.59",
+      "AZ" : "B",
+      "InstanceType" : "r5.12xlarge",
+      "Roles" : ["DataNode"]
+    }
+  ]
+}

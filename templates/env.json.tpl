@@ -45,15 +45,6 @@
                   "FSType" : "ext4",
                   "DeviceType" : "EBS",
                   "EBSVolumeType" : "gp2"
-              },
-              {
-                  "Size": {{ Server.RAM * 4 }},
-                  "Device" : "/dev/xvdh",
-                  "MountPoint" : "/backup",
-                  "Owner" : "ec2-user",
-                  "FSType" : "ext4",
-                  "DeviceType" : "EBS",
-                  "EBSVolumeType" : "gp2"
       {% endif %}
               }
             ],

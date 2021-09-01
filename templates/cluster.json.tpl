@@ -33,7 +33,7 @@
     },
    "datanode-properties" : {
         "cache-xml-file" : "../cache.xml",
-        "classpath" : "/runtime/gem_cluster_1/lib/*",
+        "classpath" : "/runtime:/runtime/lib/*",
         "conserve-sockets" : false,
         "log-level" : "config",
         "membership-port-range" : "10901-10999",
@@ -45,6 +45,7 @@
         "archive-disk-space-limit" : "100",
         "tcp-port" : 10001,
         "server-port" : 10100,
+        "groups" : "UBS-CLUSTER",
         "gemfire.ALLOW_PERSISTENT_TRANSACTIONS" : "true",
         "enable-network-partition-detection" : "true"
         {% if Environment and Environment.GemFire %}
@@ -71,6 +72,7 @@
                {%if "DataNode" in Server.Roles %}
                 {% if "Locator" in Server.Roles -%},{% endif %}"{{ Server.Name }}-server" : {
                     "type" : "datanode",
+                    "bind-address" : "{{ Server.PrivateIP }}",
                     "jvm-options" : [
                         "-Xss100m",
                         "-XX:SurvivorRatio=1",

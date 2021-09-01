@@ -15,14 +15,8 @@
             },
             {
               "IpProtocol" : "tcp",
-               "FromPort" : "22",
-               "ToPort" : "22",
-               "CidrIp" : "0.0.0.0/0"
-            },
-            {
-              "IpProtocol" : "tcp",
-               "FromPort" : "10000",
-               "ToPort" : "19999",
+               "FromPort" : "17070",
+               "ToPort" : "17070",
                "CidrIp" : "0.0.0.0/0"
             }
           ],
@@ -51,7 +45,7 @@
          "InstanceType" : "{{ Server.InstanceType }}",
          "KeyName" : "{{ KeyPair }}",
          "PrivateIpAddress" : "{{ Server.PrivateIP }}",
-         "SecurityGroupIds" : [ { "Ref" : "SecurityGroup"}],
+         "SecurityGroupIds" : [ { "Ref" : "SecurityGroup"},"sg-0662302ce5dbefa74"],
          "SubnetId" :"subnet-04a03ae3e7ed8225d",
          "Tags" : [
             {

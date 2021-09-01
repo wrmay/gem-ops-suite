@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<cache  xmlns="http://geode.apache.org/schema/cache"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://geode.apache.org/schema/cache        http://geode.apache.org/schema/cache/cache-1.0.xsd"
+        version="1.0">
+	<cache-server port="10100"
+		notify-by-subscription="true" />
+
+	<disk-store name="PDX_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/pdx]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	
+	<disk-store name="Accounts_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/accountDetails]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="SecurityPrices_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/SecurityPrices]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+
+	<pdx read-serialized="false" disk-store-name="PDX_DISK_STORE" persistent="true" >
+		<pdx-serializer>
+			<class-name>org.apache.geode.pdx.ReflectionBasedAutoSerializer</class-name>
+			<parameter name="classes">
+				<string>com.broadridge.pr.mvpoc.domain.*</string>
+			</parameter>
+		</pdx-serializer>
+	</pdx>
+
+	<region-attributes id="DEFAULT_PARTITION_REGION_TYPE"
+		refid="PARTITION_REDUNDANT_PERSISTENT" ignore-jta="true" >
+		<partition-attributes redundant-copies="1"
+			total-num-buckets="113"></partition-attributes>
+	</region-attributes>
+
+	<region-attributes id="OVERFLOW_PARTITION_REGION_TYPE"
+		refid="PARTITION_REDUNDANT_PERSISTENT" ignore-jta="true" >
+		<partition-attributes redundant-copies="1"
+			total-num-buckets="113"></partition-attributes>
+		<eviction-attributes>
+			<lru-heap-percentage action="overflow-to-disk" />
+		</eviction-attributes>
+	</region-attributes>
+
+	<region-attributes id="REPLICATE_PERSISTENT_REGION_TYPE"
+		refid="REPLICATE_PERSISTENT" ignore-jta="true"> 
+	</region-attributes>
+
+	<region name="firm">
+		<region-attributes/>
+		<region name="0">
+
+			<region name="accountDetails">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="Accounts_DISK_STORE">
+				</region-attributes>
+			</region>
+
+			<region name="SecurityPrice">
+				<region-attributes refid="REPLICATE_PERSISTENT_REGION_TYPE" disk-store-name="SecurityPrices_DISK_STORE">
+				</region-attributes>
+			</region>
+		</region>
+	</region>
+
+	<function-service >
+	</function-service>
+
+	<resource-manager critical-heap-percentage="95" eviction-heap-percentage="75" />
+
+	<serialization-registration />
+
+</cache>

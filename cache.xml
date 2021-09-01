@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://geode.apache.org/schema/cache        http://geode.apache.org/schema/cache/cache-1.0.xsd"
         version="1.0">
 	<cache-server port="10100"
-		notify-by-subscription="true" />
+		notify-by-subscription="true" socket-buffer-size="150000" />
 
 	<disk-store name="PDX_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
 		max-oplog-size="512">
@@ -13,37 +13,595 @@
 		</disk-dirs>
 	</disk-store>
 	
+	<disk-store name="0_Group_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_Group]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_GroupDecode_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_GroupDecode]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountHeuristic_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountHeuristic]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_BlendedBenchmark_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_BlendedBenchmark]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_Control_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_Control]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityClassification_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityClassification]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityClassificationDecode_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityClassificationDecode]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityPrice_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityPrice]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityReference_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityReference]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountReference_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountReference]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityAttributes_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityAttributes]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_MissingInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_MissingInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_assetClass_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_assetClass]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_Sleeve_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_Sleeve]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_Model_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_Model]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_Objective_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_Objective]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_accountDetails_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_accountDetails]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_TWRHistory_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_TWRHistory]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_TransactionType_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_TransactionType]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityLinking_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityLinking]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_ProgramEligibility_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_ProgramEligibility]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_PreComputeDailyROR_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_PreComputeDailyROR]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_NodeIdData_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_NodeIdData]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_HistoricalROR_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_HistoricalROR]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_InceptionDates_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_InceptionDates]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountLinking_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountLinking]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_ExternalAccountGroup_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_ExternalAccountGroup]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_BenchmarkInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_BenchmarkInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_UniverseInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_UniverseInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_UniverseCodeRORValue_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_UniverseCodeRORValue]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_CAPSClassificationDataRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_CAPSClassificationDataRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_UnbundleMatrixRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_UnbundleMatrixRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_TaxabilityMatrixRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_TaxabilityMatrixRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountSortRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountSortRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_NewUISearchRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_NewUISearchRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountPMRElGRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountPMRElGRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityRatings_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityRatings]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_CAPSClassificaitonRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_CAPSClassificaitonRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_AccountCaptialFlowsRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_AccountCaptialFlowsRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_GroupToAccListRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_GroupToAccListRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
 	
-	<disk-store name="Accounts_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+	<disk-store name="0_AccountDirtyFlagRegion" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
 		max-oplog-size="512">
 		<disk-dirs>
-			<disk-dir><![CDATA[/data/Accounts]]></disk-dir>
+			<disk-dir><![CDATA[/data/0_AccountDirtyFlagRegion]]></disk-dir>
 		</disk-dirs>
 	</disk-store>
-	<disk-store name="SecurityPrices_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+	
+	<disk-store name="0_AccountPreComputeData_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
 		max-oplog-size="512">
 		<disk-dirs>
-			<disk-dir><![CDATA[/data/SecurityPrices]]></disk-dir>
+			<disk-dir><![CDATA[/data/0_AccountPreComputeData]]></disk-dir>
+		</disk-dirs>
+	</disk-store>	
+	<disk-store name="0_DeathValuationRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_DeathValuationRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>	
+	<disk-store name="0_OutsideAssetRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_OutsideAssetRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>	
+	<disk-store name="0_RelationshipRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_RelationshipRegion]]></disk-dir>
 		</disk-dirs>
 	</disk-store>
-
+	<disk-store name="0_SecurityCallDateRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityCallDateRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="0_SecurityInceptionDates_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/0_SecurityInceptionDates]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	<disk-store name="1_Group_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_Group]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_GroupDecode_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_GroupDecode]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_AccountHeuristic_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountHeuristic]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_BlendedBenchmark_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_BlendedBenchmark]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_Control_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_Control]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityClassification_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityClassification]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityClassificationDecode_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityClassificationDecode]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityPrice_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityPrice]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityReference_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityReference]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_AccountReference_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountReference]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityAttributes_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityAttributes]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_MissingInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_MissingInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_assetClass_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_assetClass]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_Sleeve_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_Sleeve]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_Model_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_Model]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_Objective_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_Objective]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_accountDetails_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_accountDetails]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_TWRHistory_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_TWRHistory]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_TransactionType_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_TransactionType]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityLinking_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityLinking]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_ProgramEligibility_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_ProgramEligibility]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_PreComputeDailyROR_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_PreComputeDailyROR]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_NodeIdData_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_NodeIdData]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_HistoricalROR_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_HistoricalROR]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_InceptionDates_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_InceptionDates]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_AccountLinking_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountLinking]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_ExternalAccountGroup_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_ExternalAccountGroup]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_BenchmarkInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_BenchmarkInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_UniverseInformation_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_UniverseInformation]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_UniverseCodeRORValue_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_UniverseCodeRORValue]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_CAPSClassificationDataRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_CAPSClassificationDataRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_UnbundleMatrixRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_UnbundleMatrixRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_TaxabilityMatrixRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_TaxabilityMatrixRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_AccountSortRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountSortRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_NewUISearchRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_NewUISearchRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_AccountPMRElGRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountPMRElGRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityRatings_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityRatings]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	<disk-store name="1_CAPSClassificaitonRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_CAPSClassificaitonRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	<disk-store name="1_AccountCaptialFlowsRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountCaptialFlowsRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_GroupToAccListRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_GroupToAccListRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	<disk-store name="1_AccountDirtyFlagRegion" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountDirtyFlagRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
+	<disk-store name="1_AccountPreComputeData_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_AccountPreComputeData]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+    <disk-store name="1_DeathValuationRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_DeathValuationRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_OutsideAssetRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_OutsideAssetRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_RelationshipRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_RelationshipRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityCallDateRegion_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityCallDateRegion]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	<disk-store name="1_SecurityInceptionDates_DISK_STORE" compaction-threshold="75" auto-compact="true" allow-force-compaction="true"
+		max-oplog-size="512">
+		<disk-dirs>
+			<disk-dir><![CDATA[/data/1_SecurityInceptionDates]]></disk-dir>
+		</disk-dirs>
+	</disk-store>
+	
 	<pdx read-serialized="false" disk-store-name="PDX_DISK_STORE" persistent="true" >
 		<pdx-serializer>
 			<class-name>org.apache.geode.pdx.ReflectionBasedAutoSerializer</class-name>
 			<parameter name="classes">
-				<string>com.broadridge.pr.mvpoc.domain.*</string>
+				<string>com.broadridge.pr.calculations.data.*,com.broadridge.pr.domain.*#identity=.*Key,com.broadridge.pr.domain.DecodeControl#identity=key,com.broadridge.pr.domain.SecurityAttributes#identity=securityId,com.broadridge.pr.domain.SecurityClassificationDecode#identity=classificationId,com.broadridge.pr.domain.Sleeve#identity=sleeveId,com.broadridge.pr.domain.OutsideAssetKey#identity=accountId</string>
 			</parameter>
 		</pdx-serializer>
 	</pdx>
 
 	<region-attributes id="DEFAULT_PARTITION_REGION_TYPE"
-		refid="PARTITION_REDUNDANT_PERSISTENT" ignore-jta="true" >
+		refid="PARTITION_REDUNDANT_PERSISTENT" >
 		<partition-attributes redundant-copies="1"
 			total-num-buckets="113"></partition-attributes>
 	</region-attributes>
 
 	<region-attributes id="OVERFLOW_PARTITION_REGION_TYPE"
-		refid="PARTITION_REDUNDANT_PERSISTENT" ignore-jta="true" >
+		refid="PARTITION_REDUNDANT_PERSISTENT" >
 		<partition-attributes redundant-copies="1"
 			total-num-buckets="113"></partition-attributes>
 		<eviction-attributes>
@@ -51,31 +609,803 @@
 		</eviction-attributes>
 	</region-attributes>
 
-	<region-attributes id="REPLICATE_PERSISTENT_REGION_TYPE"
-		refid="REPLICATE_PERSISTENT" ignore-jta="true"> 
-	</region-attributes>
-
 	<region name="firm">
-		<region-attributes/>
+		<region-attributes />
 		<region name="0">
-
-			<region name="accountDetails">
-				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="Accounts_DISK_STORE">
+		<region name="SecurityClassification">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityClassification_DISK_STORE" >
 				</region-attributes>
-			</region>
+				
+				<index name="SecurityIdIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="securityClassificationKey.securityId" />
+                </index>
+				
+				 <index name="SecurityClassificationIdIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="securityClassificationKey.classificationId" />
+                </index> 
+				
+				<index name="SecurityClassificationCategoryTypeIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="securityClassificationKey.entityCategoryType" />
+                </index> 
+				
+				<index name="SecurityClassificationCategoryIdIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="categoryId" />
+                </index>
 
+				<index name="EntityIdIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="securityClassificationKey.entityId" />
+                </index>
+			</region>
+			
 			<region name="SecurityPrice">
-				<region-attributes refid="REPLICATE_PERSISTENT_REGION_TYPE" disk-store-name="SecurityPrices_DISK_STORE">
+				<region-attributes refid="REPLICATE_PERSISTENT" disk-store-name="0_SecurityPrice_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="instrumentIdPriceIndex">
+                     <functional from-clause="/firm/0/SecurityPrice"
+                          expression="instrumentValuesKey.instrumentId" />
+                </index>
+			</region>
+			
+			<region name="SecurityInceptionDates">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="0_SecurityInceptionDates_DISK_STORE" >
 				</region-attributes>
 			</region>
+			
+			<region name="Group">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_Group_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="groupCodeIndex">
+                     <functional from-clause="/firm/0/Group"
+                          expression="groupKey.groupCode" />
+                </index>
+			</region>
+			<region name="GroupDecode">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_GroupDecode_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="AccountHeuristic">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountHeuristic_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountHeuristicIdIndex">
+                     <functional from-clause="/firm/0/AccountHeuristic"
+                          expression="accountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="BlendedBenchmark">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_BlendedBenchmark_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="blendedBenchmarkIdIndex">
+                     <functional from-clause="/firm/0/BlendedBenchmark"
+                          expression="blendedBenchmarkKey.blendedBenchmarkId" />
+                </index>
+			</region>
+			<region name="Control">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_Control_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="decodeCategoryIndex">
+                     <functional from-clause="/firm/0/Control"
+                          expression="key.category" />
+                </index>
+			</region>
+			
+			<region name="SecurityClassificationDecode">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityClassificationDecode_DISK_STORE" >
+				</region-attributes>
+			</region>
+			
+			<region name="SecurityReference">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityReference_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="referenceIdIndex">
+                     <functional from-clause="/firm/0/SecurityReference"
+                          expression="referenceId" />
+                </index>
+				
+				<index name="instrumentIdIndex">
+                     <functional from-clause="/firm/0/SecurityReference"
+                          expression="instrumentReferenceKey.instrumentId" />
+                </index>
+				
+				<index name="referenceTypeIndex">
+                     <functional from-clause="/firm/0/SecurityReference"
+                          expression="instrumentReferenceKey.referencetype" />
+                </index>
+			</region>
+			<region name="AccountReference">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountReference_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="referenceIdIndex">
+                     <functional from-clause="/firm/0/AccountReference"
+                          expression="referenceId" />
+                </index>
+				
+				<index name="accountRefIdIndex">
+                     <functional from-clause="/firm/0/AccountReference"
+                          expression="accountReferenceKey.accountRefId" />
+                </index>
+				
+				<index name="referenceTypeIndex">
+                     <functional from-clause="/firm/0/AccountReference"
+                          expression="accountReferenceKey.referencetype" />
+                </index>
+			</region>
+			<region name="SecurityAttributes">
+				<region-attributes refid="REPLICATE_PERSISTENT" disk-store-name="0_SecurityAttributes_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="securityDescriptionIndex">
+                     <functional from-clause="/firm/0/SecurityAttributes"
+                          expression="securityDescription" />
+                </index>
+				
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/0/SecurityAttributes"
+                          expression="securityId" />
+                </index>
+			</region>
+			<region name="MissingInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_MissingInformation_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="reconDateIndex">
+                     <functional from-clause="/firm/0/MissingInformation"
+                          expression="missingInformationKey.reconDate" />
+                </index>
+			</region>
+			<region name="assetClass">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_assetClass_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="assetClassIdIndex">
+                     <functional from-clause="/firm/0/assetClass"
+                          expression="assetClasskey.assetClassId" />
+                </index>
+			</region>
+			<region name="Sleeve">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_Sleeve_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="SleeveIdIndex">
+                     <functional from-clause="/firm/0/Sleeve"
+                          expression="sleeveId" />
+                </index>
+				
+				<index name="SorSleeveIdIndex">
+                     <functional from-clause="/firm/0/Sleeve"
+                          expression="sorSleeveId" />
+                </index>
+			</region>
+			<region name="Model">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_Model_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="modelIdIndex">
+                     <functional from-clause="/firm/0/Model"
+                          expression="modelKey.modelId" />
+                </index>
+				
+				<index name="sorAccountIdIndex">
+                     <functional from-clause="/firm/0/Model"
+                          expression="modelKey.sorAccountId" />
+                </index>
+			</region>
+			<region name="Objective">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_Objective_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="objectiveIdIndex">
+                     <functional from-clause="/firm/0/Objective"
+                          expression="objectiveKey.objectiveId" />
+                </index>
+				
+				<index name="objectiveModelIdIndex">
+                     <functional from-clause="/firm/0/Objective"
+                          expression="objectiveKey.modelId" />
+                </index>
+			</region>
+			<region name="accountDetails">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="0_accountDetails_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TWRHistory">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_TWRHistory_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TransactionType">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="0_TransactionType_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="SecurityLinking">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityLinking_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/0/SecurityLinking"
+                          expression="securityLinkingKey.instrumentId" />
+                </index>
+				<index name="entityIdIndex">
+                     <functional from-clause="/firm/0/SecurityLinking"
+                          expression="securityLinkingKey.entityId" />
+                </index>
+			</region>
+			<region name="ProgramEligibility">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_ProgramEligibility_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="PreComputeDailyROR">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_PreComputeDailyROR_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="secutiyIdIndex">
+                     <functional from-clause="/firm/0/PreComputeDailyROR"
+                          expression="preRORAccountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="NodeIdData">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_NodeIdData_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="HistoricalROR">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_HistoricalROR_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountIdIdIndex">
+                     <functional from-clause="/firm/0/HistoricalROR"
+                          expression="accountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="InceptionDates">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="0_InceptionDates_DISK_STORE" >
+				</region-attributes>				
+			</region>
+			<region name="AccountLinking">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountLinking_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountLinkingIdIndex">
+                     <functional from-clause="/firm/0/AccountLinking"
+                          expression="accountLinkingKey.newAccountId" />
+                </index>
+			</region>
+			<region name="ExternalAccountGroup">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_ExternalAccountGroup_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="BenchmarkInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_BenchmarkInformation_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="benchmarkInformationIdIndex">
+                     <functional from-clause="/firm/0/BenchmarkInformation"
+                          expression="benchmarkInformationKey.benchmarkId" />
+                </index>
+				<index name="BenchmarkInformationBenchmarkCodeIndex">
+					<functional from-clause="/firm/0/BenchmarkInformation" expression="benchmarkCode" />
+				</index>
+			</region>
+			<region name="UniverseInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_UniverseInformation_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="UniverseCodeRORValue">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_UniverseCodeRORValue_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="universeCodeIdIndex">
+                     <functional from-clause="/firm/0/UniverseCodeRORValue"
+                          expression="universeInCodeRORKey.universeCode" />
+                </index>
+			</region>
+			<region name="CAPSClassificationDataRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_CAPSClassificationDataRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="UnbundleMatrixRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_UnbundleMatrixRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TaxabilityMatrixRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_TaxabilityMatrixRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="AccountSortRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountSortRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+
+			<region name="SecurityRatings">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityRatings_DISK_STORE" />
+				<index name="securityIdIndex">
+					<functional from-clause="/firm/0/SecurityRatings" expression="securityId" />
+				</index>
+				<index name="startDateIndex">
+					<functional from-clause="/firm/0/SecurityRatings" expression="startDate" />
+				</index>			
+			</region>
+			
+			<region name="CAPSClassificaitonRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_CAPSClassificaitonRegion_DISK_STORE" />
+				<index name="capsSecurityIdIndex">
+					<functional from-clause="/firm/0/CAPSClassificaitonRegion" expression="securityId" />
+				</index>
+				<index name="capsStartDateIndex">
+					<functional from-clause="/firm/0/CAPSClassificaitonRegion" expression="startDate" />
+				</index>			
+			</region>
+			
+			<region name="AccountPMRElGRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE"  disk-store-name="0_AccountPMRElGRegion_DISK_STORE" />
+				<index name="accountPMRElGAccountIDIndex">
+					<functional from-clause="/firm/0/AccountPMRElGRegion" expression="accountID" />
+				</index>
+			</region>
+			
+			<region name="AccountCaptialFlowsRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountCaptialFlowsRegion_DISK_STORE" />
+				<index name="accountCapitalFlowsAccountIDIndex">
+					<functional from-clause="/firm/0/AccountCaptialFlowsRegion" expression="accountID" />
+				</index>
+			</region>
+			<region name="NewUISearchRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_NewUISearchRegion_DISK_STORE" />
+			</region>
+
+			<region name="AccountPreComputeData">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="0_AccountPreComputeData_DISK_STORE"  />
+			</region>
+			<region name="GroupToAccListRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_GroupToAccListRegion_DISK_STORE"  />
+			</region>
+			<region name="AccountDirtyFlagRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_AccountDirtyFlagRegion"  />
+			</region>
+			<region name="DeathValuationRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_DeathValuationRegion_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="DeathValuationRegionIndex">
+                     <functional from-clause="/firm/0/DeathValuationRegion"
+                          expression="DeathValuationKey.instrumentId" />
+                </index>
+			</region>
+			<region name="OutsideAssetRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_OutsideAssetRegion_DISK_STORE"  />
+				<index name="outsideAssetRegionAccountIDIndex">
+					<functional from-clause="/firm/0/OutsideAssetRegion" expression="accountId" />
+				</index>
+			</region>
+			<region name="RelationshipRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_RelationshipRegion_DISK_STORE" />
+				<index name="relationshipCodeIndex">
+                     <functional from-clause="/firm/0/RelationshipRegion" expression="relationshipCode" />
+                </index>			
+			</region>
+			<region name="SecurityCallDateRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="0_SecurityCallDateRegion_DISK_STORE" />
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/0/SecurityCallDateRegion" expression="securityId" />
+                </index>			
+			</region>
+			
+			
+		</region>
+		<region name="1">
+		<region name="SecurityClassification">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityClassification_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="SecurityIdIndex">
+                     <functional from-clause="/firm/1/SecurityClassification"
+                          expression="securityClassificationKey.securityId" />
+                </index>
+				
+				 <index name="SecurityClassificationIdIndex">
+                     <functional from-clause="/firm/1/SecurityClassification"
+                          expression="securityClassificationKey.classificationId" />
+                </index> 
+				
+			 <index name="SecurityClassificationCategoryTypeIndex">
+                     <functional from-clause="/firm/1/SecurityClassification"
+                          expression="securityClassificationKey.entityCategoryType" />
+                </index> 
+				
+				<index name="SecurityClassificationCategoryIdIndex">
+                     <functional from-clause="/firm/1/SecurityClassification"
+                          expression="categoryId" />
+                </index>
+
+				<index name="EntityIdIndex">
+                     <functional from-clause="/firm/0/SecurityClassification"
+                          expression="securityClassificationKey.entityId" />
+                </index>
+
+			</region>
+			<region name="Group">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_Group_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="groupCodeIndex">
+                     <functional from-clause="/firm/1/Group"
+                          expression="groupKey.groupCode" />
+                </index>
+			</region>
+			<region name="GroupDecode">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_GroupDecode_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="AccountHeuristic">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountHeuristic_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountHeuristicIdIndex">
+                     <functional from-clause="/firm/1/AccountHeuristic"
+                          expression="accountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="BlendedBenchmark">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_BlendedBenchmark_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="blendedBenchmarkIdIndex">
+                     <functional from-clause="/firm/1/BlendedBenchmark"
+                          expression="blendedBenchmarkKey.blendedBenchmarkId" />
+                </index>
+			</region>
+			<region name="Control">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_Control_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="decodeCategoryIndex">
+                     <functional from-clause="/firm/1/Control"
+                          expression="key.category" />
+                </index>
+			</region>
+			
+			<region name="SecurityClassificationDecode">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityClassificationDecode_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="SecurityPrice">
+				<region-attributes refid="REPLICATE_PERSISTENT" disk-store-name="1_SecurityPrice_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="instrumentIdPriceIndex">
+                     <functional from-clause="/firm/1/SecurityPrice"
+                          expression="instrumentValuesKey.instrumentId" />
+                </index>
+			</region>
+			<region name="SecurityReference">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityReference_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="referenceIdIndex">
+                     <functional from-clause="/firm/1/SecurityReference"
+                          expression="referenceId" />
+                </index>
+				
+				<index name="instrumentIdIndex">
+                     <functional from-clause="/firm/1/SecurityReference"
+                          expression="instrumentReferenceKey.instrumentId" />
+                </index>
+				
+				<index name="referenceTypeIndex">
+                     <functional from-clause="/firm/1/SecurityReference"
+                          expression="instrumentReferenceKey.referencetype" />
+                </index>
+			</region>
+			<region name="AccountReference">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountReference_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="referenceIdIndex">
+                     <functional from-clause="/firm/1/AccountReference"
+                          expression="referenceId" />
+                </index>
+				
+				<index name="accountRefIdIndex">
+                     <functional from-clause="/firm/1/AccountReference"
+                          expression="accountReferenceKey.accountRefId" />
+                </index>
+				
+				<index name="referenceTypeIndex">
+                     <functional from-clause="/firm/1/AccountReference"
+                          expression="accountReferenceKey.referencetype" />
+                </index>
+			</region>
+			<region name="SecurityAttributes">
+				<region-attributes refid="REPLICATE_PERSISTENT" disk-store-name="1_SecurityAttributes_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="securityDescriptionIndex">
+                     <functional from-clause="/firm/1/SecurityAttributes"
+                          expression="securityDescription" />
+                </index>
+				
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/1/SecurityAttributes"
+                          expression="securityId" />
+                </index>
+			</region>
+			<region name="MissingInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_MissingInformation_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="reconDateIndex">
+                     <functional from-clause="/firm/1/MissingInformation"
+                          expression="missingInformationKey.reconDate" />
+                </index>
+			</region>
+			<region name="assetClass">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_assetClass_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="assetClassIdIndex">
+                     <functional from-clause="/firm/1/assetClass"
+                          expression="assetClasskey.assetClassId" />
+                </index>
+			</region>
+			<region name="Sleeve">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_Sleeve_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="SleeveIdIndex">
+                     <functional from-clause="/firm/1/Sleeve"
+                          expression="sleeveId" />
+                </index>
+				
+				<index name="SorSleeveIdIndex">
+                     <functional from-clause="/firm/1/Sleeve"
+                          expression="sorSleeveId" />
+                </index>
+			</region>
+			<region name="Model">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_Model_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="modelIdIndex">
+                     <functional from-clause="/firm/1/Model"
+                          expression="modelKey.modelId" />
+                </index>
+				
+				<index name="sorAccountIdIndex">
+                     <functional from-clause="/firm/1/Model"
+                          expression="modelKey.sorAccountId" />
+                </index>
+			</region>
+			<region name="Objective">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_Objective_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="objectiveIdIndex">
+                     <functional from-clause="/firm/1/Objective"
+                          expression="objectiveKey.objectiveId" />
+                </index>
+				
+				<index name="objectiveModelIdIndex">
+                     <functional from-clause="/firm/1/Objective"
+                          expression="objectiveKey.modelId" />
+                </index>
+			</region>
+			<region name="accountDetails">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="1_accountDetails_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TWRHistory">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_TWRHistory_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TransactionType">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="1_TransactionType_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="SecurityLinking">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityLinking_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/1/SecurityLinking"
+                          expression="securityLinkingKey.instrumentId" />
+                </index>
+				<index name="entityIdIndex">
+                     <functional from-clause="/firm/0/SecurityLinking"
+                          expression="securityLinkingKey.entityId" />
+                </index>
+			</region>
+			<region name="ProgramEligibility">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_ProgramEligibility_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="PreComputeDailyROR">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_PreComputeDailyROR_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="secutiyIdIndex">
+                     <functional from-clause="/firm/1/PreComputeDailyROR"
+                          expression="preRORAccountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="NodeIdData">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_NodeIdData_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="HistoricalROR">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_HistoricalROR_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountIdIdIndex">
+                     <functional from-clause="/firm/1/HistoricalROR"
+                          expression="accountHeuristicKey.accountId" />
+                </index>
+			</region>
+			<region name="InceptionDates">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="1_InceptionDates_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="AccountLinking">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountLinking_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="accountLinkingIdIndex">
+                     <functional from-clause="/firm/1/AccountLinking"
+                          expression="accountLinkingKey.newAccountId" />
+                </index>
+			</region>
+			<region name="ExternalAccountGroup">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_ExternalAccountGroup_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="BenchmarkInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_BenchmarkInformation_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="benchmarkInformationIdIndex">
+                     <functional from-clause="/firm/1/BenchmarkInformation"
+                          expression="benchmarkInformationKey.benchmarkId" />
+                </index>
+				<index name="BenchmarkInformationBenchmarkCodeIndex">
+					<functional from-clause="/firm/1/BenchmarkInformation" expression="benchmarkCode" />
+				</index>
+			</region>
+			<region name="UniverseInformation">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_UniverseInformation_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="UniverseCodeRORValue">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_UniverseCodeRORValue_DISK_STORE" >
+				</region-attributes>
+				
+				<index name="universeCodeIdIndex">
+                     <functional from-clause="/firm/1/UniverseCodeRORValue"
+                          expression="universeInCodeRORKey.universeCode" />
+                </index>
+			</region>
+			<region name="CAPSClassificationDataRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_CAPSClassificationDataRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="UnbundleMatrixRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_UnbundleMatrixRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="TaxabilityMatrixRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_TaxabilityMatrixRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+			<region name="AccountSortRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountSortRegion_DISK_STORE" >
+				</region-attributes>
+			</region>
+
+			<region name="SecurityRatings">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityRatings_DISK_STORE"/>
+				<index name="securityIdIndex">
+					<functional from-clause="/firm/1/SecurityRatings" expression="securityId" />
+				</index>
+				<index name="startDateIndex">
+					<functional from-clause="/firm/1/SecurityRatings" expression="startDate" />
+				</index>			
+			</region>
+			
+			<region name="CAPSClassificaitonRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_CAPSClassificaitonRegion_DISK_STORE"  />
+				<index name="capsSecurityIdIndex">
+					<functional from-clause="/firm/1/CAPSClassificaitonRegion" expression="securityId" />
+				</index>
+				<index name="capsStartDateIndex">
+					<functional from-clause="/firm/1/CAPSClassificaitonRegion" expression="startDate" />
+				</index>			
+			</region>
+			
+			<region name="AccountPMRElGRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountPMRElGRegion_DISK_STORE"/>
+				<index name="accountPMRElGAccountIDIndex">
+					<functional from-clause="/firm/1/AccountPMRElGRegion" expression="accountID" />
+				</index>
+				
+			</region>
+			
+			<region name="AccountCaptialFlowsRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountCaptialFlowsRegion_DISK_STORE" />
+				<index name="accountCapitalFlowsAccountIDIndex">
+					<functional from-clause="/firm/1/AccountCaptialFlowsRegion" expression="accountID" />
+				</index>
+				
+			</region>
+			<region name="NewUISearchRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_NewUISearchRegion_DISK_STORE" />
+				<index name="searchIDIndex">
+					<functional from-clause="/firm/1/NewUISearchRegion"	expression="newUIKey.uniqueSearchId" />
+				</index>
+			</region>
+			
+			<region name="AccountPreComputeData">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="1_AccountPreComputeData_DISK_STORE" />
+			</region>
+			<region name="GroupToAccListRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_GroupToAccListRegion_DISK_STORE"  />
+			</region>
+		
+			<region name="AccountDirtyFlagRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_AccountDirtyFlagRegion"  />
+			</region>
+			
+	        <region name="DeathValuationRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_DeathValuationRegion_DISK_STORE" >
+				</region-attributes>				
+				<index name="DeathValuationRegionIndex">
+                     <functional from-clause="/firm/1/DeathValuationRegion"
+                          expression="DeathValuationKey.instrumentId" />
+                </index>
+		    </region>
+		    <region name="OutsideAssetRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_OutsideAssetRegion_DISK_STORE"  />
+				<index name="outsideAssetRegionAccountIDIndex">
+					<functional from-clause="/firm/1/OutsideAssetRegion" expression="accountId" />
+				</index>
+			</region>
+		    <region name="RelationshipRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_RelationshipRegion_DISK_STORE" />
+				<index name="relationshipCodeIndex">
+                     <functional from-clause="/firm/1/RelationshipRegion" expression="relationshipCode" />
+                </index>			
+			</region>
+			<region name="SecurityCallDateRegion">
+				<region-attributes refid="DEFAULT_PARTITION_REGION_TYPE" disk-store-name="1_SecurityCallDateRegion_DISK_STORE" />
+				<index name="securityIdIndex">
+                     <functional from-clause="/firm/1/SecurityCallDateRegion" expression="securityId" />
+                </index>			
+			</region>
+			<region name="SecurityInceptionDates">
+				<region-attributes refid="OVERFLOW_PARTITION_REGION_TYPE" disk-store-name="1_SecurityInceptionDates_DISK_STORE" >
+				</region-attributes>
+			</region>
+			
 		</region>
 	</region>
 
-	<function-service >
-	</function-service>
+	<function-service />
 
-	<resource-manager critical-heap-percentage="95" eviction-heap-percentage="75" />
+	<resource-manager critical-heap-percentage="95"
+		eviction-heap-percentage="75" />
 
 	<serialization-registration />
 
+	<initializer>
+		<class-name>com.broadridge.pr.gf.ServerCacheInitializer</class-name>
+		<parameter name="bootSpring">
+			<string>true</string>
+		</parameter>
+	</initializer>
 </cache>

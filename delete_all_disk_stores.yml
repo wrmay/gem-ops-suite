@@ -9,6 +9,6 @@
         path: "{{ item }}"
         state: absent
       loop:
-        - /data/Accounts
+        - /data/accountDetails
         - /data/SecurityPrices
         - /data/pdx 
